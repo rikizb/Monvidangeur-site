@@ -22,17 +22,23 @@ header,main,footer{max-width:60rem;margin:auto;padding:1rem}a{color:var(--a)}tab
 th,td{border:1px solid #d5dde1;padding:.4rem .5rem;text-align:left;vertical-align:top}th{background:var(--f)}
 .evitement{position:absolute;left:-999px;top:0;background:#fff;padding:.5rem}.evitement:focus{left:1rem}.bref{background:var(--f);border-left:4px solid var(--a);padding:.75rem 1rem}
 .table-wrap{overflow-x:auto}form label{display:block;margin:.5rem 0}input,select,textarea{font:inherit;padding:.4rem;width:100%;max-width:28rem}
-input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px solid #d5dde1;margin:.75rem 0}.carte{border:1px solid #d5dde1;border-left:4px solid var(--a);padding:.5rem 1rem;margin:1rem 0}.suggestions{list-style:none;padding:0}.lien{background:none;color:var(--a);text-decoration:underline;padding:.2rem 0;border:0;cursor:pointer}.bouton2{display:inline-block;border:1px solid var(--a);padding:.3rem .6rem;text-decoration:none}button{font:inherit;padding:.5rem 1rem;background:var(--a);color:#fff;border:0}
-/* Mobile 375 px : pas de débordement horizontal (URL longues, tableaux) ; focus visible ; cibles tactiles de la nav ≥ 24 px */
-main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}header nav a{display:inline-block;padding:.35rem 0}
+input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px solid #d5dde1;margin:.75rem 0}.carte{border:1px solid #d5dde1;border-left:4px solid var(--a);padding:.5rem 1rem;margin:1rem 0}.suggestions{list-style:none;padding:0}.lien{background:none;color:var(--a);text-decoration:underline;padding:.2rem 0;border:0;cursor:pointer}.bouton2{display:inline-block;border:1px solid var(--a);padding:.3rem .6rem;text-decoration:none}blockquote{margin-inline:0}.cta-fin{margin:1.5rem 0}a.bouton{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:.6rem 1.1rem;background:var(--a);color:#fff;text-decoration:none;border-radius:4px;font-weight:600}a.bouton:hover{background:#08465d}button{font:inherit;padding:.5rem 1rem;background:var(--a);color:#fff;border:0}
+/* Mobile 375 px : pas de débordement horizontal (URL longues, tableaux) ; focus visible ; cibles tactiles ≥ 44 px (nav, tuiles, simulateur) */
+main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.menu{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;column-gap:.25rem}header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .55rem;font-weight:600}header nav li:first-child a{padding-left:0}header nav a.nav-urgence{color:#a3262a}.evitement{min-height:44px;display:inline-flex;align-items:center}.tuiles{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.6rem}.tuiles a{display:flex;align-items:center;min-height:44px;padding:.6rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);text-decoration:none;font-weight:600}.tuiles a.t-urgence{border-left-color:#a3262a;color:#a3262a}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
 </style>
 </head>
 <body data-indexable="non">
 <a class="evitement" href="#contenu">Aller au contenu</a>
-<header><nav aria-label="Menu principal"><a href="/"><strong>Mon Vidangeur</strong></a> · <a href="/guides/">Guides</a> · <a href="/controle-spanc/">Contrôle SPANC</a> · <a href="/controle-spanc/vente-immobiliere/">Simulateur vente</a></nav></header>
+<header><nav aria-label="Menu principal"><ul class="menu">
+<li><a href="/"><span class="vh">Mon Vidangeur, </span>Accueil</a></li>
+<li><a href="/vidange-fosse-septique/">Vidange</a></li>
+<li><a href="/urgence/" class="nav-urgence">Urgence</a></li>
+<li><a href="/controle-spanc/">Contrôle SPANC</a></li>
+<li><a href="/guides/">Guides</a></li>
+</ul></nav></header>
 <main id="contenu" tabindex="-1"><nav aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <span aria-current="page">Données personnelles et cookies</span></nav>
 <h1>Données personnelles et cookies</h1>
-<p class="bref">En bref : le site ne vous demande aucune donnée, n'a ni compte, ni formulaire d'envoi, ni publicité, ni outil de mesure d'audience tiers. Seules des données techniques de connexion sont traitées par l'hébergeur, pour faire fonctionner le site et produire des statistiques de fréquentation anonymisées (OVHcloud Web Statistics, actif).</p>
+<p class="bref">En bref : ni compte, ni formulaire, ni publicité, ni mesure d'audience tierce. Seul l'hébergeur traite des données techniques de connexion.</p>
 
 <h2>Responsable du traitement</h2>
 <p>LES EVABRES, société par actions simplifiée (SAS), 87 rue Carnot, 92300 Levallois-Perret (SIREN 913 826 319), représentée par Aymeric Berenger, président. Contact : contact@monvidangeur.fr.</p>

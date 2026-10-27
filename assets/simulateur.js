@@ -9,10 +9,10 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const dateFr = (d) => { if (!d) return ""; const iso = typeof d === "string" ? d : d.toISOString(); const [y, m, j] = iso.slice(0, 10).split("-"); return `${j}/${m}/${y}`; };
 const euro = (n) => new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", minimumFractionDigits: Number.isInteger(n) ? 0 : 2 }).format(n);
 
-const H_MUETS = ["Hénonville"];
+const H_MUETS = ["Hénonville", "Harcourt"];
 const de = (n) => /^Le /.test(n) ? "du " + n.slice(3) : /^Les /.test(n) ? "des " + n.slice(4) : /^[AEIOUYÂÀÉÈÊÎÏÔÛ]/.test(n) || H_MUETS.includes(n) ? "d'" + n : "de " + n;
 const a = (n) => /^Le /.test(n) ? "au " + n.slice(3) : /^Les /.test(n) ? "aux " + n.slice(4) : "à " + n;
-const lienExt = (url, txt, cta) => url ? `<a href="${esc(url)}" rel="noopener" target="_blank"${cta ? ` data-cta="${cta}"` : ""}>${esc(txt)}</a>` : "";
+const lienExt = (url, txt, cta) => url ? `<a href="${esc(url)}" rel="noopener" target="_blank"${cta ? ` data-cta="${cta}"` : ""}>${esc(txt)}<span class="vh"> (nouvel onglet)</span></a>` : "";
 const typeLibelle = { CC: "communauté de communes", CA: "communauté d'agglomération", CU: "communauté urbaine", SMF: "syndicat mixte", SMO: "syndicat mixte", SIVU: "syndicat intercommunal", SIVOM: "syndicat intercommunal", COM: "commune" };
 const aujourdhuiUTC = () => { const n = new Date(); return new Date(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate())); };
 
@@ -114,7 +114,7 @@ function carteB(ev, REG) {
     const b2 = [];
     if (cs.tel && cs.tel !== sp.tel) b2.push(`<a href="tel:${esc(cs.tel)}" data-contact="tel">${esc(telAff(cs.tel))}</a>`);
     if (mailGenerique(cs.mail)) b2.push(`<a href="mailto:${esc(cs.mail)}" data-contact="mail">${esc(cs.mail)}</a>`);
-    if (cs.web) b2.push(lienExt(/^https?:/.test(cs.web) ? cs.web : "https://" + cs.web, cs.web));
+    if (cs.web) b2.push(lienExt(/^https?:/.test(cs.web) ? cs.web : "https://" + cs.web, "Site internet"));
     if (b2.length) h += `<p>Coordonnées du siège de ${esc(s.nom)} : ${b2.join(" · ")}</p>`;
     const p = s.periodicite || {};
     if (p.ans && !p.discordance) h += `<p>Dans ce secteur, le contrôle périodique a lieu tous les ${p.ans} ans (${lienExt(p.source, "source")}${p.annee ? ", " + esc(p.annee) : ""}).</p>`;
@@ -128,13 +128,14 @@ function carteB(ev, REG) {
 function carteC(ev) {
   const s = ev.spanc, t = (s && s.tarif_controle_vente) || {}, L = CFG.libelles;
   let h = `<section class="carte" data-carte="C" data-etat-tarif="${ev.et.etat}"><h3>Ce que coûte le contrôle</h3>`;
-  const ref = t.nature_preuve ? esc(t.nature_preuve) : `délibération du ${dateFr(t.date_deliberation)}`;
+
+  const ref = esc((t.nature_preuve && String(t.nature_preuve).trim()) || (t.date_deliberation ? `délibération du ${dateFr(t.date_deliberation)}` : "document du service"));
   const suite = `${lienExt(t.url_source, "Voir la source", "source_tarif")}. Relevé le ${dateFr(t.date_lecture)}.`;
   const mention = (n) => ev.et.drapeaux.includes("HT") ? `<strong>${euro(n)} HT</strong> (le montant TTC n'est pas publié)`
     : ev.et.drapeaux.includes("HT_TTC_INCONNU") ? `<strong>${euro(n)}</strong> <em data-mention="ht-ttc-inconnu">(${esc(L.montant_ht_ttc_inconnu)})</em>` : `<strong>${euro(n)} TTC</strong>`;
   if (ev.et.etat === "E1") {
-    if (ev.et.drapeaux.includes("GRATUITE")) h += `<p><strong>Pas de facturation à part pour le contrôle en cas de vente</strong>, selon ${ref} de ${esc(s.nom)} : « ${esc(t.libelle_source)} ». ${suite}</p>`;
-    else h += `<p data-montant="${t.montant}">${mention(t.montant)} : tarif du contrôle en cas de vente fixé par ${esc(s.nom)} (${ref}). ${suite}</p>`;
+    if (ev.et.drapeaux.includes("GRATUITE")) h += `<p><strong>Pas de facturation à part pour le contrôle en cas de vente</strong>, selon ${esc(s.nom)} (source : ${ref}) : « ${esc(t.libelle_source)} ». ${suite}</p>`;
+    else h += `<p data-montant="${t.montant}">${mention(t.montant)} : tarif du contrôle en cas de vente fixé par ${esc(s.nom)}, source : ${ref}. ${suite}</p>`;
     for (const v of t.variantes || []) if (v.montant != null) h += `<p>Tarif différent si ${esc(v.condition)} : ${mention(v.montant)}</p>`;
   } else {
     h += `<p><strong>${esc(L.libelle_si_absent)}</strong></p>`;

@@ -1,0 +1,81 @@
+# .htaccess de PRODUCTION — monvidangeur.fr (OVH hébergement web).
+# Écrit dans dist/.htaccess UNIQUEMENT par le build de production (SITE_PREPROD=0), bloc noindex (5) selon SITE_INDEXABLE ; la préprod garde son propre .htaccess (auth basique, README_DEPLOY.md §3).
+# monvidangeur.fr et monvidangeur.com pointent sur le même dossier www : les règles testent l'hôte pour éviter toute boucle.
+
+ErrorDocument 404 /404.html
+
+# Sans mod_rewrite : même protection (règle 0 ci-dessous), en 403 via <If> (cœur d'Apache 2.4).
+<IfModule !mod_rewrite.c>
+<If "(%{REQUEST_URI} =~ m#(^|/)\.# && ! (%{REQUEST_URI} =~ m#^/\.well-known/#)) || %{REQUEST_URI} =~ m#^/readme\.txt$#i">
+Require all denied
+</If>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Sous-requêtes internes (ErrorDocument…) : jamais redirigées.
+RewriteCond %{ENV:REDIRECT_STATUS} !^$
+RewriteRule ^ - [L]
+
+# Validation des certificats (Let's Encrypt OVH) : jamais redirigée.
+RewriteRule ^\.well-known/acme-challenge/ - [L]
+
+# 0. Fichiers techniques jamais servis (dépôt Git « Associer Git » d'OVH : au cas où .git, .gitignore ou README.txt seraient copiés dans www).
+#    Tout chemin dont un segment commence par un point (/.git, /.gitignore, /.env, /x/.y…) et README.txt → 404, sauf sous /.well-known/.
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteRule (^|/)\. - [R=404,L]
+RewriteRule ^README\.txt$ - [R=404,L,NC]
+
+# 1. Hôtes secondaires (www.monvidangeur.fr, monvidangeur.com, www.monvidangeur.com ; port ou point final éventuels)
+#    → https://monvidangeur.fr, en une seule redirection, quel que soit le protocole. Chemin conservé ; query string conservée (ajoutée d'office par mod_rewrite).
+#    NB : Apache réécrit les %XX du chemin en minuscules (%C3%A9 → %c3%a9), URL équivalente (RFC 3986 §2.1).
+RewriteCond %{HTTP_HOST} !^monvidangeur\.fr$ [NC]
+RewriteCond %{HTTP_HOST} ^(www\.)?monvidangeur\.(fr|com)\.?(:[0-9]+)?$ [NC]
+RewriteRule ^ https://monvidangeur.fr%{REQUEST_URI} [R=301,L]
+
+# 2. http → https sur l'hôte canonique. Chez OVH, le TLS est terminé en amont : Apache peut voir la requête en HTTP.
+#    On ne redirige que si AUCUN indicateur ne signale HTTPS (variable HTTPS, ENV:HTTPS posée par OVH, en-tête X-Forwarded-Proto, port 443) → pas de boucle.
+RewriteCond %{HTTP_HOST} ^monvidangeur\.fr\.?(:[0-9]+)?$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{ENV:HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !^https$ [NC]
+RewriteCond %{SERVER_PORT} !=443
+RewriteRule ^ https://monvidangeur.fr%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# 3. Compression (P-10) : texte uniquement (HTML, CSS, JS, JSON, XML, SVG, TXT). Le PDF et les images sont déjà compressés.
+#    Gain mesuré par l'audit Produit : 60.json + 27.json ≈ 480 Ko bruts, ≈ 29 Ko gzippés. Sans mod_deflate/mod_filter, bloc ignoré.
+<IfModule mod_deflate.c>
+<IfModule mod_filter.c>
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+</IfModule>
+
+# 4. Cache navigateur (P-10). Les noms de fichiers ne sont PAS versionnés (assets/simulateur.js, data/simulateur-vente/60.json…) :
+#    pas de cache long, sinon un visiteur pourrait garder un ancien JS face à un nouveau JSON après un déploiement.
+#    HTML : revalidation à chaque visite (no-cache) ; JS, CSS, JSON, XML : 1 heure ; PDF : 1 jour ; autres : 1 heure.
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access plus 1 hour"
+ExpiresByType text/html "access plus 0 seconds"
+ExpiresByType text/css "access plus 1 hour"
+ExpiresByType text/javascript "access plus 1 hour"
+ExpiresByType application/javascript "access plus 1 hour"
+ExpiresByType application/json "access plus 1 hour"
+ExpiresByType application/pdf "access plus 1 day"
+</IfModule>
+<IfModule mod_headers.c>
+<FilesMatch "\.html$">
+Header set Cache-Control "no-cache"
+</FilesMatch>
+</IfModule>
+
+# >>> NOINDEX-PREMIERE-MISE-EN-LIGNE (P-30)
+# 5. Première mise en ligne en noindex (décision D-D) : en-tête sur TOUTES les réponses, PDF et JSON compris.
+#    Bloc conservé par le build tant que SITE_INDEXABLE=0 ; retiré automatiquement par le build SITE_INDEXABLE=1.
+#    Jour J (décision de Nicolas et d'Aymeric) : supprimer ce bloc, marqueurs compris (README_DEPLOY.md §4 ter).
+<IfModule mod_headers.c>
+Header set X-Robots-Tag "noindex, follow"
+</IfModule>
+# <<< NOINDEX-PREMIERE-MISE-EN-LIGNE (P-30)

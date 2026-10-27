@@ -1,0 +1,30 @@
+# Ce dépôt ne contient QUE le site construit (contenu de l'archive de production). Protection contre l'ajout accidentel de sources.
+node_modules/
+src/
+scripts/
+relecture/
+_site/
+dist/
+dist-prod*/
+*.njk
+*.md
+*.mjs
+*.cjs
+*.ts
+*.py
+*.csv
+*.map
+package.json
+package-lock.json
+eleventy.config.js
+.eleventy.js
+.env
+.env.*
+# Éditeurs et systèmes
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

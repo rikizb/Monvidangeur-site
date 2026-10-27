@@ -1,18 +1,14 @@
-// Îlot JS du simulateur (page /controle-spanc/vente-immobiliere/). Textes : growth/exp01 textes-ui.md.
-// Aucune donnée saisie n'est envoyée ni stockée ; aucun cookie ; aucun tiers. Analytics câblés en no-op.
 import { chercher, resoudreCommune, etatSpanc, etatTarif, validite, blocIssue, indexer, isoVersDate, mailGenerique } from "./simulateur-logique.js";
 
 const racine = document.getElementById("simulateur-vente");
 const CFG = JSON.parse(document.getElementById("simulateur-config").textContent);
 
-// Plan de marquage (analytics.md) : aucun outil choisi ni consenti -> no-op. Ne jamais y passer de date saisie.
 const suivre = (evenement, proprietes) => { void evenement; void proprietes; };
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const dateFr = (d) => { if (!d) return ""; const iso = typeof d === "string" ? d : d.toISOString(); const [y, m, j] = iso.slice(0, 10).split("-"); return `${j}/${m}/${y}`; };
 const euro = (n) => new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", minimumFractionDigits: Number.isInteger(n) ? 0 : 2 }).format(n);
-// Élision et contraction devant un nom de commune : « d'Évreux », « du Crocq », « des Andelys ».
-// Élision devant h muet : UNIQUEMENT pour la liste explicite ci-dessous (recette S1, C3). Les autres noms en H gardent « de ».
+
 const H_MUETS = ["Hénonville"];
 const de = (n) => /^Le /.test(n) ? "du " + n.slice(3) : /^Les /.test(n) ? "des " + n.slice(4) : /^[AEIOUYÂÀÉÈÊÎÏÔÛ]/.test(n) || H_MUETS.includes(n) ? "d'" + n : "de " + n;
 const a = (n) => /^Le /.test(n) ? "au " + n.slice(3) : /^Les /.test(n) ? "aux " + n.slice(4) : "à " + n;
@@ -39,7 +35,6 @@ async function charger() {
   }
 }
 
-// ---------- Saisie commune ----------
 function proposer() {
   const champ = q("#simu-commune"), liste = q("#simu-suggestions"), msg = q("[data-msg-commune]");
   const v = champ.value;
@@ -78,7 +73,6 @@ function evaluerCourant() {
   return { es, et, spanc };
 }
 
-// ---------- Cartes ----------
 function carteA(va, REG) {
   const V = REG.validite_rapport_vente_ans.valeur, src = REG.validite_rapport_vente_ans.sources[0];
   const libActe = etat.dateActe ? `À la date de la signature prévue (${dateFr(etat.dateActe)}), ce rapport aura` : "À ce jour, ce rapport a déjà";
@@ -92,13 +86,13 @@ function carteA(va, REG) {
   return `<section class="carte" data-carte="A" data-verdict="${va.verdict}"><h3>${esc(t[0])}</h3><p>${esc(t[1])}</p>
 ${etat.moisSeul && va.dateRapport ? "<p><small>Calcul fait au 1er jour du mois indiqué : vérifiez la date exacte sur le rapport.</small></p>" : ""}
 <p><small><em>Pour vendre, le rapport du SPANC doit avoir moins de ${V} ans le jour de la signature de l'acte authentique.</em> ${lienExt(src, "Source : service-public.gouv.fr", "source_reglementaire")}</small></p>
-${va.verdict === "A_valable" ? `<p data-note-nc><small>Un rapport « non conforme » encore valable peut servir pour la vente : il informe l'acheteur. Sa conclusion ne change pas sa durée de validité. <a href="${CFG.urls.rapport_non_conforme}" data-cta="non_conformite">Que faire si le rapport est non conforme ?</a></small></p>` : ""}</section>`; // Produit & UX 27/10 : note seulement si un rapport existe et est encore valable
+${va.verdict === "A_valable" ? `<p data-note-nc><small>Un rapport « non conforme » encore valable peut servir pour la vente : il informe l'acheteur. Sa conclusion ne change pas sa durée de validité. <a href="${CFG.urls.rapport_non_conforme}" data-cta="non_conformite">Que faire si le rapport est non conforme ?</a></small></p>` : ""}</section>`;
 }
 
 function carteB(ev, REG) {
   const c = etat.commune, s = ev.spanc;
   let h = `<section class="carte" data-carte="B" data-etat-spanc="${ev.es}"><h3>Le service à contacter</h3>`;
-  // Phrase omise si la déléguée porte le nom de la commune nouvelle (Formerie, Breteuil, Pacy-sur-Eure) : recette S1, C1.
+
   if (etat.deleguee && etat.deleguee.nom !== c.nom) h += `<p data-deleguee>${esc(etat.deleguee.nom)} est une commune ${etat.deleguee.statut === "commune_associee" ? "associée" : "déléguée"} ${esc(de(c.nom))}. Le service d'assainissement est celui ${esc(de(c.nom))}.</p>`;
   if (ev.es === "E7") h += `<p>Les sources publiques ne concordent pas sur le service compétent pour ${esc(c.nom)}. Avant toute démarche, confirmez auprès de votre mairie.</p>`;
   else if (ev.es === "E6") {
@@ -113,8 +107,8 @@ function carteB(ev, REG) {
     const telAff = (t) => t.replace(/(\d{2})(?=\d)/g, "$1 ");
     if (sp.tel) bouts.push(`<a href="tel:${esc(sp.tel)}" data-contact="tel">${esc(telAff(sp.tel))}</a>`);
     if (mailGenerique(sp.mail)) bouts.push(`<a href="mailto:${esc(sp.mail)}" data-contact="mail">${esc(sp.mail)}</a>`);
-    if (sp.url_page) bouts.push(lienExt(sp.url_page, "Page du service")); // page officielle de la collectivité (repli quand aucune adresse générique)
-    if (sp.url_page_contact) bouts.push(lienExt(sp.url_page_contact, "Formulaire ou page de contact")); // page officielle (Data ANC, champ url_page_contact)
+    if (sp.url_page) bouts.push(lienExt(sp.url_page, "Page du service"));
+    if (sp.url_page_contact) bouts.push(lienExt(sp.url_page_contact, "Formulaire ou page de contact"));
     if (sp.url_demande_controle_vente) bouts.push(lienExt(sp.url_demande_controle_vente, "Demander le contrôle vente"));
     if (bouts.length) h += `<p>Service SPANC : ${bouts.join(" · ")}</p>`;
     const b2 = [];
@@ -123,7 +117,7 @@ function carteB(ev, REG) {
     if (cs.web) b2.push(lienExt(/^https?:/.test(cs.web) ? cs.web : "https://" + cs.web, cs.web));
     if (b2.length) h += `<p>Coordonnées du siège de ${esc(s.nom)} : ${b2.join(" · ")}</p>`;
     const p = s.periodicite || {};
-    if (p.ans && !p.discordance) h += `<p>Dans ce secteur, le contrôle périodique a lieu tous les ${p.ans} ans (${lienExt(p.source, "source")}${p.annee ? ", " + esc(p.annee) : ""}).</p>`; // année omise si absente (évite « (source, ) »)
+    if (p.ans && !p.discordance) h += `<p>Dans ce secteur, le contrôle périodique a lieu tous les ${p.ans} ans (${lienExt(p.source, "source")}${p.annee ? ", " + esc(p.annee) : ""}).</p>`;
     else h += `<p>La fréquence des contrôles est fixée par chaque service, au plus tous les ${REG.periodicite_max_ans.valeur} ans.</p>`;
     if ((s.deps || []).length > 1) h += `<p>${esc(s.nom)} intervient aussi dans d'autres départements (${esc(s.deps.filter((d) => d !== c.dep).join(", "))}).</p>`;
   }
@@ -175,7 +169,7 @@ function carteD(va, ev, REG) {
   if (va.verdict === "A_valable") etapes.push("Transmettez le rapport à votre notaire ou à votre agent pour qu'il soit joint au dossier de diagnostic technique.");
   if (etapes.length) h += `<ol>${etapes.slice(0, 2).map((e) => `<li>${e}</li>`).join("")}</ol>`;
   h += `<p>${CFG.urls.checklist_pdf ? `<a class="bouton2" href="${CFG.urls.checklist_pdf}" data-cta="checklist_pdf">Télécharger la checklist vente / achat (PDF gratuit, sans inscription)</a> · ` : ""}<a href="${CFG.urls.rapport_non_conforme}" data-cta="non_conformite">Rapport non conforme : quelles conséquences pour la vente ?</a></p>`;
-  // CTA rappel e-mail : désactivé (config.json ctas.rappel_email.actif = false). CTA annuaire : liste préfectorale non lue -> masqué.
+
   return h + "</section>";
 }
 
@@ -188,7 +182,6 @@ function rendre() {
   if (!etat.resultatVu && va.verdict) { etat.resultatVu = true; suivre("simu_resultat", { verdict: va.verdict, date_acte_saisie: !!etat.dateActe, mois_seul: etat.moisSeul, issue_rapport: etat.issue, etat_tarif: ev.et.etat, dep: etat.commune.dep }); }
 }
 
-// ---------- Événements ----------
 function lireDates() {
   const msgR = q("[data-msg-rapport]"), msgA = q("[data-msg-acte]"), auj = aujourdhuiUTC();
   msgR.textContent = msgA.textContent = "";

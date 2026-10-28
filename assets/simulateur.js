@@ -114,8 +114,13 @@ function carteB(ev, REG) {
     const b2 = [];
     if (cs.tel && cs.tel !== sp.tel) b2.push(`<a href="tel:${esc(cs.tel)}" data-contact="tel">${esc(telAff(cs.tel))}</a>`);
     if (mailGenerique(cs.mail)) b2.push(`<a href="mailto:${esc(cs.mail)}" data-contact="mail">${esc(cs.mail)}</a>`);
-    if (cs.web) b2.push(lienExt(/^https?:/.test(cs.web) ? cs.web : "https://" + cs.web, "Site internet"));
-    if (b2.length) h += `<p>Coordonnées du siège de ${esc(s.nom)} : ${b2.join(" · ")}</p>`;
+    const nomOrg = String(s.nom || "").trim(), web = cs.web ? (/^https?:/.test(cs.web) ? cs.web : "https://" + cs.web) : "";
+    if (web) b2.push(lienExt(web, nomOrg ? `Site internet de ${nomOrg}` : "Site internet"));
+
+    const norm = (u) => String(u).toLowerCase().replace(/^https?:\/\/(www\.)?/, "").replace(/\/+$/, "");
+    if (cs.url_page_contact && /^https:\/\//.test(cs.url_page_contact) && !mailGenerique(sp.mail) && !sp.url_page && !sp.url_page_contact && (!web || norm(web) !== norm(cs.url_page_contact)))
+      b2.push(lienExt(cs.url_page_contact, nomOrg ? `Page de contact de ${nomOrg}` : "Page de contact"));
+    if (b2.length) h += `<p>Coordonnées du siège${nomOrg ? " de " + esc(nomOrg) : ""} : ${b2.join(" · ")}</p>`;
     const p = s.periodicite || {};
     if (p.ans && !p.discordance) h += `<p>Dans ce secteur, le contrôle périodique a lieu tous les ${p.ans} ans (${lienExt(p.source, "source")}${p.annee ? ", " + esc(p.annee) : ""}).</p>`;
     else h += `<p>La fréquence des contrôles est fixée par chaque service, au plus tous les ${REG.periodicite_max_ans.valeur} ans.</p>`;

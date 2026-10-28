@@ -4,6 +4,9 @@
 
 ErrorDocument 404 /404.html
 
+# Jamais de listing de répertoire (même si l'hébergeur l'active par défaut). Indispensable avec « DirectorySlash Off » ci-dessous.
+Options -Indexes
+
 # Sans mod_rewrite : même protection (règle 0 ci-dessous), en 403 via <If> (cœur d'Apache 2.4).
 <IfModule !mod_rewrite.c>
 <If "(%{REQUEST_URI} =~ m#(^|/)\.# && ! (%{REQUEST_URI} =~ m#^/\.well-known/#)) || %{REQUEST_URI} =~ m#^/readme\.txt$#i">
@@ -26,6 +29,22 @@ RewriteRule ^\.well-known/acme-challenge/ - [L]
 RewriteCond %{REQUEST_URI} !^/\.well-known/
 RewriteRule (^|/)\. - [R=404,L]
 RewriteRule ^README\.txt$ - [R=404,L,NC]
+
+# 0 bis. Répertoire demandé sans slash final (/guides) → UNE redirection 301 vers https://monvidangeur.fr/guides/, sans port, depuis tout hôte du site
+#    et tout protocole (remplace la redirection de mod_dir, qui ajoutait « :443 » et faisait 2 sauts depuis www ou http). Query conservée.
+#    « DirectorySlash Off » n'est actif que si mod_rewrite l'est (sinon mod_dir garde sa redirection par défaut) ; listing exclu par « Options -Indexes ».
+#    Placée après la règle 0 : /.git, /.env… restent en 404.
+<IfModule mod_dir.c>
+DirectorySlash Off
+</IfModule>
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{HTTP_HOST} ^(www\.)?monvidangeur\.(fr|com)\.?(:[0-9]+)?$ [NC]
+RewriteRule ^ https://monvidangeur.fr%{REQUEST_URI}/ [R=301,L]
+# Autre hôte (nom technique de l'hébergeur) : redirection relative, comme le faisait mod_dir.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^ %{REQUEST_URI}/ [R=301,L]
 
 # 1. Hôtes secondaires (www.monvidangeur.fr, monvidangeur.com, www.monvidangeur.com ; port ou point final éventuels)
 #    → https://monvidangeur.fr, en une seule redirection, quel que soit le protocole. Chemin conservé ; query string conservée (ajoutée d'office par mod_rewrite).
@@ -69,6 +88,24 @@ ExpiresByType application/pdf "access plus 1 day"
 <FilesMatch "\.html$">
 Header set Cache-Control "no-cache"
 </FilesMatch>
+</IfModule>
+
+# 4 bis. En-têtes de sécurité et de contenu. Sécurité : sur toutes les réponses (200, redirections, erreurs). Sans mod_headers : bloc ignoré (pas d'erreur 500).
+#    Pas de Strict-Transport-Security tant que les certificats www ne sont pas confirmés.
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+#    Jeu de caractères déclaré dans Content-Type (HTML : cœur d'Apache ; JS, JSON, XML, TXT, CSS : mod_mime).
+AddDefaultCharset UTF-8
+<IfModule mod_mime.c>
+AddCharset UTF-8 .js .json .xml .txt .css
+</IfModule>
+#    Page 404 (ErrorDocument) compressée : le filtre par type (bloc 3) ne s'applique pas toujours aux réponses d'erreur.
+<IfModule mod_deflate.c>
+<Files "404.html">
+SetOutputFilter DEFLATE
+</Files>
 </IfModule>
 
 # >>> NOINDEX-PREMIERE-MISE-EN-LIGNE (P-30)

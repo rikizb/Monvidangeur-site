@@ -27,8 +27,14 @@ input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px soli
 main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.menu{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;column-gap:.25rem}header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .55rem;font-weight:600}header nav li:first-child a{padding-left:0}header nav a.nav-urgence{color:#a3262a}.evitement{min-height:44px;display:inline-flex;align-items:center}.tuiles{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.6rem}.tuiles a{display:flex;align-items:center;min-height:44px;padding:.6rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);text-decoration:none;font-weight:600}.tuiles a.t-urgence{border-left-color:#a3262a;color:#a3262a}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
 /* Simulateur : avec JavaScript actif, sa hauteur est réservée avant l'affichage par le script (évite le décalage de mise en page) ; sans JavaScript, il reste masqué et le bloc noscript s'affiche. */
 @media (scripting:enabled){ #simulateur-vente[hidden]{display:block;visibility:hidden}}
+/* Repli du simulateur (v4.4) : si le script ne s'est pas chargé après 3 s (échec ou lenteur), un message s'affiche DANS la hauteur réservée (position absolue : aucun décalage) ; il disparaît dès que le script affiche le simulateur. */
+.simu-repli{display:none}@media (scripting:enabled){ #simulateur-vente[hidden]{position:relative}#simulateur-vente[hidden]>.simu-repli{display:block;position:absolute;inset:0 0 auto 0;margin:0;padding:.75rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);background:#fff;animation:simu-repli 0s 3s both}}@keyframes simu-repli{from{visibility:hidden}to{visibility:visible}}
 /* Cibles tactiles ≥ 44 px (suite). Fil d'Ariane : padding vertical sur l'inline (aucun déplacement de mise en page) ; cartes du simulateur, sommaire d'ancres et pied de page : inline-flex min 44 px. Liens au fil d'une phrase du corps : exception WCAG 2.5.8 (inchangés). */
 nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#"],footer a{display:inline-flex;align-items:center;min-height:44px}
+/* v4.4 (a) : lien seul dans une cellule de tableau (colonne « Page » de /urgence/) : cible ≥ 44 px. */
+td>a.lien-cellule{display:inline-flex;align-items:center;min-height:44px}
+/* Mesure d'audience (textes v4.4, avec SITE_MESURE=1) : bouton d'opposition de /confidentialite/, cible ≥ 44 px. */
+.mesure-opposition button{min-height:44px}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ItemList","name":"Urgence fosse septique","itemListElement":[{"@type":"ListItem","position":1,"url":"https://monvidangeur.fr/urgence/fosse-septique-pleine-qui-deborde/"},{"@type":"ListItem","position":2,"url":"https://monvidangeur.fr/urgence/refoulement-canalisation-bouchee/"},{"@type":"ListItem","position":3,"url":"https://monvidangeur.fr/urgence/odeurs-fosse-septique/"}],"numberOfItems":3},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Que faire si ma fosse septique déborde ?","acceptedAnswer":{"@type":"Answer","text":"Coupez ou limitez l'usage de l'eau, éloignez les personnes de la zone, puis appelez un vidangeur agréé. Un débordement peut venir d'une fosse pleine, d'une sortie bouchée ou d'un épandage saturé : voir notre page dédiée."}},{"@type":"Question","name":"Qui appeler pour vider une fosse septique en urgence ?","acceptedAnswer":{"@type":"Answer","text":"Une entreprise agréée par la préfecture pour la vidange (CSP L1331-1-1). La liste des entreprises agréées est publiée par la préfecture de chaque département."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://monvidangeur.fr/"},{"@type":"ListItem","position":2,"name":"Urgence","item":"https://monvidangeur.fr/urgence/"}]}]}</script>
 </head>
@@ -68,17 +74,17 @@ nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#
 <tbody>
 <tr>
 <td>Les regards de la fosse ou du jardin débordent</td>
-<td><a href="/urgence/fosse-septique-pleine-qui-deborde/">Fosse pleine qui déborde</a></td>
+<td><a class="lien-cellule" href="/urgence/fosse-septique-pleine-qui-deborde/">Fosse pleine qui déborde</a></td>
 <td>Fosse pleine, sortie bouchée, épandage saturé</td>
 </tr>
 <tr>
 <td>Les eaux usées remontent dans les toilettes, la douche ou les siphons</td>
-<td><a href="/urgence/refoulement-canalisation-bouchee/">Refoulement, canalisation bouchée</a></td>
+<td><a class="lien-cellule" href="/urgence/refoulement-canalisation-bouchee/">Refoulement, canalisation bouchée</a></td>
 <td>Bouchon entre la maison et la fosse</td>
 </tr>
 <tr>
 <td>Une forte odeur dans la maison ou le jardin</td>
-<td><a href="/urgence/odeurs-fosse-septique/">Odeurs de fosse septique</a></td>
+<td><a class="lien-cellule" href="/urgence/odeurs-fosse-septique/">Odeurs de fosse septique</a></td>
 <td>Ventilation défaillante, siphon sec, fosse pleine</td>
 </tr>
 </tbody>
@@ -110,13 +116,14 @@ nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#
 <li>Service-public.gouv.fr — Trouver un vidangeur agréé (R74108) — <a rel="noopener" href="https://www.service-public.gouv.fr/particuliers/vosdroits/R74108">Lire sur Service-public.gouv.fr</a> (consulté le 27/10/2026)</li>
 <li>Service-public.gouv.fr — Quels sont les numéros en cas d'urgence (Samu, pompiers...) ? (F33954), page vérifiée par la DILA le 25/08/2026 — <a rel="noopener" href="https://www.service-public.gouv.fr/particuliers/vosdroits/F33954">Lire sur Service-public.gouv.fr</a> (consulté le 27/10/2026)</li>
 </ul>
-<p>Dernière mise à jour de la page : 27/10/2026. Données : 27/10/2026.</p>
+<p>Dernière mise à jour de la page : 27/10/2026. Données : 28/10/2026.</p>
 
 </main>
 <footer>
 <p>Mon Vidangeur est un site d'information indépendant, ce n'est pas un service public. <a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Données personnelles et cookies</a></p>
-<p>Ni publicité, ni mesure d'audience par cookie, ni envoi de vos saisies. Seul l'hébergeur dépose un cookie technique (voir la page données personnelles).</p>
-<p>Données : relevé des tarifs et services SPANC de l'Oise et de l'Eure, mis à jour le 27/10/2026.</p>
+<p>Ni publicité, ni cookie de mesure, ni envoi de vos saisies. Seul l'hébergeur dépose un cookie technique. Statistiques de visite anonymes, sur notre propre hébergement : <a href="/confidentialite/#mesure-audience">vous y opposer</a>.</p>
+<p>Données : relevé des tarifs et services SPANC de l'Oise et de l'Eure, mis à jour le 28/10/2026.</p>
 </footer>
+<script src="/assets/mesure.js" data-matomo="https://stats.monvidangeur.fr/" data-site="1" defer></script>
 </body>
 </html>

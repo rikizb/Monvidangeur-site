@@ -27,8 +27,14 @@ input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px soli
 main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.menu{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;column-gap:.25rem}header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .55rem;font-weight:600}header nav li:first-child a{padding-left:0}header nav a.nav-urgence{color:#a3262a}.evitement{min-height:44px;display:inline-flex;align-items:center}.tuiles{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.6rem}.tuiles a{display:flex;align-items:center;min-height:44px;padding:.6rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);text-decoration:none;font-weight:600}.tuiles a.t-urgence{border-left-color:#a3262a;color:#a3262a}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
 /* Simulateur : avec JavaScript actif, sa hauteur est réservée avant l'affichage par le script (évite le décalage de mise en page) ; sans JavaScript, il reste masqué et le bloc noscript s'affiche. */
 @media (scripting:enabled){ #simulateur-vente[hidden]{display:block;visibility:hidden}}
+/* Repli du simulateur (v4.4) : si le script ne s'est pas chargé après 3 s (échec ou lenteur), un message s'affiche DANS la hauteur réservée (position absolue : aucun décalage) ; il disparaît dès que le script affiche le simulateur. */
+.simu-repli{display:none}@media (scripting:enabled){ #simulateur-vente[hidden]{position:relative}#simulateur-vente[hidden]>.simu-repli{display:block;position:absolute;inset:0 0 auto 0;margin:0;padding:.75rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);background:#fff;animation:simu-repli 0s 3s both}}@keyframes simu-repli{from{visibility:hidden}to{visibility:visible}}
 /* Cibles tactiles ≥ 44 px (suite). Fil d'Ariane : padding vertical sur l'inline (aucun déplacement de mise en page) ; cartes du simulateur, sommaire d'ancres et pied de page : inline-flex min 44 px. Liens au fil d'une phrase du corps : exception WCAG 2.5.8 (inchangés). */
 nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#"],footer a{display:inline-flex;align-items:center;min-height:44px}
+/* v4.4 (a) : lien seul dans une cellule de tableau (colonne « Page » de /urgence/) : cible ≥ 44 px. */
+td>a.lien-cellule{display:inline-flex;align-items:center;min-height:44px}
+/* Mesure d'audience (textes v4.4, avec SITE_MESURE=1) : bouton d'opposition de /confidentialite/, cible ≥ 44 px. */
+.mesure-opposition button{min-height:44px}
 </style>
 </head>
 <body data-indexable="non">
@@ -42,7 +48,7 @@ nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#
 </ul></nav></header>
 <main id="contenu" tabindex="-1"><nav aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <span aria-current="page">Données personnelles et cookies</span></nav>
 <h1>Données personnelles et cookies</h1>
-<p class="bref">En bref : ni compte, ni formulaire, ni publicité, ni mesure d'audience tierce. Seul l'hébergeur traite des données techniques de connexion.</p>
+<p class="bref">En bref : ni compte, ni formulaire, ni publicité, ni cookie de mesure. Statistiques anonymes sur notre hébergement (<a href="#mesure-audience">opposition possible</a>).</p>
 
 <h2>Responsable du traitement</h2>
 <p>LES EVABRES, société par actions simplifiée (SAS), 87 rue Carnot, 92300 Levallois-Perret (SIREN 913 826 319), représentée par Aymeric Berenger, président. Contact : contact@monvidangeur.fr.</p>
@@ -50,9 +56,9 @@ nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#
 <h2>Ce que le site ne fait pas</h2>
 <ul>
 <li>Pas de compte, pas d'inscription, pas de formulaire d'envoi : la checklist et son PDF sont accessibles sans rien fournir.</li>
-<li>Pas de stockage dans votre navigateur par le site (ni cookie, ni stockage local).</li>
-<li>Pas de publicité, pas de réseau social intégré, pas de police, vidéo ou script chargé depuis un autre site.</li>
-<li>Le simulateur fonctionne entièrement dans votre navigateur : la commune et les dates que vous saisissez ne sont envoyées à personne. Pour calculer, la page télécharge depuis ce site un fichier de données identique pour tous les visiteurs.</li>
+<li>Pas de cookie de mesure, pas de stockage local. En dehors du cookie technique de l'hébergeur (ci-dessous), le seul cookie que le site peut déposer est le cookie d'opposition à la mesure d'audience, et seulement si vous le demandez.</li>
+<li>Pas de publicité, pas de réseau social intégré, pas de police, vidéo ou script chargé depuis un autre site. Seule exception : le script de statistiques, servi par notre propre sous-domaine stats.monvidangeur.fr.</li>
+<li>Le simulateur fonctionne entièrement dans votre navigateur : la commune et les dates que vous saisissez ne sont envoyées à personne. Pour calculer, la page télécharge depuis ce site un fichier de données identique pour tous les visiteurs. Les statistiques retiennent seulement que le simulateur a été utilisé, le département (Oise ou Eure) et le type de résultat.</li>
 </ul>
 
 <h2>Cookie technique de l'hébergeur</h2>
@@ -71,6 +77,19 @@ nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#
 <h2>Statistiques de fréquentation de l'hébergeur</h2>
 <p>Le site utilise l'outil « OVHcloud Web Statistics », fourni avec l'hébergement et actif. Il produit des statistiques de fréquentation (zone géographique au niveau régional, type de terminal, pages vues, codes de réponse) à partir des journaux ci-dessus. Selon OVHcloud, ces données sont anonymisées et agrégées sur ses propres infrastructures, et aucune donnée permettant d'identifier un visiteur n'est conservée pour ces statistiques. Cet outil n'ajoute ni cookie ni script aux pages (source : <a href="https://docs.ovhcloud.com/fr/guides/web-cloud/web-hosting/hosting-technical-specificities" rel="noopener">OVHcloud, « Spécificités techniques des hébergements mutualisés », mise à jour du 08/06/2026, consultée le 27/10/2026</a>). Finalité : connaître la fréquentation du site pour l'améliorer. Base légale : notre intérêt légitime (article 6.1.f du RGPD).</p>
 
+<h2 id="mesure-audience">Mesure d'audience</h2>
+<p>Nous utilisons Matomo, un logiciel de statistiques installé sur notre propre hébergement (OVHcloud, France, sous-domaine stats.monvidangeur.fr), pour produire des statistiques anonymes de fréquentation et améliorer le site.</p>
+<ul>
+<li>Données mesurées : pages vues ; utilisation du simulateur (démarrage, département Oise ou Eure, type de résultat, sans la commune ni les dates) ; clics sur un numéro de téléphone, une adresse e-mail, le site ou la page de contact d'un SPANC ; ainsi que des informations techniques non identifiantes (temps de chargement de la page, heure locale de la visite).</li>
+<li>Ce qui n'est pas fait : aucun cookie de mesure, aucun identifiant de visiteur, aucun recoupement avec d'autres données, aucun suivi d'un site à l'autre, aucune publicité. Votre adresse IP est tronquée (2 octets masqués) avant tout enregistrement ; l'adresse de la page est enregistrée sans paramètres ; le site d'où vous venez est réduit à son nom de domaine.</li>
+<li>Finalité : connaître la fréquentation des pages et l'usage du simulateur, pour notre seul compte. Les statistiques ne sont ni vendues, ni transmises à des tiers.</li>
+<li>Base légale : notre intérêt légitime à mesurer l'audience du site et à l'améliorer (article 6.1.f du RGPD). Cette mesure, limitée et anonyme, ne nécessite pas votre consentement (article 82 de la loi Informatique et Libertés, conditions d'exemption fixées par la CNIL).</li>
+<li>Destinataire : l'éditeur. L'hébergeur OVH SAS intervient comme sous-traitant.</li>
+<li>Durée de conservation : 25 mois au plus pour les données de mesure ; le cookie d'opposition est conservé 13 mois.</li>
+</ul>
+<p><strong>Vous opposer à la mesure.</strong> Vous pouvez à tout moment refuser d'être compté(e). Votre choix est enregistré dans ce navigateur par un cookie d'opposition (« mv_mesure_opposition ») ; il ne vaut que pour ce navigateur et disparaît si vous effacez vos cookies.</p>
+<div id="mesure-opposition" class="mesure-opposition"><p>JavaScript est désactivé dans votre navigateur : aucune statistique n'est collectée sur votre visite.</p></div>
+
 <h2>Localisation des données</h2>
 <p>Le site est hébergé par OVH SAS (Roubaix, France). Datacentre : Gravelines, France (Union européenne) : l'hébergement n'implique aucun transfert de données hors de l'Union européenne, et l'éditeur n'en réalise aucun.</p>
 
@@ -83,13 +102,14 @@ nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#
 
 <h2>Évolutions</h2>
 <p>Cette page décrit le site tel qu'il fonctionne aujourd'hui. Si un service nouveau est ajouté (par exemple un rappel par e-mail ou un autre outil de mesure d'audience), cette page sera mise à jour avant sa mise en service et, lorsque la loi l'exige, votre consentement sera demandé.</p>
-<p><small>Dernière mise à jour : 27/10/2026.</small></p>
+<p><small>Dernière mise à jour : 30/10/2026.</small></p>
 
 </main>
 <footer>
 <p>Mon Vidangeur est un site d'information indépendant, ce n'est pas un service public. <a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Données personnelles et cookies</a></p>
-<p>Ni publicité, ni mesure d'audience par cookie, ni envoi de vos saisies. Seul l'hébergeur dépose un cookie technique (voir la page données personnelles).</p>
-<p>Données : relevé des tarifs et services SPANC de l'Oise et de l'Eure, mis à jour le 27/10/2026.</p>
+<p>Ni publicité, ni cookie de mesure, ni envoi de vos saisies. Seul l'hébergeur dépose un cookie technique. Statistiques de visite anonymes, sur notre propre hébergement : <a href="/confidentialite/#mesure-audience">vous y opposer</a>.</p>
+<p>Données : relevé des tarifs et services SPANC de l'Oise et de l'Eure, mis à jour le 28/10/2026.</p>
 </footer>
+<script src="/assets/mesure.js" data-matomo="https://stats.monvidangeur.fr/" data-site="1" defer></script>
 </body>
 </html>

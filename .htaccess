@@ -108,11 +108,3 @@ SetOutputFilter DEFLATE
 </Files>
 </IfModule>
 
-# >>> NOINDEX-PREMIERE-MISE-EN-LIGNE (P-30)
-# 5. Première mise en ligne en noindex : en-tête sur TOUTES les réponses, PDF et JSON compris.
-#    Bloc conservé par le build tant que SITE_INDEXABLE=0 ; retiré automatiquement par le build SITE_INDEXABLE=1.
-#    Jour J : supprimer ce bloc, marqueurs compris (consignes de déploiement, §4 ter).
-<IfModule mod_headers.c>
-Header set X-Robots-Tag "noindex, follow"
-</IfModule>
-# <<< NOINDEX-PREMIERE-MISE-EN-LIGNE (P-30)

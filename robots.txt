@@ -1,4 +1,4 @@
-# Site non indexable (SITE_INDEXABLE=0 : préproduction ou première mise en ligne). Crawl autorisé pour que les robots lisent
-# le <meta name="robots" content="noindex, follow"> et l'en-tête X-Robots-Tag. Un Disallow empêcherait la lecture du noindex.
 User-agent: *
 Allow: /
+
+Sitemap: https://monvidangeur.fr/sitemap.xml

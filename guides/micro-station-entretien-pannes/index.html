@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Micro-station : entretien, alarme et pannes | Mon Vidangeur</title>
+<meta name="description" content="Entretien d&#39;une micro-station : ce que fixent l&#39;avis d&#39;agrément et le guide d&#39;utilisation, quand vidanger, que faire en cas d&#39;alarme ou d&#39;odeur.">
+<link rel="icon" href="data:,">
+<link rel="canonical" href="https://monvidangeur.fr/guides/micro-station-entretien-pannes/">
+<meta property="og:url" content="https://monvidangeur.fr/guides/micro-station-entretien-pannes/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mon Vidangeur">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Micro-station : entretien, alarme et pannes">
+<meta property="og:description" content="Entretien d&#39;une micro-station : ce que fixent l&#39;avis d&#39;agrément et le guide d&#39;utilisation, quand vidanger, que faire en cas d&#39;alarme ou d&#39;odeur.">
+<meta name="twitter:card" content="summary">
+<style>
+/* CSS critique inline (< 2 Ko) : pas de requête bloquante, pas de webfont -> LCP/CLS maîtrisés */
+:root{--t:#1b2a33;--a:#0b5c7a;--f:#f4f7f8}*{box-sizing:border-box}body{margin:0;font:1rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t)}
+header,main,footer{max-width:60rem;margin:auto;padding:1rem}a{color:var(--a)}table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{border:1px solid #d5dde1;padding:.4rem .5rem;text-align:left;vertical-align:top}th{background:var(--f)}
+.evitement{position:absolute;left:-999px;top:0;background:#fff;padding:.5rem}.evitement:focus{left:1rem}.bref{background:var(--f);border-left:4px solid var(--a);padding:.75rem 1rem}
+.table-wrap{overflow-x:auto}form label{display:block;margin:.5rem 0}input,select,textarea{font:inherit;padding:.4rem;width:100%;max-width:28rem}
+input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px solid #d5dde1;margin:.75rem 0}.carte{border:1px solid #d5dde1;border-left:4px solid var(--a);padding:.5rem 1rem;margin:1rem 0}.suggestions{list-style:none;padding:0}.lien{background:none;color:var(--a);text-decoration:underline;padding:.2rem 0;border:0;cursor:pointer}.bouton2{display:inline-block;border:1px solid var(--a);padding:.3rem .6rem;text-decoration:none}blockquote{margin-inline:0}.cta-fin{margin:1.5rem 0}a.bouton{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:.6rem 1.1rem;background:var(--a);color:#fff;text-decoration:none;border-radius:4px;font-weight:600}a.bouton:hover{background:#08465d}button{font:inherit;padding:.5rem 1rem;background:var(--a);color:#fff;border:0}
+/* Mobile 375 px : pas de débordement horizontal (URL longues, tableaux) ; focus visible ; cibles tactiles ≥ 44 px (nav, tuiles, simulateur) */
+main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.menu{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;column-gap:.25rem}header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .55rem;font-weight:600}header nav li:first-child a{padding-left:0}header nav a.nav-urgence{color:#a3262a}.evitement{min-height:44px;display:inline-flex;align-items:center}.tuiles{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.6rem}.tuiles a{display:flex;align-items:center;min-height:44px;padding:.6rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);text-decoration:none;font-weight:600}.tuiles a.t-urgence{border-left-color:#a3262a;color:#a3262a}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
+/* Simulateur : avec JavaScript actif, sa hauteur est réservée avant l'affichage par le script (évite le décalage de mise en page) ; sans JavaScript, il reste masqué et le bloc noscript s'affiche. */
+@media (scripting:enabled){ #simulateur-vente[hidden]{display:block;visibility:hidden}}
+/* Repli du simulateur (v4.4) : si le script ne s'est pas chargé après 3 s (échec ou lenteur), un message s'affiche DANS la hauteur réservée (position absolue : aucun décalage) ; il disparaît dès que le script affiche le simulateur. */
+.simu-repli{display:none}@media (scripting:enabled){ #simulateur-vente[hidden]{position:relative}#simulateur-vente[hidden]>.simu-repli{display:block;position:absolute;inset:0 0 auto 0;margin:0;padding:.75rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);background:#fff;animation:simu-repli 0s 3s both}}@keyframes simu-repli{from{visibility:hidden}to{visibility:visible}}
+/* Cibles tactiles ≥ 44 px (suite). Fil d'Ariane : padding vertical sur l'inline (aucun déplacement de mise en page) ; cartes du simulateur, sommaire d'ancres et pied de page : inline-flex min 44 px. Liens au fil d'une phrase du corps : exception WCAG 2.5.8 (inchangés). */
+nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#"],footer a{display:inline-flex;align-items:center;min-height:44px}
+/* v4.4 (a) : lien seul dans une cellule de tableau (colonne « Page » de /urgence/) : cible ≥ 44 px. */
+td>a.lien-cellule{display:inline-flex;align-items:center;min-height:44px}
+/* Mesure d'audience (textes v4.4, avec SITE_MESURE=1) : bouton d'opposition de /confidentialite/, cible ≥ 44 px. */
+.mesure-opposition button{min-height:44px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Micro-station : entretien, vidange, alarme et pannes courantes","author":{"@id":"https://monvidangeur.fr/#org"},"datePublished":"2026-10-27","dateModified":"2026-11-09","publisher":{"@id":"https://monvidangeur.fr/#org"},"mainEntityOfPage":"https://monvidangeur.fr/guides/micro-station-entretien-pannes/","inLanguage":"fr-FR"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Tous les combien vidanger une micro-station ?","acceptedAnswer":{"@type":"Answer","text":"Quand les boues atteignent le seuil fixé par l'avis d'agrément du modèle ; sans mention contraire, la règle générale reste 50 % du volume utile (arrêté du 7/9/2009, art. 15). Exemple : pour la PureStation PS6 (avis n° 2025-CERIB-009), au plus 30 % du volume utile du décanteur primaire, seuil propre à ce dispositif. Les fréquences en mois ou en années données par certains avis sont indicatives : seul le niveau de boues déclenche la vidange."}},{"@type":"Question","name":"Que faire quand l'alarme de la micro-station sonne ?","acceptedAnswer":{"@type":"Answer","text":"Consultez le guide d'utilisation pour identifier l'alarme, puis appelez l'installateur ou l'entreprise de maintenance. N'ouvrez pas les cuves et n'intervenez pas sur l'armoire électrique."}},{"@type":"Question","name":"Existe-t-il des micro-stations sans vidange ?","acceptedAnswer":{"@type":"Answer","text":"Non : toutes produisent des boues qui doivent être extraites par une personne agréée quand elles atteignent le seuil prévu par l'avis d'agrément (arrêté « prescriptions techniques » du 7/9/2009 modifié, art. 15 et 16)."}},{"@type":"Question","name":"Pourquoi ma micro-station sent-elle mauvais ?","acceptedAnswer":{"@type":"Answer","text":"Une odeur persistante signale un défaut à faire diagnostiquer, par exemple de ventilation ou de siphon. Faites intervenir un professionnel et ne descendez jamais dans une cuve : le sulfure d'hydrogène peut être mortel (INRS)."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://monvidangeur.fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://monvidangeur.fr/guides/"},{"@type":"ListItem","position":3,"name":"Micro-station : entretien et pannes","item":"https://monvidangeur.fr/guides/micro-station-entretien-pannes/"}]},{"@type":"Organization","@id":"https://monvidangeur.fr/#org","name":"Mon Vidangeur","url":"https://monvidangeur.fr/","legalName":"LES EVABRES","telephone":"+33664841784","address":{"@type":"PostalAddress","streetAddress":"87 rue Carnot","postalCode":"92300","addressLocality":"Levallois-Perret","addressCountry":"FR"},"contactPoint":{"@type":"ContactPoint","contactType":"contact","email":"contact@monvidangeur.fr","availableLanguage":"fr"}}]}</script>
+</head>
+<body data-indexable="oui">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header><nav aria-label="Menu principal"><ul class="menu">
+<li><a href="/"><span class="vh">Mon Vidangeur, </span>Accueil</a></li>
+<li><a href="/vidange-fosse-septique/">Vidange</a></li>
+<li><a href="/urgence/" class="nav-urgence">Urgence</a></li>
+<li><a href="/controle-spanc/">Contrôle SPANC</a></li>
+<li><a href="/guides/">Guides</a></li>
+</ul></nav></header>
+<main id="contenu" tabindex="-1"><nav aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <a href="/guides/">Guides</a> › <span aria-current="page">Micro-station : entretien et pannes</span></nav>
+<h1>Micro-station : entretien, vidange, alarme et pannes courantes</h1>
+<blockquote>
+<p><strong>En bref.</strong> L'entretien d'une micro-station suit <strong>son guide d'utilisation</strong> et <strong>son avis d'agrément</strong>. Alarme, odeur, panne : n'ouvrez pas les cuves, appelez l'installateur ou un professionnel.</p>
+</blockquote>
+<p>Légende : ⚖️ condition fixée par les textes · 💡 conseil pratique.</p>
+<h2 id="ce-qui-fixe-l-entretien-de-votre-micro-station">Ce qui fixe l'entretien de votre micro-station</h2>
+<ul>
+<li>⚖️ Chaque micro-station est un <strong>modèle agréé</strong> : son <strong>avis d'agrément</strong> (publié au Journal officiel) et son <strong>guide d'utilisation</strong> sont consultables sur le portail interministériel de l'ANC (arrêté « prescriptions techniques » du 7/9/2009 modifié, art. 7 et 9).</li>
+<li>⚖️ Le guide d'utilisation, remis au propriétaire, doit indiquer les <strong>prescriptions d'entretien, de vidange et de maintenance, notamment leur fréquence</strong>, la consommation électrique, les pièces détachées, et comporter une rubrique pour noter chaque intervention (art. 16).</li>
+<li>⚖️ L'entretien régulier incombe au <strong>propriétaire</strong> (art. 15 ; service-public.gouv.fr, F447).</li>
+</ul>
+<p>💡 Vous n'avez plus le guide ? Retrouvez la marque et le modèle (facture d'installation, rapport du SPANC), puis retrouvez l'avis et le guide sur le portail interministériel.</p>
+<h2 id="vidange-quand-et-par-qui">Vidange : quand et par qui</h2>
+<ul>
+<li>⚖️ Le seuil de vidange est celui de l'<strong>avis d'agrément</strong> du modèle ; sans mention contraire dans l'avis, la règle générale reste <strong>50 % du volume utile</strong> (arrêté « prescriptions techniques » du 7/9/2009 modifié, art. 15). Exemple propre à un seul dispositif : pour la micro-station PureStation PS6 (avis d'agrément n° 2025-CERIB-009 du 22/12/2025), le seuil est d'<strong>au plus 30 % du volume utile du décanteur primaire</strong> ; il ne s'applique pas aux autres modèles.</li>
+<li>⚖️ Les fréquences « théoriques » données par certains avis sont <strong>indicatives</strong> : « seul le remplissage à la hauteur indiquée doit déclencher la vidange » (même avis).</li>
+<li>⚖️ La vidange est faite par une <strong>personne agréée par le préfet</strong>, qui vous remet un bordereau de suivi.</li>
+</ul>
+<p>Une micro-station « sans vidange » n'existe pas : toutes produisent des boues, dont le stockage puis l'extraction sont prévus dans l'avis et le guide. Voir aussi <a href="/guides/quand-vidanger-fosse-septique/">la règle de vidange expliquée</a>. Pour le choix de filière : <a href="/guides/fosse-septique-ou-micro-station/">Fosse septique ou micro-station ?</a>. Pour vérifier l'agrément et le bordereau : <a href="/guides/reconnaitre-vidangeur-agree-bordereau/">Reconnaître un vidangeur agréé</a>. Tous les guides : <a href="/guides/">/guides/</a>.</p>
+<h2 id="l-alarme-sonne-ou-le-voyant-s-allume">L'alarme sonne ou le voyant s'allume</h2>
+<p>Les avis d'agrément consultés listent une <strong>alarme</strong> parmi les équipements de la micro-station. Elle signale un défaut détecté par l'appareil ; sa signification exacte dépend du modèle et figure dans le guide d'utilisation.</p>
+<ol>
+<li><strong>Consultez le guide d'utilisation</strong> pour identifier le type d'alarme.</li>
+<li><strong>Appelez l'installateur ou l'entreprise de maintenance</strong> indiquée dans le guide.</li>
+<li>💡 <strong>N'ouvrez pas les cuves</strong> et n'intervenez pas sur l'armoire électrique : ces opérations relèvent d'un professionnel.</li>
+</ol>
+<p>💡 Si le surpresseur ou le compresseur s'arrête, l'aération qui fait travailler les bactéries n'est plus assurée (guide ministériel des usagers, fiche 9-7) : signalez la panne sans attendre.</p>
+<h2 id="odeurs-autour-ou-dans-la-maison">Odeurs autour ou dans la maison</h2>
+<p>Une odeur persistante signale un défaut à faire diagnostiquer (ventilation, siphon, remplissage). Les causes et les bons réflexes sont détaillés sur la page <a href="/urgence/odeurs-fosse-septique/">odeurs de fosse septique</a>.</p>
+<blockquote>
+<p><strong>⚠ Ne descendez jamais dans une cuve ni dans un regard.</strong> La fermentation produit du sulfure d'hydrogène (H₂S) : plus lourd que l'air, il peut s'accumuler dans les points bas ; il est mortel par inhalation et, à forte concentration, son odeur peut disparaître (INRS, fiche toxicologique n° 32). En cas de danger immédiat (malaise, intoxication, effondrement), appelez le 112.</p>
+</blockquote>
+<h2 id="le-controle-du-spanc">Le contrôle du SPANC</h2>
+<p>⚖️ Le SPANC contrôle le fonctionnement et l'entretien à la fréquence fixée par son règlement de service, au plus tous les 10 ans. Pour les installations à éléments électromécaniques, la collectivité peut contrôler plus souvent ou vous demander entre deux visites les justificatifs d'entretien et de vidange (arrêté du 27/4/2012, art. 4 et 7). Gardez donc bordereaux et factures d'entretien. Voir <a href="/controle-spanc/">le contrôle SPANC</a>.</p>
+<h2 id="residence-secondaire-et-absences-prolongees">Résidence secondaire et absences prolongées</h2>
+<p>⚖️ Les micro-stations ne sont pas prévues pour un usage intermittent, sauf mention contraire dans leur avis d'agrément (guide ministériel des usagers, fiches 9-6 et 9-7) ; certains avis excluent explicitement les résidences secondaires. 💡 Avant une longue absence, suivez les consignes du guide de votre modèle.</p>
+<h2 id="questions-frequentes">Questions fréquentes</h2>
+<h3 id="tous-les-combien-vidanger-une-micro-station">Tous les combien vidanger une micro-station ?</h3>
+<p>Quand les boues atteignent le seuil fixé par l'avis d'agrément du modèle ; sans mention contraire, la règle générale reste 50 % du volume utile (arrêté du 7/9/2009, art. 15). Exemple : pour la PureStation PS6 (avis n° 2025-CERIB-009), au plus 30 % du volume utile du décanteur primaire, seuil propre à ce dispositif. Les fréquences en mois ou en années données par certains avis sont indicatives : seul le niveau de boues déclenche la vidange.</p>
+<h3 id="que-faire-quand-l-alarme-de-la-micro-station-sonne">Que faire quand l'alarme de la micro-station sonne ?</h3>
+<p>Consultez le guide d'utilisation pour identifier l'alarme, puis appelez l'installateur ou l'entreprise de maintenance. N'ouvrez pas les cuves et n'intervenez pas sur l'armoire électrique.</p>
+<h3 id="existe-t-il-des-micro-stations-sans-vidange">Existe-t-il des micro-stations sans vidange ?</h3>
+<p>Non : toutes produisent des boues qui doivent être extraites par une personne agréée quand elles atteignent le seuil prévu par l'avis d'agrément (arrêté « prescriptions techniques » du 7/9/2009 modifié, art. 15 et 16).</p>
+<h3 id="pourquoi-ma-micro-station-sent-elle-mauvais">Pourquoi ma micro-station sent-elle mauvais ?</h3>
+<p>Une odeur persistante signale un défaut à faire diagnostiquer, par exemple de ventilation ou de siphon. Faites intervenir un professionnel et ne descendez jamais dans une cuve : le sulfure d'hydrogène peut être mortel (INRS).</p>
+<p class="lien-seul"><a href="/trouver-un-professionnel/#vidange">Où trouver la liste officielle →</a></p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Arrêté du 7 septembre 2009 modifié fixant les prescriptions techniques applicables aux installations d'assainissement non collectif recevant une charge brute de pollution organique inférieure ou égale à 1,2 kg/j de DBO5, art. 5, 6, 7, 9, 15 et 16 — AIDA (INERIS), version consolidée — <a rel="noopener" href="https://aida.ineris.fr/reglementation/arrete-070909-fixant-prescriptions-techniques-applicables-installations">Lire sur AIDA (INERIS)</a> (consulté le 02/11/2026)</li>
+<li>Avis d'agrément n° 2025-CERIB-009 du 22/12/2025, Sagéau, micro-station PureStation PS6 6 EH (agrément 2014-019) : vidange à un remplissage d'au plus 30 % du volume utile du décanteur primaire (p. 2/3), seuil propre à ce dispositif ; fréquences théoriques données « à titre indicatif » ; pas d'installation en résidence secondaire — portail interministériel de l'ANC — <a rel="noopener" href="https://www.assainissement-non-collectif.developpement-durable.gouv.fr/IMG/pdf/2025_12_22_avis_agrement_sageau_purestation.pdf">Lire sur le portail interministériel de l'ANC (PDF)</a> (consulté le 02/11/2026)</li>
+<li>Portail interministériel de l'ANC — « Agrément des dispositifs de traitement » : listes des dispositifs agréés, avis d'agrément et guides d'utilisation (pages microstations mises à jour le 15/04/2026) — <a rel="noopener" href="https://www.assainissement-non-collectif.developpement-durable.gouv.fr/agrement-des-dispositifs-de-traitement-r92.html">Lire sur le portail interministériel de l'ANC</a> (consulté le 02/11/2026)</li>
+<li>Ministère de l'Écologie — Guide d'information sur les installations d'assainissement non collectif à destination des usagers (septembre 2012), fiches 6 (synthèse des critères), 7 (fonctionnement, entretien, vidange), 9-1, 9-6 et 9-7 (fosse et épandage, micro-stations) — portail interministériel de l'ANC — <a rel="noopener" href="https://www.assainissement-non-collectif.developpement-durable.gouv.fr/IMG/pdf/12032_ANC_Guide-usagers_complet_02-10-12_light_cle1713de.pdf">Lire sur le portail interministériel de l'ANC (PDF)</a> (consulté le 02/11/2026)</li>
+<li>Arrêté du 27 avril 2012 relatif aux modalités de l'exécution de la mission de contrôle des installations d'ANC, art. 4 (vérification des vidanges, de l'entretien et des bordereaux) et art. 7 (fréquence de contrôle n'excédant pas dix ans, contrôles plus réguliers possibles pour les installations à éléments électromécaniques) — AIDA (INERIS), version consolidée — <a rel="noopener" href="https://aida.ineris.fr/reglementation/arrete-270412-relatif-modalites-lexecution-mission-controle-installations">Lire sur AIDA (INERIS)</a> (consulté le 02/11/2026)</li>
+<li>Service-public.gouv.fr — Assainissement des eaux usées domestiques (F447), page vérifiée par la DILA le 12/12/2025 — <a rel="noopener" href="https://www.service-public.gouv.fr/particuliers/vosdroits/F447">Lire sur Service-public.gouv.fr</a> (consulté le 02/11/2026)</li>
+<li>INRS — Fiche toxicologique n° 32, Sulfure d'hydrogène (édition février 2024) — <a rel="noopener" href="https://www.inrs.fr/publications/bdd/fichetox/fiche.html?refINRS=FICHETOX_32">Lire sur le site de l'INRS</a> (consulté le 27/10/2026)</li>
+<li>Service-public.gouv.fr — Quels sont les numéros en cas d'urgence (Samu, pompiers...) ? (F33954), page vérifiée par la DILA le 25/08/2026 — <a rel="noopener" href="https://www.service-public.gouv.fr/particuliers/vosdroits/F33954">Lire sur Service-public.gouv.fr</a> (consulté le 27/10/2026)</li>
+</ul>
+<p><em>Rédigé par Mon Vidangeur · Mis à jour le 09/11/2026.</em> Données : 09/11/2026.</p>
+
+</main>
+<footer>
+<p>Mon Vidangeur est un site d'information indépendant, ce n'est pas un service public. <a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Données personnelles et cookies</a></p>
+<p>Ni publicité, ni cookie de mesure, ni envoi de vos saisies. Seul l'hébergeur dépose un cookie technique. Statistiques de visite anonymes, sur notre propre hébergement : <a href="/confidentialite/#mesure-audience">vous y opposer</a>.</p>
+<p>Données : relevé des tarifs et services SPANC de l'Oise et de l'Eure, mis à jour le 09/11/2026.</p>
+</footer>
+<script src="/assets/mesure.js" data-matomo="https://stats.monvidangeur.fr/" data-site="1" defer></script>
+</body>
+</html>

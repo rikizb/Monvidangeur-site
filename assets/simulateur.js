@@ -130,6 +130,16 @@ function carteB(ev, REG) {
   return h;
 }
 
+const TEXTES_GRILLE_A_VERIFIER = {
+  "200067973": (lienReglement) => `La Communauté de communes Thelloise publie un tarif pour ce contrôle, mais ses deux documents officiels n'indiquent pas le même montant. Consultez le ${lienReglement("règlement 2026 (délibération du 11/12/2025)")} ou appelez le <a href="tel:+33344269950" data-contact="tel">03 44 26 99 50</a>.`,
+};
+function texteGrilleAVerifier(ev) {
+  const t = (ev.spanc && ev.spanc.tarif_controle_vente) || {};
+  if (t.motif_non_affiche !== "grille_a_verifier" || !t.url_source) return "";
+  const id = etat.commune && etat.commune.spanc_id, f = id && Object.hasOwn(TEXTES_GRILLE_A_VERIFIER, id) ? TEXTES_GRILLE_A_VERIFIER[id] : null;
+  return f ? `<p data-motif="grille_a_verifier">${f((txt) => lienExt(t.url_source, txt, "source_tarif"))}</p>` : "";
+}
+
 function carteC(ev) {
   const s = ev.spanc, t = (s && s.tarif_controle_vente) || {}, L = CFG.libelles;
   let h = `<section class="carte" data-carte="C" data-etat-tarif="${ev.et.etat}"><h3>Ce que coûte le contrôle</h3>`;
@@ -148,6 +158,7 @@ function carteC(ev) {
     if (e === "E2") h += `<p>Le dernier tarif publié que nous avons trouvé date du ${dateFr(ev.et.ref)} : il a pu changer depuis, nous ne l'affichons donc pas. ${lienExt(t.url_source, "Voir la dernière source trouvée", "source_tarif")}. Demandez le tarif en vigueur au service.</p>`;
     else if (e === "E2c") h += `<p>Nous avons trouvé un tarif sur un document de ce service, sans pouvoir confirmer qu'il s'applique à votre cas : nous ne l'affichons pas. ${lienExt(t.url_source, "Voir le document", "source_tarif")}. Demandez le tarif en vigueur au service.</p>`;
     else if (e === "E3a") h += `<p>Le service affiche un tarif sur une page non datée. Nous ne pouvons pas garantir qu'il est à jour. ${lienExt(t.url_source, "Voir la page du service", "source_tarif")} (consultée le ${dateFr(t.date_lecture)}).</p>`;
+    else if (e === "E4" && texteGrilleAVerifier(ev)) h += texteGrilleAVerifier(ev);
     else if (e === "E4" || e === "E4z") h += `<p>Nous n'avons pas trouvé de tarif publié pour le contrôle en cas de vente. Demandez-le lors de la prise de rendez-vous : le contrôle est payant et son tarif est fixé par la collectivité (${lienExt("https://www.service-public.gouv.fr/particuliers/vosdroits/F447", "service-public.gouv.fr, F447", "source_reglementaire")}).${e === "E4z" && t.url_source ? " " + lienExt(t.url_source, "Voir la page du service", "source_tarif") + "." : ""}</p>`;
     else h += `<p>Le tarif dépend du service compétent : confirmez-le d'abord auprès de votre mairie.</p>`;
   }

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vérifier un vidangeur agréé et son bordereau | Mon Vidangeur</title>
+<meta name="description" content="Vérifier qu&#39;un vidangeur est agréé par la préfecture, comprendre le bordereau de suivi des matières de vidange et le cas de l&#39;agriculteur qui vidange.">
+<link rel="icon" href="data:,">
+<link rel="canonical" href="https://monvidangeur.fr/guides/reconnaitre-vidangeur-agree-bordereau/">
+<meta property="og:url" content="https://monvidangeur.fr/guides/reconnaitre-vidangeur-agree-bordereau/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mon Vidangeur">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Vérifier un vidangeur agréé et son bordereau">
+<meta property="og:description" content="Vérifier qu&#39;un vidangeur est agréé par la préfecture, comprendre le bordereau de suivi des matières de vidange et le cas de l&#39;agriculteur qui vidange.">
+<meta name="twitter:card" content="summary">
+<style>
+/* CSS critique inline (< 2 Ko) : pas de requête bloquante, pas de webfont -> LCP/CLS maîtrisés */
+:root{--t:#1b2a33;--a:#0b5c7a;--f:#f4f7f8}*{box-sizing:border-box}body{margin:0;font:1rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t)}
+header,main,footer{max-width:60rem;margin:auto;padding:1rem}a{color:var(--a)}table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{border:1px solid #d5dde1;padding:.4rem .5rem;text-align:left;vertical-align:top}th{background:var(--f)}
+.evitement{position:absolute;left:-999px;top:0;background:#fff;padding:.5rem}.evitement:focus{left:1rem}.bref{background:var(--f);border-left:4px solid var(--a);padding:.75rem 1rem}
+.table-wrap{overflow-x:auto}form label{display:block;margin:.5rem 0}input,select,textarea{font:inherit;padding:.4rem;width:100%;max-width:28rem}
+input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px solid #d5dde1;margin:.75rem 0}.carte{border:1px solid #d5dde1;border-left:4px solid var(--a);padding:.5rem 1rem;margin:1rem 0}.suggestions{list-style:none;padding:0}.lien{background:none;color:var(--a);text-decoration:underline;padding:.2rem 0;border:0;cursor:pointer}.bouton2{display:inline-block;border:1px solid var(--a);padding:.3rem .6rem;text-decoration:none}blockquote{margin-inline:0}.cta-fin{margin:1.5rem 0}a.bouton{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:.6rem 1.1rem;background:var(--a);color:#fff;text-decoration:none;border-radius:4px;font-weight:600}a.bouton:hover{background:#08465d}button{font:inherit;padding:.5rem 1rem;background:var(--a);color:#fff;border:0}
+/* Mobile 375 px : pas de débordement horizontal (URL longues, tableaux) ; focus visible ; cibles tactiles ≥ 44 px (nav, tuiles, simulateur) */
+main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.menu{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;column-gap:.25rem}header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .55rem;font-weight:600}header nav li:first-child a{padding-left:0}header nav a.nav-urgence{color:#a3262a}.evitement{min-height:44px;display:inline-flex;align-items:center}.tuiles{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.6rem}.tuiles a{display:flex;align-items:center;min-height:44px;padding:.6rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);text-decoration:none;font-weight:600}.tuiles a.t-urgence{border-left-color:#a3262a;color:#a3262a}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
+/* Simulateur : avec JavaScript actif, sa hauteur est réservée avant l'affichage par le script (évite le décalage de mise en page) ; sans JavaScript, il reste masqué et le bloc noscript s'affiche. */
+@media (scripting:enabled){ #simulateur-vente[hidden]{display:block;visibility:hidden}}
+/* Repli du simulateur (v4.4) : si le script ne s'est pas chargé après 3 s (échec ou lenteur), un message s'affiche DANS la hauteur réservée (position absolue : aucun décalage) ; il disparaît dès que le script affiche le simulateur. */
+.simu-repli{display:none}@media (scripting:enabled){ #simulateur-vente[hidden]{position:relative}#simulateur-vente[hidden]>.simu-repli{display:block;position:absolute;inset:0 0 auto 0;margin:0;padding:.75rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);background:#fff;animation:simu-repli 0s 3s both}}@keyframes simu-repli{from{visibility:hidden}to{visibility:visible}}
+/* Cibles tactiles ≥ 44 px (suite). Fil d'Ariane : padding vertical sur l'inline (aucun déplacement de mise en page) ; cartes du simulateur, sommaire d'ancres et pied de page : inline-flex min 44 px. Liens au fil d'une phrase du corps : exception WCAG 2.5.8 (inchangés). */
+nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#"],footer a{display:inline-flex;align-items:center;min-height:44px}
+/* v4.4 (a) : lien seul dans une cellule de tableau (colonne « Page » de /urgence/) : cible ≥ 44 px. */
+td>a.lien-cellule{display:inline-flex;align-items:center;min-height:44px}
+/* Mesure d'audience (textes v4.4, avec SITE_MESURE=1) : bouton d'opposition de /confidentialite/, cible ≥ 44 px. */
+.mesure-opposition button{min-height:44px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Vidangeur agréé : comment le vérifier et lire le bordereau de suivi","author":{"@id":"https://monvidangeur.fr/#org"},"datePublished":"2026-10-27","dateModified":"2026-11-09","publisher":{"@id":"https://monvidangeur.fr/#org"},"mainEntityOfPage":"https://monvidangeur.fr/guides/reconnaitre-vidangeur-agree-bordereau/","inLanguage":"fr-FR"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qu'est-ce que le bordereau de suivi des matières de vidange ?","acceptedAnswer":{"@type":"Answer","text":"Un document établi pour chaque vidange, en trois volets (propriétaire, vidangeur, filière d'élimination). Il identifie le vidangeur et son numéro d'agrément, l'installation, la date, la quantité et le lieu d'élimination des matières (arrêté « agrément » du 7/9/2009 modifié, art. 9 et annexe II)."}},{"@type":"Question","name":"Comment savoir si un vidangeur est agréé ?","acceptedAnswer":{"@type":"Answer","text":"Vérifiez qu'il figure sur la liste publiée par la préfecture de son département, avec son numéro d'agrément et une date de fin de validité non dépassée ; service-public.gouv.fr propose un accès à ces listes (« Trouver un vidangeur agréé »)."}},{"@type":"Question","name":"Un agriculteur peut-il vidanger ma fosse septique ?","acceptedAnswer":{"@type":"Answer","text":"Oui s'il est agréé par le préfet, comme toute personne qui vidange : vérifiez sa présence sur la liste préfectorale et exigez le bordereau de suivi. L'épandage agricole des matières n'est autorisé que dans les conditions du code de l'environnement (arrêté « agrément », art. 8)."}},{"@type":"Question","name":"Un vidangeur d'un autre département peut-il intervenir ?","acceptedAnswer":{"@type":"Answer","text":"Oui : un vidangeur agréé dans un département peut exercer dans toute la France. Consultez la liste de la préfecture qui l'a agréé (portail interministériel de l'ANC)."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://monvidangeur.fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://monvidangeur.fr/guides/"},{"@type":"ListItem","position":3,"name":"Vidangeur agréé et bordereau","item":"https://monvidangeur.fr/guides/reconnaitre-vidangeur-agree-bordereau/"}]},{"@type":"Organization","@id":"https://monvidangeur.fr/#org","name":"Mon Vidangeur","url":"https://monvidangeur.fr/","legalName":"LES EVABRES","telephone":"+33664841784","address":{"@type":"PostalAddress","streetAddress":"87 rue Carnot","postalCode":"92300","addressLocality":"Levallois-Perret","addressCountry":"FR"},"contactPoint":{"@type":"ContactPoint","contactType":"contact","email":"contact@monvidangeur.fr","availableLanguage":"fr"}}]}</script>
+</head>
+<body data-indexable="oui">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header><nav aria-label="Menu principal"><ul class="menu">
+<li><a href="/"><span class="vh">Mon Vidangeur, </span>Accueil</a></li>
+<li><a href="/vidange-fosse-septique/">Vidange</a></li>
+<li><a href="/urgence/" class="nav-urgence">Urgence</a></li>
+<li><a href="/controle-spanc/">Contrôle SPANC</a></li>
+<li><a href="/guides/">Guides</a></li>
+</ul></nav></header>
+<main id="contenu" tabindex="-1"><nav aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <a href="/guides/">Guides</a> › <span aria-current="page">Vidangeur agréé et bordereau</span></nav>
+<h1>Vidangeur agréé : comment le vérifier et lire le bordereau de suivi</h1>
+<blockquote>
+<p><strong>En bref.</strong> Un vidangeur agréé figure sur la <strong>liste de sa préfecture</strong>, avec un numéro et une date de fin de validité. À chaque vidange, il vous remet un <strong>bordereau</strong> signé : gardez-le.</p>
+</blockquote>
+<p>Légende : ⚖️ condition fixée par les textes · 💡 conseil pratique.</p>
+<h2 id="ce-que-disent-les-textes">Ce que disent les textes</h2>
+<ul>
+<li>⚖️ La vidange d'une installation d'assainissement non collectif est faite par une <strong>personne agréée par le préfet</strong> (code de la santé publique, art. L1331-1-1 ; arrêté « prescriptions techniques », art. 15), ou par la commune si elle propose ce service.</li>
+<li>⚖️ L'agrément est délivré par le <strong>préfet du département où le vidangeur est domicilié</strong>, pour <strong>10 ans</strong> renouvelables. La préfecture publie sur son site la liste des personnes agréées : nom, adresse, <strong>numéro départemental d'agrément</strong> et <strong>date de fin de validité</strong> (arrêté « agrément » du 7/9/2009 modifié, art. 2).</li>
+<li>⚖️ Un vidangeur agréé dans un département peut <strong>intervenir dans toute la France</strong> (portail interministériel de l'ANC).</li>
+</ul>
+<h2 id="verifier-un-vidangeur-en-3-etapes">Vérifier un vidangeur en 3 étapes</h2>
+<ol>
+<li><strong>Demandez son numéro d'agrément</strong> et son département d'agrément.</li>
+<li><strong>Ouvrez la liste de la préfecture</strong> de ce département : l'outil officiel de service-public.gouv.fr (« Trouver un vidangeur agréé ») et le portail interministériel de l'ANC donnent les liens. Pensez aux départements limitrophes.</li>
+<li><strong>Contrôlez la date de fin de validité</strong> : un agrément expiré ne couvre plus l'activité.</li>
+</ol>
+<p>💡 La seule mention publicitaire autorisée est : « Agréé par l'État pour l'activité de vidange et de prise en charge du transport et de l'élimination des matières extraites des installations d'assainissement non collectif. – Se reporter à la liste des personnes agréées sur le site internet de la préfecture » (arrêté « agrément », art. 7). Une autre formule ne prouve pas l'agrément : seule la liste préfectorale fait foi.</p>
+<p>Pour les départements déjà couverts : <a href="/vidangeurs-agrees/oise/">Oise</a> · <a href="/vidangeurs-agrees/eure/">Eure</a>.</p>
+<h2 id="le-bordereau-de-suivi-ligne-par-ligne">Le bordereau de suivi, ligne par ligne</h2>
+<p>⚖️ Pour <strong>chaque vidange</strong>, le vidangeur établit un <strong>bordereau de suivi des matières de vidange</strong> en <strong>trois volets</strong> : un pour vous, un pour lui, un pour la filière qui élimine les matières. Votre volet est signé par vous et par le vidangeur (arrêté « agrément », art. 9). Il comporte au minimum (annexe II) :</p>
+<div class="table-wrap" role="region" aria-label="Tableau 1 (défilement horizontal possible)" tabindex="0"><table>
+<thead>
+<tr>
+<th>Rubrique</th>
+<th>À vérifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Numéro de bordereau</td>
+<td>Présent</td>
+</tr>
+<tr>
+<td>Désignation du vidangeur</td>
+<td>Identique à la liste préfectorale</td>
+</tr>
+<tr>
+<td>Numéro départemental d'agrément</td>
+<td>Identique à la liste</td>
+</tr>
+<tr>
+<td>Date de fin de validité de l'agrément</td>
+<td>Postérieure à la date de vidange</td>
+</tr>
+<tr>
+<td>Immatriculation du véhicule</td>
+<td>Renseignée</td>
+</tr>
+<tr>
+<td>Nom et prénom de la personne qui vidange</td>
+<td>Renseignés</td>
+</tr>
+<tr>
+<td>Vos coordonnées et celles de l'installation</td>
+<td>Exactes</td>
+</tr>
+<tr>
+<td>Date de la vidange</td>
+<td>Exacte</td>
+</tr>
+<tr>
+<td>Désignation des sous-produits vidangés</td>
+<td>Renseignée</td>
+</tr>
+<tr>
+<td>Quantité vidangée</td>
+<td>Renseignée</td>
+</tr>
+<tr>
+<td>Lieu d'élimination des matières</td>
+<td>Renseigné</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="pourquoi-le-garder">Pourquoi le garder</h2>
+<ul>
+<li>⚖️ Lors du contrôle, le SPANC vérifie la réalisation des vidanges, notamment au vu des <strong>bordereaux</strong> ; il peut aussi les demander entre deux visites (arrêté du 27/4/2012, art. 4). Voir <a href="/controle-spanc/">le contrôle SPANC</a>.</li>
+<li>💡 Conservez-les avec le carnet d'entretien de votre guide d'utilisation (micro-station, filtre compact), qui prévoit une rubrique pour noter la date, la nature des prestations et le nom de la personne agréée (arrêté « prescriptions techniques », art. 16), et joignez-les au dossier en cas de vente.</li>
+</ul>
+<h2 id="vidange-par-un-agriculteur-ce-qu-il-faut-savoir">Vidange par un agriculteur : ce qu'il faut savoir</h2>
+<ul>
+<li>⚖️ La règle est la même pour tous : <strong>celui qui vidange doit être agréé</strong>, quel que soit son statut. Ce qui compte est sa présence sur la liste préfectorale, pas son activité principale.</li>
+<li>⚖️ L'épandage agricole des matières de vidange n'est qu'une <strong>filière d'élimination</strong> possible, soumise à autorisation et aux règles du code de l'environnement (art. R211-25 à R211-45) ; l'agrément est accordé sous réserve de ces autorisations (arrêté « agrément », art. 3, 4 et 8).</li>
+<li>💡 Exigez le même bordereau qu'avec une entreprise : le « lieu d'élimination » doit y figurer.</li>
+</ul>
+<p>Les étapes d'une vidange et la règle des 50 % sont détaillées sur la page <a href="/vidange-fosse-septique/">vidange de fosse septique</a>. Pour choisir entre fosse et micro-station : <a href="/guides/fosse-septique-ou-micro-station/">Fosse septique ou micro-station ?</a>. Pour l'entretien d'une micro-station (carnet, bordereau) : <a href="/guides/micro-station-entretien-pannes/">Micro-station : entretien, alarme et pannes</a>. Tous les guides : <a href="/guides/">/guides/</a>.</p>
+<h2 id="questions-frequentes">Questions fréquentes</h2>
+<h3 id="qu-est-ce-que-le-bordereau-de-suivi-des-matieres-de-vidange">Qu'est-ce que le bordereau de suivi des matières de vidange ?</h3>
+<p>Un document établi pour chaque vidange, en trois volets (propriétaire, vidangeur, filière d'élimination). Il identifie le vidangeur et son numéro d'agrément, l'installation, la date, la quantité et le lieu d'élimination des matières (arrêté « agrément » du 7/9/2009 modifié, art. 9 et annexe II).</p>
+<h3 id="comment-savoir-si-un-vidangeur-est-agree">Comment savoir si un vidangeur est agréé ?</h3>
+<p>Vérifiez qu'il figure sur la liste publiée par la préfecture de son département, avec son numéro d'agrément et une date de fin de validité non dépassée ; service-public.gouv.fr propose un accès à ces listes (« Trouver un vidangeur agréé »).</p>
+<h3 id="un-agriculteur-peut-il-vidanger-ma-fosse-septique">Un agriculteur peut-il vidanger ma fosse septique ?</h3>
+<p>Oui s'il est agréé par le préfet, comme toute personne qui vidange : vérifiez sa présence sur la liste préfectorale et exigez le bordereau de suivi. L'épandage agricole des matières n'est autorisé que dans les conditions du code de l'environnement (arrêté « agrément », art. 8).</p>
+<h3 id="un-vidangeur-d-un-autre-departement-peut-il-intervenir">Un vidangeur d'un autre département peut-il intervenir ?</h3>
+<p>Oui : un vidangeur agréé dans un département peut exercer dans toute la France. Consultez la liste de la préfecture qui l'a agréé (portail interministériel de l'ANC).</p>
+<p class="lien-seul"><a href="/trouver-un-professionnel/#vidange">Où trouver la liste officielle →</a></p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Arrêté du 7 septembre 2009 modifié définissant les modalités d'agrément des personnes réalisant les vidanges et prenant en charge le transport et l'élimination des matières extraites des installations d'assainissement non collectif, art. 1 à 4 et 6 à 9, annexe II — AIDA (INERIS), version consolidée — <a rel="noopener" href="https://aida.ineris.fr/reglementation/arrete-070909-definissant-modalites-dagrement-personnes-realisant-vidanges-prenant">Lire sur AIDA (INERIS)</a> (consulté le 02/11/2026)</li>
+<li>Code de la santé publique, art. L1331-1-1 (version en vigueur depuis le 14/07/2010) — <a rel="noopener" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000022495931">Lire sur Légifrance</a> (consulté le 22/10/2026)</li>
+<li>Arrêté du 7 septembre 2009 modifié fixant les prescriptions techniques applicables aux installations d'assainissement non collectif recevant une charge brute de pollution organique inférieure ou égale à 1,2 kg/j de DBO5, art. 5, 6, 7, 9, 15 et 16 — AIDA (INERIS), version consolidée — <a rel="noopener" href="https://aida.ineris.fr/reglementation/arrete-070909-fixant-prescriptions-techniques-applicables-installations">Lire sur AIDA (INERIS)</a> (consulté le 02/11/2026)</li>
+<li>Arrêté du 27 avril 2012 relatif aux modalités de l'exécution de la mission de contrôle des installations d'ANC, art. 4 (vérification des vidanges, de l'entretien et des bordereaux) et art. 7 (fréquence de contrôle n'excédant pas dix ans, contrôles plus réguliers possibles pour les installations à éléments électromécaniques) — AIDA (INERIS), version consolidée — <a rel="noopener" href="https://aida.ineris.fr/reglementation/arrete-270412-relatif-modalites-lexecution-mission-controle-installations">Lire sur AIDA (INERIS)</a> (consulté le 02/11/2026)</li>
+<li>Service-public.gouv.fr — Trouver un vidangeur agréé (R74108), page vérifiée par la DILA le 06/08/2026 — <a rel="noopener" href="https://www.service-public.gouv.fr/particuliers/vosdroits/R74108">Lire sur Service-public.gouv.fr</a> (consulté le 02/11/2026)</li>
+<li>Portail interministériel de l'ANC — « Liens vers les listes de vidangeurs agréés » (mis à jour le 16/04/2026) — <a rel="noopener" href="https://www.assainissement-non-collectif.developpement-durable.gouv.fr/liens-vers-les-listes-de-vidangeurs-agrees-a619.html">Lire sur le portail interministériel de l'ANC</a> (consulté le 02/11/2026)</li>
+<li>Service-public.gouv.fr — Assainissement des eaux usées domestiques (F447), page vérifiée par la DILA le 12/12/2025 — <a rel="noopener" href="https://www.service-public.gouv.fr/particuliers/vosdroits/F447">Lire sur Service-public.gouv.fr</a> (consulté le 02/11/2026)</li>
+</ul>
+<p><em>Rédigé par Mon Vidangeur · Mis à jour le 09/11/2026.</em> Données : 09/11/2026.</p>
+
+</main>
+<footer>
+<p>Mon Vidangeur est un site d'information indépendant, ce n'est pas un service public. <a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Données personnelles et cookies</a></p>
+<p>Ni publicité, ni cookie de mesure, ni envoi de vos saisies. Seul l'hébergeur dépose un cookie technique. Statistiques de visite anonymes, sur notre propre hébergement : <a href="/confidentialite/#mesure-audience">vous y opposer</a>.</p>
+<p>Données : relevé des tarifs et services SPANC de l'Oise et de l'Eure, mis à jour le 09/11/2026.</p>
+</footer>
+<script src="/assets/mesure.js" data-matomo="https://stats.monvidangeur.fr/" data-site="1" defer></script>
+</body>
+</html>

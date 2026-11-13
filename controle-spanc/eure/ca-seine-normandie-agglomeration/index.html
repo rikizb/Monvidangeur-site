@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPANC Seine Normandie Agglomération (SNA) | Mon Vidangeur</title>
+<meta name="description" content="SPANC de la CA Seine Normandie Agglomération : le montant du contrôle en cas de vente n&#39;est pas affiché (formulaire non daté), périodicité, contact et les 61 communes rattachées (Aigleville, Bois-Jérôme-Saint-Ouen, Boisset-les-Prévanches…).">
+<link rel="icon" href="data:,">
+<link rel="canonical" href="https://monvidangeur.fr/controle-spanc/eure/ca-seine-normandie-agglomeration/">
+<meta property="og:url" content="https://monvidangeur.fr/controle-spanc/eure/ca-seine-normandie-agglomeration/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mon Vidangeur">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="SPANC Seine Normandie Agglomération (SNA)">
+<meta property="og:description" content="SPANC de la CA Seine Normandie Agglomération : le montant du contrôle en cas de vente n&#39;est pas affiché (formulaire non daté), périodicité, contact et les 61 communes rattachées (Aigleville, Bois-Jérôme-Saint-Ouen, Boisset-les-Prévanches…).">
+<meta name="twitter:card" content="summary">
+<style>
+/* CSS critique inline (< 2 Ko) : pas de requête bloquante, pas de webfont -> LCP/CLS maîtrisés */
+:root{--t:#1b2a33;--a:#0b5c7a;--f:#f4f7f8}*{box-sizing:border-box}body{margin:0;font:1rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t)}
+header,main,footer{max-width:60rem;margin:auto;padding:1rem}a{color:var(--a)}table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{border:1px solid #d5dde1;padding:.4rem .5rem;text-align:left;vertical-align:top}th{background:var(--f)}
+.evitement{position:absolute;left:-999px;top:0;background:#fff;padding:.5rem}.evitement:focus{left:1rem}.bref{background:var(--f);border-left:4px solid var(--a);padding:.75rem 1rem}
+.table-wrap{overflow-x:auto}form label{display:block;margin:.5rem 0}input,select,textarea{font:inherit;padding:.4rem;width:100%;max-width:28rem}
+input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px solid #d5dde1;margin:.75rem 0}.carte{border:1px solid #d5dde1;border-left:4px solid var(--a);padding:.5rem 1rem;margin:1rem 0}.suggestions{list-style:none;padding:0}.lien{background:none;color:var(--a);text-decoration:underline;padding:.2rem 0;border:0;cursor:pointer}.bouton2{display:inline-block;border:1px solid var(--a);padding:.3rem .6rem;text-decoration:none}blockquote{margin-inline:0}.cta-fin{margin:1.5rem 0}a.bouton{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:.6rem 1.1rem;background:var(--a);color:#fff;text-decoration:none;border-radius:4px;font-weight:600}a.bouton:hover{background:#08465d}button{font:inherit;padding:.5rem 1rem;background:var(--a);color:#fff;border:0}
+/* Mobile 375 px : pas de débordement horizontal (URL longues, tableaux) ; focus visible ; cibles tactiles ≥ 44 px (nav, tuiles, simulateur) */
+main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.menu{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;column-gap:.25rem}header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .55rem;font-weight:600}header nav li:first-child a{padding-left:0}header nav a.nav-urgence{color:#a3262a}.evitement{min-height:44px;display:inline-flex;align-items:center}.tuiles{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.6rem}.tuiles a{display:flex;align-items:center;min-height:44px;padding:.6rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);text-decoration:none;font-weight:600}.tuiles a.t-urgence{border-left-color:#a3262a;color:#a3262a}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
+/* Simulateur : avec JavaScript actif, sa hauteur est réservée avant l'affichage par le script (évite le décalage de mise en page) ; sans JavaScript, il reste masqué et le bloc noscript s'affiche. */
+@media (scripting:enabled){ #simulateur-vente[hidden]{display:block;visibility:hidden}}
+/* Repli du simulateur (v4.4) : si le script ne s'est pas chargé après 3 s (échec ou lenteur), un message s'affiche DANS la hauteur réservée (position absolue : aucun décalage) ; il disparaît dès que le script affiche le simulateur. */
+.simu-repli{display:none}@media (scripting:enabled){ #simulateur-vente[hidden]{position:relative}#simulateur-vente[hidden]>.simu-repli{display:block;position:absolute;inset:0 0 auto 0;margin:0;padding:.75rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);background:#fff;animation:simu-repli 0s 3s both}}@keyframes simu-repli{from{visibility:hidden}to{visibility:visible}}
+/* Cibles tactiles ≥ 44 px (suite). Fil d'Ariane : padding vertical sur l'inline (aucun déplacement de mise en page) ; cartes du simulateur, sommaire d'ancres et pied de page : inline-flex min 44 px. Liens au fil d'une phrase du corps : exception WCAG 2.5.8 (inchangés). */
+nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#"],footer a{display:inline-flex;align-items:center;min-height:44px}
+/* v4.4 (a) : lien seul dans une cellule de tableau (colonne « Page » de /urgence/) : cible ≥ 44 px. */
+td>a.lien-cellule{display:inline-flex;align-items:center;min-height:44px}
+/* Mesure d'audience (textes v4.4, avec SITE_MESURE=1) : bouton d'opposition de /confidentialite/, cible ≥ 44 px. */
+.mesure-opposition button{min-height:44px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://monvidangeur.fr/controle-spanc/eure/ca-seine-normandie-agglomeration/#webpage","url":"https://monvidangeur.fr/controle-spanc/eure/ca-seine-normandie-agglomeration/","name":"Fosse septique et SPANC dans la CA Seine Normandie Agglomération : contrôle, vidange","inLanguage":"fr-FR","isPartOf":{"@id":"https://monvidangeur.fr/#website"},"publisher":{"@id":"https://monvidangeur.fr/#org"},"dateModified":"2026-11-13"},{"@type":"Service","@id":"https://monvidangeur.fr/controle-spanc/eure/ca-seine-normandie-agglomeration/#service","name":"SPANC de la CA Seine Normandie Agglomération","serviceType":"Service public d'assainissement non collectif","url":"https://monvidangeur.fr/controle-spanc/eure/ca-seine-normandie-agglomeration/","provider":{"@type":"GovernmentOrganization","name":"CA Seine Normandie Agglomération","identifier":"200072312"},"areaServed":[{"@type":"PostalAddress","addressLocality":"Aigleville","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Bois-Jérôme-Saint-Ouen","postalCode":"27620","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Boisset-les-Prévanches","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Bouafles","postalCode":"27700","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Breuilpont","postalCode":"27640","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Bueil","postalCode":"27730","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Caillouet-Orgeville","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Chaignes","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Chambray","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Croisy-sur-Eure","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Cuverville","postalCode":"27700","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Daubeuf-près-Vatteville","postalCode":"27430","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Douains","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Écouis","postalCode":"27440","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Fains","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Frenelles-en-Vexin","postalCode":"27150","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Frenelles-en-Vexin","postalCode":"27700","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Gadencourt","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Gasny","postalCode":"27620","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Giverny","postalCode":"27620","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Guiseniers","postalCode":"27700","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Hardencourt-Cocherel","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Harquency","postalCode":"27700","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Hécourt","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Hennezis","postalCode":"27700","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Heubécourt-Haricourt","postalCode":"27630","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Heuqueville","postalCode":"27700","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Houlbec-Cocherel","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"La Boissière","postalCode":"27220","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"La Chapelle-Longueville","postalCode":"27950","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"La Heunière","postalCode":"27950","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"La Roquette","postalCode":"27700","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Le Cormier","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Le Plessis-Hébert","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Le Thuit","postalCode":"27700","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Les Andelys","postalCode":"27700","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Ménilles","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Mercey","postalCode":"27950","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Merey","postalCode":"27640","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Mesnil-Verclives","postalCode":"27440","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Mézières-en-Vexin","postalCode":"27510","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Muids","postalCode":"27430","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Neuilly","postalCode":"27730","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Notre-Dame-de-l'Isle","postalCode":"27940","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Pacy-sur-Eure","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Port-Mort","postalCode":"27940","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Pressagny-l'Orgueilleux","postalCode":"27510","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Rouvray","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Saint-Marcel","postalCode":"27950","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Saint-Vincent-des-Bois","postalCode":"27950","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Sainte-Colombe-près-Vernon","postalCode":"27950","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Sainte-Geneviève-lès-Gasny","postalCode":"27620","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Suzay","postalCode":"27420","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Tilly","postalCode":"27510","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Vatteville","postalCode":"27430","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Vaux-sur-Eure","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Vernon","postalCode":"27200","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Vexin-sur-Epte","postalCode":"27420","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Vexin-sur-Epte","postalCode":"27510","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Vexin-sur-Epte","postalCode":"27630","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Vézillon","postalCode":"27700","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Villegats","postalCode":"27120","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Villez-sous-Bailleul","postalCode":"27950","addressCountry":"FR"},{"@type":"PostalAddress","addressLocality":"Villiers-en-Désœuvre","postalCode":"27640","addressCountry":"FR"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://monvidangeur.fr/"},{"@type":"ListItem","position":2,"name":"Contrôle SPANC","item":"https://monvidangeur.fr/controle-spanc/"},{"@type":"ListItem","position":3,"name":"CA Seine Normandie Agglomération","item":"https://monvidangeur.fr/controle-spanc/eure/ca-seine-normandie-agglomeration/"}]},{"@type":"Organization","@id":"https://monvidangeur.fr/#org","name":"Mon Vidangeur","url":"https://monvidangeur.fr/","legalName":"LES EVABRES","telephone":"+33664841784","address":{"@type":"PostalAddress","streetAddress":"87 rue Carnot","postalCode":"92300","addressLocality":"Levallois-Perret","addressCountry":"FR"},"contactPoint":{"@type":"ContactPoint","contactType":"contact","email":"contact@monvidangeur.fr","availableLanguage":"fr"}}]}</script>
+</head>
+<body data-indexable="oui">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header><nav aria-label="Menu principal"><ul class="menu">
+<li><a href="/"><span class="vh">Mon Vidangeur, </span>Accueil</a></li>
+<li><a href="/vidange-fosse-septique/">Vidange</a></li>
+<li><a href="/urgence/" class="nav-urgence">Urgence</a></li>
+<li><a href="/controle-spanc/">Contrôle SPANC</a></li>
+<li><a href="/guides/">Guides</a></li>
+</ul></nav></header>
+<main id="contenu" tabindex="-1"><nav aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <a href="/controle-spanc/">Contrôle SPANC</a> › <span aria-current="page">CA Seine Normandie Agglomération</span></nav>
+<h1>Fosse septique et SPANC dans la CA Seine Normandie Agglomération : contrôle, vidange</h1>
+<blockquote>
+<p><strong>En bref.</strong> Le SPANC de la CA Seine Normandie Agglomération contrôle l'assainissement non collectif de 61 communes ; le montant du contrôle en cas de vente n'est pas affiché (formulaire non daté) ; contrôle périodique : au plus tous les 10 ans (maximum réglementaire).</p>
+</blockquote>
+<p>Cette page réunit ce que le service publie sur le contrôle en cas de vente, la périodicité du contrôle, le contact et la liste des communes rattachées.</p>
+<h2 id="tarifs-publies">Tarifs publiés</h2>
+<div class="table-wrap" role="region" aria-label="Tableau 1 (défilement horizontal possible)" tabindex="0"><table>
+<thead>
+<tr>
+<th>Contrôle</th>
+<th>Montant</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diagnostic en cas de vente, logement non raccordé (assainissement individuel)</td>
+<td>Le formulaire du service indique un montant, mais il n'est pas daté : nous ne l'affichons pas. Demandez le tarif en vigueur au SPANC.</td>
+<td><a rel="noopener" href="https://www.sna27.fr/wp-content/uploads/2025/09/FORMULAIRE-DDE-DE-DIAGNOSTIC-2023-EN-VIGUEUR.pdf">Formulaire de demande du service</a>, lu le 13/11/2026</td>
+</tr>
+</tbody>
+</table></div>
+<p>Le même formulaire indique un autre montant pour les logements raccordés au réseau collectif : il ne concerne pas le SPANC. Les autres contrôles ne sont pas repris ici. Nous n'affichons un montant que s'il figure dans un document officiel daté de moins de 18 mois. En cas de doute, le document du service fait foi.</p>
+<h2 id="periodicite-du-controle">Périodicité du contrôle</h2>
+<p><strong>au plus tous les 10 ans (maximum réglementaire)</strong>, selon la fréquence fixée par votre SPANC. La loi fixe un plafond de 10 ans entre deux contrôles (CGCT, art. L2224-8) ; chaque service fixe sa propre fréquence. Pour vendre, le rapport doit avoir moins de 3 ans le jour de l'acte : <a href="/controle-spanc/vente-immobiliere/">simulateur contrôle SPANC et vente</a>.</p>
+<h2 id="contact">Contact</h2>
+<p>Accueil de la CA Seine Normandie Agglomération (Vernon) : <a href="mailto:contact@sna27.fr">contact@sna27.fr</a>. Coordonnées du siège issues de BANATIC (export du 21/10/2026, lu le 22/10/2026) ; le service peut avoir un contact dédié au SPANC.</p>
+<h2 id="vidange-vidangeurs-agrees-pour-l-eure">Vidange : vidangeurs agréés pour l'Eure</h2>
+<p>La vidange se décide selon la hauteur de boues (au plus 50 % du volume utile, sauf autre seuil fixé par l'avis d'agrément du dispositif) et doit être faite par une entreprise agréée par le préfet. La liste de la préfecture de l'Eure, datée du 07/08/2026, compte 48 entreprises : <a href="/vidangeurs-agrees/eure/">vidangeurs agréés de l'Eure</a>. Elle indique le siège de chaque entreprise, pas son secteur d'intervention.</p>
+<h2 id="communes-rattachees">Communes rattachées</h2>
+<p>61 communes rattachées au SPANC de la CA Seine Normandie Agglomération (rattachement lu le 22/10/2026 ; codes postaux La Poste).</p>
+<div class="table-wrap" role="region" aria-label="Tableau 2 (défilement horizontal possible)" tabindex="0"><table>
+<thead>
+<tr>
+<th>Commune</th>
+<th>Code postal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aigleville</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Bois-Jérôme-Saint-Ouen</td>
+<td>27620</td>
+</tr>
+<tr>
+<td>Boisset-les-Prévanches</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Bouafles</td>
+<td>27700</td>
+</tr>
+<tr>
+<td>Breuilpont</td>
+<td>27640</td>
+</tr>
+<tr>
+<td>Bueil</td>
+<td>27730</td>
+</tr>
+<tr>
+<td>Caillouet-Orgeville</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Chaignes</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Chambray</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Croisy-sur-Eure</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Cuverville</td>
+<td>27700</td>
+</tr>
+<tr>
+<td>Daubeuf-près-Vatteville</td>
+<td>27430</td>
+</tr>
+<tr>
+<td>Douains</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Écouis</td>
+<td>27440</td>
+</tr>
+<tr>
+<td>Fains</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Frenelles-en-Vexin</td>
+<td>27150, 27700</td>
+</tr>
+<tr>
+<td>Gadencourt</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Gasny</td>
+<td>27620</td>
+</tr>
+<tr>
+<td>Giverny</td>
+<td>27620</td>
+</tr>
+<tr>
+<td>Guiseniers</td>
+<td>27700</td>
+</tr>
+<tr>
+<td>Hardencourt-Cocherel</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Harquency</td>
+<td>27700</td>
+</tr>
+<tr>
+<td>Hécourt</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Hennezis</td>
+<td>27700</td>
+</tr>
+<tr>
+<td>Heubécourt-Haricourt</td>
+<td>27630</td>
+</tr>
+<tr>
+<td>Heuqueville</td>
+<td>27700</td>
+</tr>
+<tr>
+<td>Houlbec-Cocherel</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>La Boissière</td>
+<td>27220</td>
+</tr>
+<tr>
+<td>La Chapelle-Longueville</td>
+<td>27950</td>
+</tr>
+<tr>
+<td>La Heunière</td>
+<td>27950</td>
+</tr>
+<tr>
+<td>La Roquette</td>
+<td>27700</td>
+</tr>
+<tr>
+<td>Le Cormier</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Le Plessis-Hébert</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Le Thuit</td>
+<td>27700</td>
+</tr>
+<tr>
+<td>Les Andelys</td>
+<td>27700</td>
+</tr>
+<tr>
+<td>Ménilles</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Mercey</td>
+<td>27950</td>
+</tr>
+<tr>
+<td>Merey</td>
+<td>27640</td>
+</tr>
+<tr>
+<td>Mesnil-Verclives</td>
+<td>27440</td>
+</tr>
+<tr>
+<td>Mézières-en-Vexin</td>
+<td>27510</td>
+</tr>
+<tr>
+<td>Muids</td>
+<td>27430</td>
+</tr>
+<tr>
+<td>Neuilly</td>
+<td>27730</td>
+</tr>
+<tr>
+<td>Notre-Dame-de-l'Isle</td>
+<td>27940</td>
+</tr>
+<tr>
+<td>Pacy-sur-Eure</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Port-Mort</td>
+<td>27940</td>
+</tr>
+<tr>
+<td>Pressagny-l'Orgueilleux</td>
+<td>27510</td>
+</tr>
+<tr>
+<td>Rouvray</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Saint-Marcel</td>
+<td>27950</td>
+</tr>
+<tr>
+<td>Saint-Vincent-des-Bois</td>
+<td>27950</td>
+</tr>
+<tr>
+<td>Sainte-Colombe-près-Vernon</td>
+<td>27950</td>
+</tr>
+<tr>
+<td>Sainte-Geneviève-lès-Gasny</td>
+<td>27620</td>
+</tr>
+<tr>
+<td>Suzay</td>
+<td>27420</td>
+</tr>
+<tr>
+<td>Tilly</td>
+<td>27510</td>
+</tr>
+<tr>
+<td>Vatteville</td>
+<td>27430</td>
+</tr>
+<tr>
+<td>Vaux-sur-Eure</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Vernon</td>
+<td>27200</td>
+</tr>
+<tr>
+<td>Vexin-sur-Epte</td>
+<td>27420, 27510, 27630</td>
+</tr>
+<tr>
+<td>Vézillon</td>
+<td>27700</td>
+</tr>
+<tr>
+<td>Villegats</td>
+<td>27120</td>
+</tr>
+<tr>
+<td>Villez-sous-Bailleul</td>
+<td>27950</td>
+</tr>
+<tr>
+<td>Villiers-en-Désœuvre</td>
+<td>27640</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="autres-spanc-de-l-eure">Autres SPANC de l'Eure</h2>
+<ul>
+<li><a href="/controle-spanc/eure/ca-evreux-portes-normandie/">SPANC de la CA Évreux Portes de Normandie</a></li>
+<li><a href="/controle-spanc/eure/cc-bernay-terres-normandie/">SPANC de la CC Intercom Bernay Terres de Normandie</a></li>
+<li><a href="/controle-spanc/eure/cc-roumois-seine/">SPANC de la CC Roumois Seine</a></li>
+</ul>
+<p>Prix du contrôle dans les autres services : <a href="/prix/controle-spanc/">prix du contrôle SPANC dans l'Oise et l'Eure</a>.</p>
+<h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<ul>
+<li><a href="/controle-spanc/">Contrôle SPANC : périodicité, vente, rapport</a></li>
+<li><a href="/guides/quand-vidanger-fosse-septique/">Quand vidanger une fosse septique</a></li>
+<li><a href="/guides/checklist-vente-achat-maison-fosse-septique/">Checklist vente ou achat avec fosse septique</a></li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Arrêté du 7 septembre 2009 fixant les prescriptions techniques applicables aux installations d'assainissement non collectif recevant une charge brute de pollution organique inférieure ou égale à 1,2 kg/j de DBO5 (NOR DEVO0809422A, JORF n°0234 du 9/10/2009), art. 15 — version en vigueur depuis le 01/03/2021 (modifié par l'arrêté du 26/02/2021, art. 1) — Légifrance, version consolidée — <a rel="noopener" href="https://www.legifrance.gouv.fr/loda/id/LEGITEXT000021125886">Lire sur Légifrance</a> (consulté le 27/10/2026)</li>
+<li>Code de la santé publique, art. L1331-11-1 (version du 25/08/2021) — <a rel="noopener" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043975559">Lire sur Légifrance</a> (consulté le 22/10/2026)</li>
+<li>Code général des collectivités territoriales, art. L2224-8 III — synthèse officielle « Quelle est la périodicité des contrôles ? » (portail interministériel de l'ANC) — <a rel="noopener" href="https://www.assainissement-non-collectif.developpement-durable.gouv.fr/quelle-est-la-periodicite-des-controles-a37.html">Lire sur le portail interministériel de l'ANC</a> (consulté le 22/10/2026)</li>
+<li>La Poste — Base officielle des codes postaux (jeu data.gouv.fr, données mises à jour le 08/10/2026, Licence Ouverte) — <a rel="noopener" href="https://www.data.gouv.fr/datasets/base-officielle-des-codes-postaux">Lire sur data.gouv.fr</a> (consulté le 28/10/2026)</li>
+<li>Seine Normandie Agglomération — Formulaire « Demande de diagnostic de l'installation d'assainissement » (aucune date écrite dans le document) — <a rel="noopener" href="https://www.sna27.fr/wp-content/uploads/2025/09/FORMULAIRE-DDE-DE-DIAGNOSTIC-2023-EN-VIGUEUR.pdf">Lire sur sna27.fr (PDF)</a> (consulté le 13/11/2026)</li>
+<li>BANATIC — base nationale de l'intercommunalité, export national du 21/10/2026 : nom, siège et coordonnées des groupements — <a rel="noopener" href="https://www.banatic.interieur.gouv.fr/">Lire sur BANATIC (ministère de l'Intérieur)</a> (consulté le 22/10/2026)</li>
+<li>Préfecture de l'Eure — Vidangeurs agréés pour l'assainissement non collectif (liste mise à jour le 07/08/2026) — <a rel="noopener" href="https://www.eure.gouv.fr/Actions-de-l-Etat/Environnement/eau-et-nature/Eau/Services-publics-d-eau-potable-et-d-assainissement/Assainissement-non-collectif-Vidangeurs-agrees/Vidangeurs-agrees-pour-l-assainissement-non-collectif-ANC">Lire sur eure.gouv.fr</a> (consulté le 01/11/2026)</li>
+</ul>
+<p><em>Rédigé par Mon Vidangeur · Mis à jour le 13/11/2026.</em> Données : 13/11/2026.</p>
+
+</main>
+<footer>
+<p>Mon Vidangeur est un site d'information indépendant, ce n'est pas un service public. <a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Données personnelles et cookies</a></p>
+<p>Ni publicité, ni cookie de mesure, ni envoi de vos saisies. Seul l'hébergeur dépose un cookie technique. Statistiques de visite anonymes, sur notre propre hébergement : <a href="/confidentialite/#mesure-audience">vous y opposer</a>.</p>
+<p>Données : relevé des tarifs et services SPANC de l'Oise et de l'Eure, mis à jour le 13/11/2026.</p>
+</footer>
+<script src="/assets/mesure.js" data-matomo="https://stats.monvidangeur.fr/" data-site="1" defer></script>
+</body>
+</html>

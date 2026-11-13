@@ -146,12 +146,13 @@ function carteC(ev) {
 
   const ref = esc((t.nature_preuve && String(t.nature_preuve).trim()) || (t.date_deliberation ? `délibération du ${dateFr(t.date_deliberation)}` : "document du service"));
   const suite = `${lienExt(t.url_source, "Voir la source", "source_tarif")}. Relevé le ${dateFr(t.date_lecture)}.`;
-  const mention = (n) => ev.et.drapeaux.includes("HT") ? `<strong>${euro(n)} HT</strong> (le montant TTC n'est pas publié)`
-    : ev.et.drapeaux.includes("HT_TTC_INCONNU") ? `<strong>${euro(n)}</strong> <em data-mention="ht-ttc-inconnu">(${esc(L.montant_ht_ttc_inconnu)})</em>` : `<strong>${euro(n)} TTC</strong>`;
+
+  const mention = (n, x) => ev.et.drapeaux.includes("HT") ? `<strong>${euro(n)} HT</strong> (le montant TTC n'est pas publié)`
+    : ev.et.drapeaux.includes("HT_TTC_INCONNU") ? `<strong>${euro(n)}</strong> <em data-mention="ht-ttc-inconnu">(${esc((x && x.mention_ht_ttc) || "HT ou TTC non précisé")})</em>` : `<strong>${euro(n)} TTC</strong>`;
   if (ev.et.etat === "E1") {
     if (ev.et.drapeaux.includes("GRATUITE")) h += `<p><strong>Pas de facturation à part pour le contrôle en cas de vente</strong>, selon ${esc(s.nom)} (source : ${ref}) : « ${esc(t.libelle_source)} ». ${suite}</p>`;
-    else h += `<p data-montant="${t.montant}">${mention(t.montant)} : tarif du contrôle en cas de vente fixé par ${esc(s.nom)}, source : ${ref}. ${suite}</p>`;
-    for (const v of t.variantes || []) if (v.montant != null) h += `<p>Tarif différent si ${esc(v.condition)} : ${mention(v.montant)}</p>`;
+    else h += `<p data-montant="${t.montant}">${mention(t.montant, t)} : tarif du contrôle en cas de vente fixé par ${esc(s.nom)}, source : ${ref}. ${suite}</p>`;
+    for (const v of t.variantes || []) if (v.montant != null) h += `<p>Tarif différent si ${esc(v.condition)} : ${mention(v.montant, v)}</p>`;
   } else {
     h += `<p><strong>${esc(L.libelle_si_absent)}</strong></p>`;
     const e = ev.et.etat;

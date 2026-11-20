@@ -15,25 +15,22 @@
 <meta property="og:description" content="Fosse septique et contrôle SPANC : vendre ou acheter une maison, rapport non conforme, délais et démarches. Guides sourcés, simulateur et checklist.">
 <meta name="twitter:card" content="summary">
 <style>
-/* CSS critique inline (< 2 Ko) : pas de requête bloquante, pas de webfont -> LCP/CLS maîtrisés */
-:root{--t:#1b2a33;--a:#0b5c7a;--f:#f4f7f8}*{box-sizing:border-box}body{margin:0;font:1rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t)}
+:root{--t:#1b2a33;--a:#0b5c7a;--f:#f4f7f8;--u:#a3262a;--b:#d5dde1;--n:#0a3346}*{box-sizing:border-box}body{margin:0;font:1rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t)}
 header,main,footer{max-width:60rem;margin:auto;padding:1rem}a{color:var(--a)}table{border-collapse:collapse;width:100%;font-size:.95rem}
 th,td{border:1px solid #d5dde1;padding:.4rem .5rem;text-align:left;vertical-align:top}th{background:var(--f)}
-.evitement{position:absolute;left:-999px;top:0;background:#fff;padding:.5rem}.evitement:focus{left:1rem}.bref{background:var(--f);border-left:4px solid var(--a);padding:.75rem 1rem}
-.table-wrap{overflow-x:auto}form label{display:block;margin:.5rem 0}input,select,textarea{font:inherit;padding:.4rem;width:100%;max-width:28rem}
-input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px solid #d5dde1;margin:.75rem 0}.carte{border:1px solid #d5dde1;border-left:4px solid var(--a);padding:.5rem 1rem;margin:1rem 0}.suggestions{list-style:none;padding:0}.lien{background:none;color:var(--a);text-decoration:underline;padding:.2rem 0;border:0;cursor:pointer}.bouton2{display:inline-block;border:1px solid var(--a);padding:.3rem .6rem;text-decoration:none}blockquote{margin-inline:0}.cta-fin{margin:1.5rem 0}a.bouton{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:.6rem 1.1rem;background:var(--a);color:#fff;text-decoration:none;border-radius:4px;font-weight:600}a.bouton:hover{background:#08465d}button{font:inherit;padding:.5rem 1rem;background:var(--a);color:#fff;border:0}
-/* Mobile 375 px : pas de débordement horizontal (URL longues, tableaux) ; focus visible ; cibles tactiles ≥ 44 px (nav, tuiles, simulateur) */
-main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.menu{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;column-gap:.25rem}header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .55rem;font-weight:600}header nav li:first-child a{padding-left:0}header nav a.nav-urgence{color:#a3262a}.evitement{min-height:44px;display:inline-flex;align-items:center}.tuiles{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.6rem}.tuiles a{display:flex;align-items:center;min-height:44px;padding:.6rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);text-decoration:none;font-weight:600}.tuiles a.t-urgence{border-left-color:#a3262a;color:#a3262a}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
-/* Simulateur : avec JavaScript actif, sa hauteur est réservée avant l'affichage par le script (évite le décalage de mise en page) ; sans JavaScript, il reste masqué et le bloc noscript s'affiche. */
+.evitement{position:absolute;left:-999px;top:0;background:#fff;padding:.5rem;min-height:44px;display:inline-flex;align-items:center}.evitement:focus{left:1rem}.bref,h1+blockquote{background:var(--f);border-left:4px solid var(--a);padding:.75rem 1rem}h1+blockquote>p{margin:0}
+form label{display:block;margin:.5rem 0}input,select{font:inherit;padding:.4rem;width:100%;max-width:28rem}
+input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px solid #d5dde1;margin:.75rem 0}.carte{border:1px solid #d5dde1;border-left:4px solid var(--a);padding:.5rem 1rem;margin:1rem 0}.suggestions{list-style:none;padding:0}.lien{background:none;color:var(--a);text-decoration:underline;padding:.2rem 0;border:0;cursor:pointer}.bouton2{display:inline-block;border:1px solid var(--a);padding:.3rem .6rem;text-decoration:none}blockquote{margin-inline:0}.cta-fin{margin:1.5rem 0}a.bouton{display:inline-flex;align-items:center;min-height:44px;padding:.6rem 1.1rem;background:var(--a);color:#fff;text-decoration:none;border-radius:4px;font-weight:600}a.bouton:hover{background:#08465d}button{font:inherit;padding:.5rem 1rem;background:var(--a);color:#fff;border:0}
+main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.menu{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;column-gap:.25rem}header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .55rem;font-weight:600}header nav li:first-child a{padding-left:0}header nav a.nav-urgence{color:#a3262a}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
 @media (scripting:enabled){ #simulateur-vente[hidden]{display:block;visibility:hidden}}
-/* Repli du simulateur (v4.4) : si le script ne s'est pas chargé après 3 s (échec ou lenteur), un message s'affiche DANS la hauteur réservée (position absolue : aucun décalage) ; il disparaît dès que le script affiche le simulateur. */
 .simu-repli{display:none}@media (scripting:enabled){ #simulateur-vente[hidden]{position:relative}#simulateur-vente[hidden]>.simu-repli{display:block;position:absolute;inset:0 0 auto 0;margin:0;padding:.75rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);background:#fff;animation:simu-repli 0s 3s both}}@keyframes simu-repli{from{visibility:hidden}to{visibility:visible}}
-/* Cibles tactiles ≥ 44 px (suite). Fil d'Ariane : padding vertical sur l'inline (aucun déplacement de mise en page) ; cartes du simulateur, sommaire d'ancres et pied de page : inline-flex min 44 px. Liens au fil d'une phrase du corps : exception WCAG 2.5.8 (inchangés). */
 nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#"],footer a{display:inline-flex;align-items:center;min-height:44px}
-/* v4.4 (a) : lien seul dans une cellule de tableau (colonne « Page » de /urgence/) : cible ≥ 44 px. */
 td>a.lien-cellule{display:inline-flex;align-items:center;min-height:44px}
-/* Mesure d'audience (textes v4.4, avec SITE_MESURE=1) : bouton d'opposition de /confidentialite/, cible ≥ 44 px. */
 .mesure-opposition button{min-height:44px}
+main>p>a[href="/trouver-un-professionnel/"]{display:inline-flex;align-items:center;min-height:44px}
+.mini{font-size:.875rem;margin:0}.ex{border:2px dashed var(--a);border-radius:1rem;padding:0 1rem}.badge{background:#fff3c4;color:#5c4400;font-weight:700;padding:0 .4rem}
+h1,h2{line-height:1.2;color:var(--n)}
+.hero,.mea{display:grid;gap:.75rem;border-radius:1rem;padding:1rem}.hero{background:var(--n);color:#fff}.hero h1{color:#fff;font-size:clamp(1.8rem,6vw,3rem);margin:0}.hero .bref{background:none;border:0;padding:0}.hero svg{width:100%;height:auto;max-height:11rem;order:9}.kick{font-weight:700;color:#9fe0d0;margin:0 0 .5rem}.projets,.chiffres,.ras,.tuiles,.grille,.etapes{list-style:none;padding:0;margin:0;display:grid;gap:.75rem}.tuiles a,.grille a{display:flex;flex-direction:column;justify-content:center;min-height:56px;padding:.75rem 1rem;background:#fff;border-radius:.75rem;font-weight:700;text-decoration:none}.t-urgence,.urg h2{color:var(--u)}.ras{grid-template-columns:1fr 1fr;margin:1.5rem 0}.ras li,.etapes li{display:flex;gap:.6rem}.ras svg{flex:none}.tuiles a,.grille a{height:100%;border:1px solid var(--b)}.tuiles svg,.grille svg{order:-1}.tuiles span,.grille span{font-weight:400;color:var(--t)}.mea{background:#e7f4f1;align-items:center;margin-bottom:1rem}.urg{border:2px solid var(--u);border-radius:1rem;padding:0 1.25rem;margin-top:2rem}.etapes b{flex:none;width:2rem;height:2rem;line-height:2;border-radius:50%;background:var(--a);color:#fff;text-align:center}@media(min-width:48rem){.hero{grid-template-columns:1.25fr 1fr;align-items:center;padding:2.5rem}.hero svg{max-height:none}.ras{grid-template-columns:repeat(4,1fr)}.projets,.tuiles,.grille,.etapes{grid-template-columns:repeat(3,1fr)}.hero>form,.chiffres,.hero>.mini{grid-column:1/-1}.hero svg{order:0}.projets button span{display:block}.projets button{text-align:left;padding:.5rem 1rem}.mea{grid-template-columns:3fr 2fr;padding:2rem}.duo{display:grid;grid-template-columns:1fr 1fr;gap:2rem}.duo .grille{grid-template-columns:1fr}}.entree{background:#fff;color:var(--t);border-radius:1rem;padding:1rem;display:grid;gap:.5rem}.entree input{max-width:none;border:2px solid var(--a)}.entree fieldset{border:0;padding:0;margin:0}.entree h2{margin:0;font-size:1.25rem}.projets button{min-height:56px;width:100%;padding:.5rem;border-radius:.75rem;font-weight:700}.projets span{display:none;font-weight:400}.projets{grid-template-columns:repeat(3,1fr)}.chiffres{grid-template-columns:1fr 1fr}.chiffres li{background:#123f55;border-radius:.75rem;padding:.5rem;text-align:center;font-size:.85rem;line-height:1.3}.chiffres b{display:block;font-size:1.35rem;color:#9fe0d0}a.bouton.u{background:var(--u)}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://monvidangeur.fr/#org","name":"Mon Vidangeur","url":"https://monvidangeur.fr/","legalName":"LES EVABRES","telephone":"+33664841784","address":{"@type":"PostalAddress","streetAddress":"87 rue Carnot","postalCode":"92300","addressLocality":"Levallois-Perret","addressCountry":"FR"},"contactPoint":{"@type":"ContactPoint","contactType":"contact","email":"contact@monvidangeur.fr","availableLanguage":"fr"}},{"@type":"WebSite","@id":"https://monvidangeur.fr/#website","name":"Mon Vidangeur","url":"https://monvidangeur.fr/","inLanguage":"fr-FR","publisher":{"@id":"https://monvidangeur.fr/#org"}}]}</script>
 </head>
@@ -47,25 +44,107 @@ td>a.lien-cellule{display:inline-flex;align-items:center;min-height:44px}
 <li><a href="/guides/">Guides</a></li>
 </ul></nav></header>
 <main id="contenu" tabindex="-1">
-<h1>Fosse septique : vendre, acheter, comprendre le contrôle SPANC</h1>
-<p class="bref">Vous vendez ou achetez une maison qui n'est pas raccordée au tout-à-l'égout ? Ce site vous aide à savoir si le rapport du SPANC sera encore valable le jour de la signature, qui contacter et quoi préparer. Chaque règle renvoie à sa source officielle.</p>
+
+<svg class="vh" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-src" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z M14 3v5h5 M9 12h7 M9 16h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+<symbol id="i-gratuit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 12.5l2.5 2.5L16 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-cookie" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-indep" viewBox="0 0 24 24"><path d="M4 20h16 M6 20V10 M18 20V10 M10 20v-6h4v6 M3 10l9-6 9 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+<symbol id="i-cuve" viewBox="0 0 32 32"><rect x="3" y="12" width="26" height="14" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12v14 M8 8h6v4 M19 19h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 22c3-2 6 2 9 0" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="i-urg" viewBox="0 0 32 32"><path d="M16 4l13 23H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 13v6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="23" r="1.6" fill="currentColor"/></symbol>
+<symbol id="i-spanc" viewBox="0 0 32 32"><rect x="7" y="4" width="18" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4v3h8V4 M11 15l3 3 6-6 M11 23h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-travaux" viewBox="0 0 32 32"><path d="M5 27h22 M9 27V15l7-6 7 6v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 4l6 6-3 3-6-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="i-guide" viewBox="0 0 32 32"><path d="M4 7c4-2 8-2 12 1 4-3 8-3 12-1v19c-4-2-8-2-12 1-4-3-8-3-12-1z M16 8v19" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+</defs></svg>
+<section class="hero" aria-labelledby="titre">
+<div>
+<h1 id="titre">Fosse septique : vendre, acheter, comprendre le contrôle SPANC</h1>
+<p class="bref">Vous vendez ou achetez une maison qui n'est pas raccordée au tout-à-l'égout ? Ce site vous aide à savoir si le rapport du SPANC sera encore valable le jour de la signature, qui contacter et quoi préparer.</p>
+<p><a class="bouton u" href="/urgence/">⚠ Urgence : ça déborde, ça refoule</a></p>
+</div>
+<svg viewBox="0 0 360 240" aria-hidden="true" focusable="false">
+<rect width="360" height="240" rx="18" fill="#123f55"/>
+<circle cx="292" cy="46" r="22" fill="#f3c969"/>
+<path d="M0 132c60-18 120-18 180-6s120 10 180-4v118H0z" fill="#3f8f5f"/>
+<path d="M0 150c70-10 140-6 210 2s110 4 150-2v90H0z" fill="#2f7a50"/>
+<rect x="0" y="168" width="360" height="72" fill="#6b4f3a"/><rect x="0" y="168" width="360" height="6" fill="#57402f"/>
+<g><rect x="46" y="86" width="96" height="66" fill="#f6efe4"/><path d="M36 90l58-42 58 42z" fill="#c4573f"/><rect x="58" y="104" width="24" height="20" rx="2" fill="#9fd3e6"/><rect x="104" y="112" width="22" height="40" rx="2" fill="#0b5c7a"/><rect x="120" y="56" width="10" height="22" fill="#8d3b2b"/></g>
+<g><rect x="250" y="96" width="8" height="40" fill="#5a3d2b"/><circle cx="254" cy="84" r="26" fill="#4fa36a"/><circle cx="238" cy="96" r="16" fill="#3f8f5f"/></g>
+<path d="M126 152v26h44" fill="none" stroke="#c9d6dc" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="166" y="180" width="92" height="44" rx="22" fill="#e9f4f8" stroke="#9fd3e6" stroke-width="3"/><path d="M212 182v40" stroke="#9fd3e6" stroke-width="3"/>
+<path d="M172 206c8-5 14 5 22 0s14 5 18 0" fill="none" stroke="#7fb9cc" stroke-width="3" stroke-linecap="round"/>
+<rect x="190" y="160" width="12" height="22" fill="#e9f4f8" stroke="#9fd3e6" stroke-width="2"/>
+<path d="M258 200h30 M288 192v20 M296 186h52 M296 200h52 M296 214h52" stroke="#c9d6dc" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 6"/>
+<g fill="#9fe0d0"><circle cx="70" cy="200" r="3"/><circle cx="110" cy="214" r="2"/><circle cx="30" cy="222" r="2"/></g>
+</svg>
+<form class="entree" action="/controle-spanc/vente-immobiliere/" method="get" aria-labelledby="t-entree" data-cta="accueil-entree">
+<h2 id="t-entree">En 2 questions</h2>
+<label for="e-commune"><strong>1. Commune ou code postal</strong></label>
+<input id="e-commune" type="text" autocomplete="off" placeholder="ex. 60350 ou Attichy" aria-describedby="e-aide">
+<fieldset><legend><strong>2. Votre projet</strong></legend>
+<ul class="projets">
+<li><button name="projet" value="vente">Je vends<span>Mon rapport SPANC sera-t-il valable à la signature ?</span></button></li>
+<li><button name="projet" value="achat">J'achète<span>Ce que dit le rapport et ce qui m'attend</span></button></li>
+<li><button name="projet" value="vidange">Je fais vidanger<span>Quand, et qui figure sur la liste officielle</span></button></li>
+</ul></fieldset>
+<p class="mini" id="e-aide">Gratuit, sans inscription. Votre commune n'est pas transmise : vous la confirmez sur la page suivante.</p>
+</form>
+<ul class="chiffres" aria-label="Couverture des données">
+<li><b>1 265</b>communes de l'Oise et de l'Eure</li>
+<li><b>37</b>SPANC identifiés</li>
+</ul>
+<p class="mini">Communes et SPANC couverts par le simulateur : export du 13/11/2026. Rattachement commune → SPANC établi à partir des bases publiques BANATIC et SISPEA.</p>
+</section>
+
+<ul class="ras" aria-label="Nos engagements">
+<li><svg width="26" height="26" color="#0b5c7a" aria-hidden="true" focusable="false"><use href="#i-src"/></svg><span>Chaque règle renvoie à sa source officielle.</span></li>
+<li><svg width="26" height="26" color="#0b5c7a" aria-hidden="true" focusable="false"><use href="#i-gratuit"/></svg><span>Gratuit et sans inscription</span></li>
+<li><svg width="26" height="26" color="#0b5c7a" aria-hidden="true" focusable="false"><use href="#i-cookie"/></svg><span>Aucun cookie de mesure d'audience ni de publicité</span></li>
+<li><svg width="26" height="26" color="#0b5c7a" aria-hidden="true" focusable="false"><use href="#i-indep"/></svg><span>Mon Vidangeur ne met pas en relation avec des entreprises et ne perçoit aucune commission.</span></li>
+</ul>
+
+<section class="ex" aria-labelledby="t-ex">
+<h2 id="t-ex"><span class="badge">Exemple</span> Ce que vous obtenez pour Attichy (60350)</h2>
+<ul>
+<li><strong>Le service compétent</strong> : CC des Lisières de l&#39;Oise.</li>
+<li><strong>Son tarif publié</strong> pour le contrôle en cas de vente : 250 € TTC, selon son rapport annuel du service (RPQS) (relevé le 27/10/2026).</li>
+<li><strong>La règle</strong> : pour vendre, le rapport doit avoir moins de 3 ans le jour de l'acte authentique.</li>
+</ul>
+<p class="lien-seul"><a href="#e-commune">Essayer pour ma commune ↑</a></p>
+</section>
 <h2>Votre fosse aujourd'hui</h2>
 <ul class="tuiles">
-<li><a href="/urgence/" class="t-urgence">⚠ Urgence : ça déborde, ça refoule, ça sent</a></li>
-<li><a href="/vidange-fosse-septique/">Vidange : quand et par qui</a></li>
-<li><a href="/mise-aux-normes-assainissement/">Travaux : rapport non conforme, mise aux normes</a></li>
+<li><a href="/urgence/" class="t-urgence">⚠ Urgence : ça déborde, ça refoule, ça sent<svg width="36" height="36" aria-hidden="true" focusable="false"><use href="#i-urg"/></svg><span>Urgence fosse septique : débordement, refoulement, odeurs — que faire</span></a></li>
+<li><a href="/vidange-fosse-septique/">Vidange : quand et par qui<svg width="36" height="36" aria-hidden="true" focusable="false"><use href="#i-cuve"/></svg><span>Vidange de fosse septique : quand, par qui, comment vérifier l&#39;agrément</span></a></li>
+<li><a href="/mise-aux-normes-assainissement/">Travaux : rapport non conforme, mise aux normes<svg width="36" height="36" aria-hidden="true" focusable="false"><use href="#i-travaux"/></svg><span>Mise aux normes d&#39;une fosse septique : délais, étapes, filières</span></a></li>
 </ul>
 <p>Bouchon, écoulement qui ne se fait plus sans fosse pleine : <a href="/curage-debouchage-fosse-septique/">Curage et débouchage d'une fosse ou d'un épandage</a>.</p>
 
 <h2>Par où commencer</h2>
-<ul>
-<li><a href="/controle-spanc/vente-immobiliere/"><strong>Simulateur : mon rapport SPANC sera-t-il valable le jour de la vente ?</strong></a><br>Date du contrôle et date prévue de l'acte : vous savez tout de suite s'il faut un nouveau contrôle. Le service à contacter et, quand il est publié, le tarif du contrôle s'affichent pour les communes couvertes.</li>
-<li><a href="/guides/checklist-vente-achat-maison-fosse-septique/"><strong>Checklist vente ou achat</strong></a><br>Ce que font le vendeur, l'acheteur et le notaire ou l'agent, étape par étape. Aussi en PDF à imprimer, gratuit et sans inscription.</li>
-<li><a href="/controle-spanc/"><strong>Le contrôle SPANC</strong></a><br>À quoi il sert, quand il a lieu, ce que contient le rapport.</li>
-<li><a href="/guides/"><strong>Tous les guides</strong></a><br>Vendre, acheter, comprendre un rapport non conforme.</li>
+<section class="mea" aria-labelledby="t-simu">
+<div>
+<h3 id="t-simu"><a href="/controle-spanc/vente-immobiliere/"><strong>Simulateur : mon rapport SPANC sera-t-il valable le jour de la vente ?</strong></a></h3>
+<p>Date du contrôle et date prévue de l'acte : vous savez tout de suite s'il faut un nouveau contrôle. Le service à contacter et, quand il est publié, le tarif du contrôle s'affichent pour les communes couvertes.</p>
+<p class="cta-fin"><a class="bouton" href="/controle-spanc/vente-immobiliere/">Lancer le simulateur →</a></p>
+</div>
+<svg viewBox="0 0 240 180" aria-hidden="true" focusable="false"><rect x="20" y="16" width="200" height="148" rx="16" fill="#fff"/><rect x="20" y="16" width="200" height="34" rx="16" fill="#0b5c7a"/><rect x="20" y="36" width="200" height="14" fill="#0b5c7a"/><circle cx="60" cy="16" r="6" fill="#0a3346"/><circle cx="180" cy="16" r="6" fill="#0a3346"/><g fill="#d5dde1"><rect x="40" y="64" width="24" height="18" rx="4"/><rect x="74" y="64" width="24" height="18" rx="4"/><rect x="108" y="64" width="24" height="18" rx="4"/><rect x="142" y="64" width="24" height="18" rx="4"/><rect x="176" y="64" width="24" height="18" rx="4"/><rect x="40" y="92" width="24" height="18" rx="4"/><rect x="74" y="92" width="24" height="18" rx="4"/><rect x="142" y="92" width="24" height="18" rx="4"/><rect x="176" y="92" width="24" height="18" rx="4"/><rect x="40" y="120" width="24" height="18" rx="4"/><rect x="74" y="120" width="24" height="18" rx="4"/></g><rect x="108" y="92" width="24" height="18" rx="4" fill="#9fe0d0"/><circle cx="178" cy="138" r="30" fill="#2f7a50"/><path d="M164 138l10 10 18-20" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</section>
+<ul class="grille">
+<li><a href="/guides/checklist-vente-achat-maison-fosse-septique/"><strong>Checklist vente ou achat</strong><svg width="36" height="36" aria-hidden="true" focusable="false"><use href="#i-spanc"/></svg><span>Ce que font le vendeur, l'acheteur et le notaire ou l'agent, étape par étape. Aussi en PDF à imprimer, gratuit et sans inscription.</span></a></li>
+<li><a href="/controle-spanc/"><strong>Le contrôle SPANC</strong><svg width="36" height="36" aria-hidden="true" focusable="false"><use href="#i-src"/></svg><span>À quoi il sert, quand il a lieu, ce que contient le rapport.</span></a></li>
+<li><a href="/guides/"><strong>Tous les guides</strong><svg width="36" height="36" aria-hidden="true" focusable="false"><use href="#i-guide"/></svg><span>Vendre, acheter, comprendre un rapport non conforme.</span></a></li>
 </ul>
 
-<h2>Guides selon votre situation</h2>
+<h2>Comment ça marche</h2>
+<ol class="etapes">
+<li><b>1</b><span><strong>Choisissez votre situation</strong> : urgence, vidange, vente ou travaux.</span></li>
+<li><b>2</b><span><strong>Lisez la règle et sa source</strong> : service-public.gouv.fr, Légifrance, votre SPANC.</span></li>
+<li><b>3</b><span><strong>Contactez le bon interlocuteur</strong> : SPANC, mairie, notaire, vidangeur agréé ou installateur.</span></li>
+</ol>
+
+<div class="duo">
+<section aria-labelledby="t-guides">
+<h2 id="t-guides">Guides selon votre situation</h2>
 <ul>
 <li><a href="/guides/vendre-maison-fosse-septique/">Vendre une maison avec fosse septique</a> : le rapport à fournir, sa validité et les démarches avant la promesse.</li>
 <li><a href="/guides/acheter-maison-assainissement-non-conforme/">Acheter une maison dont l'assainissement est non conforme</a> : ce que dit le rapport, le délai de travaux et ce qui se négocie.</li>
@@ -74,16 +153,41 @@ td>a.lien-cellule{display:inline-flex;align-items:center;min-height:44px}
 <li><a href="/guides/micro-station-entretien-pannes/">Entretien et pannes d'une micro-station</a> : vidange, alarme, odeurs, contrôle du SPANC.</li>
 <li><a href="/guides/quand-vidanger-fosse-septique/">Quand vidanger une fosse septique ?</a> : la règle des 50 % et les signes à surveiller.</li>
 </ul>
-
-<h2>Les repères à connaître</h2>
+</section>
+<section aria-labelledby="t-reperes">
+<h2 id="t-reperes">Les repères à connaître</h2>
 <ul>
 <li>Pour vendre, le rapport du SPANC doit avoir moins de 3 ans le jour de la signature de l'acte authentique (<a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F31685" rel="noopener">source : service-public.gouv.fr, fiche F31685</a>).</li>
 <li>Si le rapport en vigueur à la signature constate une non-conformité appelant des travaux, c'est l'acquéreur, devenu propriétaire, qui doit les faire réaliser au plus tard 1 an après l'acte, sauf si le vendeur les a faits avant la vente. Qui en paie le coût peut se négocier entre vendeur et acheteur (<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049398848" rel="noopener">source : Légifrance, code de la santé publique</a>).</li>
 <li>Le contrôle est réalisé par le SPANC, le service public d'assainissement non collectif de votre commune ou intercommunalité, et non par un diagnostiqueur immobilier.</li>
 </ul>
+</section>
+</div>
 
-<h2>Territoires couverts</h2>
-<p>Les guides et la checklist valent partout en France. Le simulateur est en phase pilote : il indique le service compétent et, s'il est publié, <a href="/prix/controle-spanc/">le tarif du contrôle</a> pour les communes de l'Oise et de l'Eure. Les listes préfectorales sont reprises ici : <a href="/vidangeurs-agrees/oise/">les vidangeurs agréés de l'Oise</a> et <a href="/vidangeurs-agrees/eure/">les vidangeurs agréés de l'Eure</a>. Commune par commune (SPANC, tarif, vidangeurs les plus proches) : <a href="/vidange-fosse-septique/oise/">80 communes de l'Oise</a>. Ailleurs, votre mairie vous indique le SPANC à contacter.</p>
+<section id="territoires" aria-labelledby="t-terr">
+<h2 id="t-terr">Territoires couverts</h2>
+<div class="duo">
+<div>
+<p>Les guides et la checklist valent partout en France. Le simulateur est en phase pilote : il indique le service compétent et, s'il est publié, <a href="/prix/controle-spanc/">le tarif du contrôle</a> pour les communes de l'Oise et de l'Eure. Les listes préfectorales sont reprises ici : <a href="/vidangeurs-agrees/oise/">les vidangeurs agréés de l'Oise</a> et <a href="/vidangeurs-agrees/eure/">les vidangeurs agréés de l'Eure</a>. Commune par commune (SPANC, tarif, vidangeurs les plus proches) : <a href="/vidange-fosse-septique/oise/">80 communes de l&#39;Oise</a>. Ailleurs, votre mairie vous indique le SPANC à contacter.</p>
+<ul class="grille">
+<li><a href="/controle-spanc/vente-immobiliere/"><strong>Oise (60)</strong><span>680 communes, 22 SPANC couverts par le simulateur.</span></a></li>
+<li><a href="/controle-spanc/vente-immobiliere/"><strong>Eure (27)</strong><span>585 communes, 15 SPANC couverts par le simulateur.</span></a></li>
+</ul>
+</div>
+<svg viewBox="0 0 300 220" role="img" aria-labelledby="carte-t"><title id="carte-t">Carte schématique de l'Eure et de l'Oise</title>
+<path d="M18 92l30-30 40-8 20 14 22-4 10 26-8 30 6 28-26 24-34-2-26 18-24-14 6-30-20-24z" fill="#cfe9e2" stroke="#0b5c7a" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M150 50l38-22 46 6 34-8 16 26-8 34 10 26-30 14-46-4-36 10-26-16 6-30z" fill="#9fd3e6" stroke="#0b5c7a" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="78" y="118" font-size="17" font-weight="700" fill="#0a3346" text-anchor="middle">Eure</text><text x="78" y="138" font-size="13" fill="#1b2a33" text-anchor="middle">27</text>
+<text x="218" y="84" font-size="17" font-weight="700" fill="#0a3346" text-anchor="middle">Oise</text><text x="218" y="104" font-size="13" fill="#1b2a33" text-anchor="middle">60</text>
+<circle cx="200" cy="190" r="5" fill="#1b2a33"/><text x="210" y="195" font-size="12" fill="#1b2a33">Paris</text>
+</svg>
+</div>
+</section>
+
+<section class="urg" aria-labelledby="t-urg">
+<h2 id="t-urg">Danger immédiat : 112</h2>
+<p><strong>En cas de danger immédiat (malaise, intoxication, effondrement), appelez le 112.</strong> Le 112 est le numéro d'urgence européen, joignable depuis un fixe ou un portable (service-public.gouv.fr, fiche F33954, consultée le 27/10/2026). Selon la situation : <a href="/urgence/">les urgences fosse septique</a>.</p>
+</section>
 
 <h2>Qui sommes-nous</h2>
 <p>Mon Vidangeur est un site d'information indépendant, édité par une société privée (voir les <a href="/mentions-legales/">mentions légales</a>). Ce n'est ni un service public, ni un SPANC : pour votre rapport, vos délais et le tarif en vigueur, c'est votre SPANC qui fait foi ; pour votre promesse ou votre acte, demandez conseil à votre notaire.</p>

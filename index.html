@@ -14,88 +14,169 @@
 <meta property="og:title" content="Fosse septique : contrôle SPANC et vente">
 <meta property="og:description" content="Fosse septique et contrôle SPANC : vendre ou acheter une maison, rapport non conforme, délais et démarches. Guides sourcés, simulateur et checklist.">
 <meta name="twitter:card" content="summary">
+<link rel="preload" href="/assets/fonts/public-sans-sub.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-/* CSS critique inline (< 2 Ko) : pas de requête bloquante, pas de webfont -> LCP/CLS maîtrisés */
-:root{--t:#1b2a33;--a:#0b5c7a;--f:#f4f7f8}*{box-sizing:border-box}body{margin:0;font:1rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t)}
-header,main,footer{max-width:60rem;margin:auto;padding:1rem}a{color:var(--a)}table{border-collapse:collapse;width:100%;font-size:.95rem}
+:root{--n:#0b1f3a;--p:#1747a6;--a:#1747a6;--y:#ffc233;--f:#f1f5fb;--u:#b3261e;--t:#1c2733;--m:#4a5868}*{box-sizing:border-box}body{margin:0;font:1.0625rem/1.6 MVPS,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t)}
+main{max-width:60rem;margin:auto;padding:1.5rem 1rem 3rem}a{color:var(--a)}table{border-collapse:collapse;width:100%;font-size:.95rem}
 th,td{border:1px solid #d5dde1;padding:.4rem .5rem;text-align:left;vertical-align:top}th{background:var(--f)}
-.evitement{position:absolute;left:-999px;top:0;background:#fff;padding:.5rem}.evitement:focus{left:1rem}.bref{background:var(--f);border-left:4px solid var(--a);padding:.75rem 1rem}
+.evitement{position:absolute;left:-999px;top:0;background:#fff;padding:.5rem}.evitement:focus{left:1rem}.bref{background:var(--f);border-left:4px solid var(--y);border-radius:0 .9rem .9rem 0;padding:.9rem 1.1rem}
 .table-wrap{overflow-x:auto}form label{display:block;margin:.5rem 0}input,select,textarea{font:inherit;padding:.4rem;width:100%;max-width:28rem}
-input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px solid #d5dde1;margin:.75rem 0}.carte{border:1px solid #d5dde1;border-left:4px solid var(--a);padding:.5rem 1rem;margin:1rem 0}.suggestions{list-style:none;padding:0}.lien{background:none;color:var(--a);text-decoration:underline;padding:.2rem 0;border:0;cursor:pointer}.bouton2{display:inline-block;border:1px solid var(--a);padding:.3rem .6rem;text-decoration:none}blockquote{margin-inline:0}.cta-fin{margin:1.5rem 0}a.bouton{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:.6rem 1.1rem;background:var(--a);color:#fff;text-decoration:none;border-radius:4px;font-weight:600}a.bouton:hover{background:#08465d}button{font:inherit;padding:.5rem 1rem;background:var(--a);color:#fff;border:0}
-/* Mobile 375 px : pas de débordement horizontal (URL longues, tableaux) ; focus visible ; cibles tactiles ≥ 44 px (nav, tuiles, simulateur) */
-main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.menu{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;column-gap:.25rem}header nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .55rem;font-weight:600}header nav li:first-child a{padding-left:0}header nav a.nav-urgence{color:#a3262a}.evitement{min-height:44px;display:inline-flex;align-items:center}.tuiles{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.6rem}.tuiles a{display:flex;align-items:center;min-height:44px;padding:.6rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);text-decoration:none;font-weight:600}.tuiles a.t-urgence{border-left-color:#a3262a;color:#a3262a}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
-/* Simulateur : avec JavaScript actif, sa hauteur est réservée avant l'affichage par le script (évite le décalage de mise en page) ; sans JavaScript, il reste masqué et le bloc noscript s'affiche. */
+input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px solid #d5dde1;margin:.75rem 0}.carte{border:1px solid #d5dde1;border-left:4px solid var(--a);padding:.5rem 1rem;margin:1rem 0}.suggestions{list-style:none;padding:0}.lien{background:none;color:var(--a);text-decoration:underline;padding:.2rem 0;border:0;cursor:pointer}.bouton2{display:inline-block;border:1px solid var(--a);padding:.3rem .6rem;text-decoration:none}blockquote{margin-inline:0}.cta-fin{margin:1.5rem 0}a.bouton{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:.6rem 1.3rem;background:var(--a);color:#fff;text-decoration:none;border-radius:99px;font-weight:700}a.bouton:hover{background:var(--n)}button{font:inherit;padding:.5rem 1rem;background:var(--a);color:#fff;border:0;border-radius:.6rem}
+main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.evitement{min-height:44px;display:inline-flex;align-items:center}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
 @media (scripting:enabled){ #simulateur-vente[hidden]{display:block;visibility:hidden}}
-/* Repli du simulateur (v4.4) : si le script ne s'est pas chargé après 3 s (échec ou lenteur), un message s'affiche DANS la hauteur réservée (position absolue : aucun décalage) ; il disparaît dès que le script affiche le simulateur. */
 .simu-repli{display:none}@media (scripting:enabled){ #simulateur-vente[hidden]{position:relative}#simulateur-vente[hidden]>.simu-repli{display:block;position:absolute;inset:0 0 auto 0;margin:0;padding:.75rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);background:#fff;animation:simu-repli 0s 3s both}}@keyframes simu-repli{from{visibility:hidden}to{visibility:visible}}
-/* Cibles tactiles ≥ 44 px (suite). Fil d'Ariane : padding vertical sur l'inline (aucun déplacement de mise en page) ; cartes du simulateur, sommaire d'ancres et pied de page : inline-flex min 44 px. Liens au fil d'une phrase du corps : exception WCAG 2.5.8 (inchangés). */
 nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#"],footer a{display:inline-flex;align-items:center;min-height:44px}
-/* v4.4 (a) : lien seul dans une cellule de tableau (colonne « Page » de /urgence/) : cible ≥ 44 px. */
 td>a.lien-cellule{display:inline-flex;align-items:center;min-height:44px}
-/* Mesure d'audience (textes v4.4, avec SITE_MESURE=1) : bouton d'opposition de /confidentialite/, cible ≥ 44 px. */
 .mesure-opposition button{min-height:44px}
+@font-face{font-family:MVPS;src:url(/assets/fonts/public-sans-sub.woff2) format("woff2");font-weight:400 800;font-display:swap}
+h1,h2,h3{color:var(--n);line-height:1.15;letter-spacing:-.015em}h1{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800}h2{font-size:clamp(1.4rem,2.4vw,1.85rem);margin-top:2.2rem}th{color:var(--n)}
+.top{background:var(--n);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.75rem clamp(1rem,4vw,3rem)}
+.logo{display:inline-flex;align-items:center;gap:.6rem;min-height:44px;color:#fff;font-weight:800;font-size:1.2rem;text-decoration:none}
+.menu{display:flex;flex-wrap:wrap;gap:.25rem;list-style:none;margin:0;padding:0}.top nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 1rem;border-radius:99px;color:#fff;font-weight:600;text-decoration:none}.top nav a:hover,.top nav a[aria-current]{background:#ffffff26}.top nav .nav-urgence{background:var(--u)}.nav-menu{display:none}
+.pied{background:var(--n);color:#c9d5e6;font-size:.9rem}.pied>div{max-width:78rem;margin:auto;padding:2.5rem 1rem}.pied a{color:#fff;margin-right:1rem}
+@media(max-width:47.99rem){.top .menu li{display:none}.top .menu li.nav-menu,.top .menu li:has(.nav-urgence){display:block}.top nav a{padding:0 .9rem}.logo{font-size:1.05rem}}
+img{max-width:100%;height:auto;display:block}main{max-width:none;padding:0}.top{position:absolute;inset:0 0 auto;z-index:3;background:none;padding:1rem clamp(1rem,4vw,3rem)}.hero{position:relative;background:var(--n);color:#fff;min-height:clamp(40rem,calc(100vh - 4.5rem),54rem);display:flex;align-items:center}.hero picture{position:absolute;inset:0}.hero-img{width:100%;height:100%;object-fit:cover;object-position:65% 50%}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b1f3af2,#0b1f3ab3 40%,#0b1f3a00 75%),linear-gradient(0deg,#0b1f3a99,#0b1f3a00 35%)}.hero-in{position:relative;z-index:1;width:100%;max-width:82rem;margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,5rem);align-items:center;padding:7rem clamp(1rem,4vw,3rem) 6rem}.kick{display:inline-flex;gap:.5rem;align-items:center;margin:0 0 1.25rem;font-weight:700;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;flex:none}.kick:before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--y)}.hero h1{color:#fff;margin:0 0 1.25rem;font-size:clamp(2.15rem,4.4vw,4rem);line-height:1.04;letter-spacing:-.025em;font-weight:800}.hero .bref{background:none;border:0;border-radius:0;padding:0;font-size:clamp(1.05rem,1.4vw,1.3rem);max-width:34rem;color:#e4ebf5;margin:0 0 1.75rem}.urg-lien{display:inline-flex;gap:.6rem;align-items:center;min-height:44px;padding:.4rem 1.1rem .4rem .5rem;border-radius:99px;background:#ffffff1f;color:#fff;font-weight:700;text-decoration:none}.urg-lien svg{background:var(--u);border-radius:50%;padding:4px;width:30px;height:30px}.entree{background:#fff;color:var(--t);border-radius:1.5rem;padding:clamp(1.25rem,2.5vw,2rem);box-shadow:0 40px 80px -30px #000a}.entree h2{margin:0 0 1.1rem;font-size:1.4rem;line-height:1.2;color:var(--n)}.entree label,.entree legend{display:block;padding:0;margin:0 0 .45rem;font-weight:700;font-size:.95rem;color:var(--n)}.entree input{max-width:none;width:100%;min-height:58px;margin:0 0 1.2rem;padding:0 1.1rem;font:inherit;font-size:1.1rem;border:2px solid #7d8ba0;border-radius:.9rem}.entree input:focus{border-color:var(--p);outline:4px solid #1747a640}.entree fieldset{border:0;margin:0;padding:0}.projets{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;list-style:none;margin:0;padding:0}.projets button{width:100%;height:100%;min-height:64px;padding:.7rem .8rem;border:0;border-radius:.9rem;background:var(--p);color:#fff;font:inherit;font-weight:800;text-align:left;cursor:pointer}.projets button:hover{background:var(--n)}.projets span{display:block;margin-top:.2rem;font-size:.8rem;font-weight:400;line-height:1.35;color:#dce6f7}.mini{margin:.9rem 0 0;font-size:.85rem;color:var(--m)}.apercu{display:flex;gap:.7rem;align-items:center;margin-top:1rem;padding:.8rem 1rem;border-radius:.9rem;background:var(--f);color:var(--t);font-size:.9rem;line-height:1.4;text-decoration:none}.badge{display:inline-block;margin:0;padding:.15rem .6rem;border-radius:99px;background:var(--y);color:var(--n);font-weight:800;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}.chiffres,.bloc,.exemple,.duo,.urg{width:calc(100% - 2rem);max-width:78rem;margin:0 auto}.chiffres{position:relative;z-index:2;margin-top:-3.5rem;padding:2rem clamp(1.25rem,3vw,2.75rem);background:#fff;border-radius:1.5rem;box-shadow:0 30px 60px -30px #0b1f3a80}.kpi,.ras,.tuiles,.photos,.etapes,.deps,.liens{list-style:none;margin:0;padding:0;display:grid;gap:1.25rem}.kpi{grid-template-columns:repeat(3,1fr)}.kpi b{display:block;font-size:clamp(2.2rem,3.5vw,3.1rem);line-height:1.05;color:var(--p);font-weight:800;letter-spacing:-.02em}.kpi span,.ras{color:var(--m);font-size:.92rem;line-height:1.45}.src{padding-top:.9rem;border-top:1px solid #e1e7ef}.ras{grid-template-columns:repeat(4,1fr);margin-top:1.25rem}.ras li{display:flex;gap:.6rem}.ras svg{flex:none;color:var(--p)}.exemple{margin-top:4.5rem;display:grid;grid-template-columns:.9fr 1.1fr;gap:2.5rem;padding:clamp(1.5rem,4vw,3rem);border-radius:1.5rem;background:var(--n);color:#d9e2ef}.exemple h2{color:#fff}.exemple a{color:#fff}.ex-res{margin:0;display:grid;gap:.9rem}.ex-res div{padding:1rem 1.25rem;border-radius:1rem;background:#ffffff12}dt{font-size:.85rem;color:#b8c6da}dd{margin:0;color:#fff;font-weight:600}dd b{color:var(--y);font-size:1.5rem}small{display:block;font-weight:400;font-size:.82rem;color:#b8c6da}.ex-res{grid-row:span 2}.ex-fin{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;align-self:end}.exemple a.bouton{display:inline-flex;align-items:center;min-height:48px;padding:.6rem 1.4rem;border-radius:99px;background:var(--y);color:var(--n)!important;font-weight:800;text-decoration:none}.bloc{padding-top:4.5rem}h2{margin:0 0 1.5rem;font-size:clamp(1.65rem,2.6vw,2.3rem);line-height:1.12;letter-spacing:-.015em;color:var(--n)}.tuiles,.photos,.etapes{grid-template-columns:repeat(3,1fr)}.tuiles a,.photos a{display:flex;flex-direction:column;gap:.4rem;height:100%;padding:1.4rem;border:1px solid #dbe2ec;border-radius:1.25rem;color:var(--t);text-decoration:none;background:#fff}.tuiles a:hover,.photos a:hover{border-color:var(--p);box-shadow:0 18px 40px -24px #0b1f3a80}.tuiles svg{color:var(--p);order:-1}.photos img{order:-1}.tuiles strong,.photos strong{font-size:1.12rem;color:var(--n)}.tuiles span,.photos span{color:var(--m);font-size:.95rem}.tuiles .t-urgence{background:#fdf1f0;border-color:#f3c9c5}.t-urgence svg,.t-urgence strong{color:var(--u)!important}.photos a{padding:0;overflow:hidden}.photos img{aspect-ratio:3/2;object-fit:cover;width:100%}.photos strong,.photos span{padding:0 1.4rem}.photos span{padding-bottom:1.4rem}.etapes li{display:flex;gap:1rem;padding:1.4rem;border-radius:1.25rem;background:var(--f)}.etapes b{flex:none;display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;background:var(--y);color:var(--n);font-size:1.1rem}.duo{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding-top:4.5rem}.liens{gap:.75rem}.liens li{padding:1rem 1.2rem;border-left:4px solid var(--y);background:var(--f);border-radius:0 1rem 1rem 0}.liens a{font-weight:700}.terr{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}.deps{grid-template-columns:1fr 1fr;margin-top:1.25rem}.deps a{display:block;height:100%;padding:1.25rem;border-radius:1.25rem;background:var(--n);color:#fff;text-decoration:none}.deps strong{display:block;font-size:1.3rem}.deps span{color:#c9d5e6;font-size:.92rem}.carte-terr{width:100%;max-width:26rem}.urg{margin-top:4.5rem;padding:1.5rem 2rem;border:2px solid var(--u);border-radius:1.5rem;background:#fdf1f0}.urg h2{color:var(--u);margin-bottom:.5rem}.qui{padding-bottom:4rem;max-width:52rem;margin-left:max(1rem,calc((100% - 78rem)/2))}.pied{background:var(--n);color:#c9d5e6;font-size:.9rem}.pied div{max-width:78rem;margin:auto;padding:2.5rem 1rem}.pied a{color:#fff;display:inline-flex;align-items:center;min-height:44px;margin-right:1rem}@media(max-width:60rem){.hero-in{grid-template-columns:1fr}.ras{grid-template-columns:1fr 1fr}.photos{grid-template-columns:1fr 1fr}}@media(max-width:47.99rem){.hero{display:block;min-height:0}.hero picture{bottom:auto;height:24rem}.hero:after{background:linear-gradient(180deg,#0b1f3a66,#0b1f3a00 20%,#0b1f3a00 30%,#0b1f3a 24rem)}.hero-in{padding:11.5rem 1rem 5rem;gap:1.5rem}.urg-lien{display:none}.hero h1{font-size:2.15rem;margin-bottom:.9rem}.kick{display:none}.bref{margin-bottom:1.1rem}.projets span,.apercu{display:none}.projets button{text-align:center;padding:.5rem}.kpi,.ras,.tuiles,.photos,.etapes,.duo,.terr,.deps,.exemple{grid-template-columns:1fr}.kpi{gap:1rem}.qui{margin:auto}.kpi{grid-template-columns:repeat(3,1fr);gap:.75rem}.kpi b{font-size:2rem}.kpi span{font-size:.8rem}.ex-res{grid-row:auto}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://monvidangeur.fr/#org","name":"Mon Vidangeur","url":"https://monvidangeur.fr/","legalName":"LES EVABRES","telephone":"+33664841784","address":{"@type":"PostalAddress","streetAddress":"87 rue Carnot","postalCode":"92300","addressLocality":"Levallois-Perret","addressCountry":"FR"},"contactPoint":{"@type":"ContactPoint","contactType":"contact","email":"contact@monvidangeur.fr","availableLanguage":"fr"}},{"@type":"WebSite","@id":"https://monvidangeur.fr/#website","name":"Mon Vidangeur","url":"https://monvidangeur.fr/","inLanguage":"fr-FR","publisher":{"@id":"https://monvidangeur.fr/#org"}}]}</script>
 </head>
 <body data-indexable="oui">
 <a class="evitement" href="#contenu">Aller au contenu</a>
-<header><nav aria-label="Menu principal"><ul class="menu">
-<li><a href="/" aria-current="page"><span class="vh">Mon Vidangeur, </span>Accueil</a></li>
+<header class="top"><a class="logo" href="/" aria-current="page"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true" focusable="false"><rect width="36" height="36" rx="10" fill="#ffc233"/><path d="M18 7c4.5 5.5 7.5 9.5 7.5 13.5a7.5 7.5 0 01-15 0C10.5 16.5 13.5 12.5 18 7z" fill="#0b1f3a"/></svg><span>Mon Vidangeur</span><span class="vh">, accueil</span></a><nav aria-label="Menu principal"><ul class="menu">
 <li><a href="/vidange-fosse-septique/">Vidange</a></li>
-<li><a href="/urgence/" class="nav-urgence">Urgence</a></li>
 <li><a href="/controle-spanc/">Contrôle SPANC</a></li>
 <li><a href="/guides/">Guides</a></li>
+<li><a href="/urgence/" class="nav-urgence">Urgence</a></li>
+<li class="nav-menu"><a href="/#menu">Menu</a></li>
 </ul></nav></header>
 <main id="contenu" tabindex="-1">
-<h1>Fosse septique : vendre, acheter, comprendre le contrôle SPANC</h1>
-<p class="bref">Vous vendez ou achetez une maison qui n'est pas raccordée au tout-à-l'égout ? Ce site vous aide à savoir si le rapport du SPANC sera encore valable le jour de la signature, qui contacter et quoi préparer. Chaque règle renvoie à sa source officielle.</p>
-<h2>Votre fosse aujourd'hui</h2>
+
+<svg class="vh" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-src" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 16h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+<symbol id="i-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 12.5l2.5 2.5L16 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-bouclier" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-indep" viewBox="0 0 24 24"><path d="M4 20h16M6 20V10M18 20V10M10 20v-6h4v6M3 10l9-6 9 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+<symbol id="i-urg" viewBox="0 0 32 32"><path d="M16 4l13 23H3z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 13v6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="16" cy="23" r="1.7" fill="currentColor"/></symbol>
+<symbol id="i-cuve" viewBox="0 0 32 32"><rect x="3" y="12" width="26" height="14" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12v14M8 8h6v4M19 19h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-travaux" viewBox="0 0 32 32"><path d="M5 27h22M9 27V15l7-6 7 6v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 4l6 6-3 3-6-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+</defs></svg>
+<section class="hero" aria-labelledby="titre">
+<picture><source media="(max-width:47.99rem)" srcset="/assets/img/hero-m-480.webp 480w, /assets/img/hero-m-780.webp 780w" sizes="100vw" width="780" height="654"><img class="hero-img" src="/assets/img/hero-960.webp" srcset="/assets/img/hero-960.webp 960w, /assets/img/hero-1600.webp 1600w, /assets/img/hero-2400.webp 2400w" sizes="100vw" width="960" height="614" alt="Village au bord d'un champ de blé, maisons et jardins, dans l'Oise" fetchpriority="high"></picture>
+<div class="hero-in"><div>
+<p class="kick">Site indépendant · Oise (60) · Eure (27)</p>
+<h1 id="titre">Fosse septique : vendre, acheter, comprendre le contrôle SPANC</h1>
+<p class="bref">Vous vendez ou achetez une maison non raccordée au tout-à-l'égout ? Ce site vous aide à savoir si le rapport du SPANC sera encore valable à la signature, qui contacter et quoi préparer.</p>
+<a class="urg-lien" href="/urgence/"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-urg"/></svg><span>Urgence : ça déborde, ça refoule</span></a></div>
+<div><form class="entree" action="/controle-spanc/vente-immobiliere/" method="get" aria-labelledby="t-entree" data-cta="accueil-entree">
+<h2 id="t-entree">Votre situation en 2 questions</h2>
+<label for="e-commune">1. Commune ou code postal</label>
+<input id="e-commune" type="text" autocomplete="off" placeholder="ex. 60350 ou Attichy" aria-describedby="e-aide">
+<fieldset><legend>2. Votre projet</legend>
+<ul class="projets">
+<li><button name="projet" value="vente">Je vends<span>Mon rapport sera-t-il valable à la signature ?</span></button></li>
+<li><button name="projet" value="achat">J'achète<span>Ce que dit le rapport, ce qui m'attend</span></button></li>
+<li><button name="projet" value="vidange">Je fais vidanger<span>Quand, et la liste officielle</span></button></li>
+</ul></fieldset>
+<p class="mini" id="e-aide">Gratuit, sans inscription. Votre commune n'est pas transmise : vous la confirmez sur la page suivante.</p>
+<a class="apercu" href="#exemple"><span class="badge">Exemple</span> <span><b>Attichy (60350)</b> · CC des Lisières de l&#39;Oise · contrôle en cas de vente <b>250 € TTC</b></span></a></form></div>
+</div></section>
+<section class="chiffres" aria-label="Couverture et engagements">
+<ul class="kpi">
+<li><b>1 265</b><span>communes couvertes<br>680 dans l'Oise · 585 dans l'Eure</span></li>
+<li><b>37</b><span>SPANC identifiés<br>22 dans l'Oise · 15 dans l'Eure</span></li>
+<li><b>13/11</b><span>dernier relevé des tarifs<br>publiés par les SPANC (2026)</span></li>
+</ul>
+<p class="mini src">Communes et SPANC couverts par le simulateur : export du 13/11/2026. Rattachement commune → SPANC établi à partir des bases publiques BANATIC et SISPEA. Tarifs publiés par les SPANC : relevé du 22/10 au 13/11/2026.</p>
+<ul class="ras">
+<li><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-src"/></svg><span>Chaque règle renvoie à sa source officielle : service-public.gouv.fr, Légifrance, votre SPANC.</span></li>
+<li><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-indep"/></svg><span>Mon Vidangeur ne met pas en relation avec des entreprises et ne perçoit aucune commission.</span></li>
+<li><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-bouclier"/></svg><span>Aucun cookie de mesure d'audience ni de publicité.</span></li>
+<li><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-ok"/></svg><span>Gratuit et sans inscription.</span></li>
+</ul>
+</section>
+<section id="exemple" class="exemple" aria-labelledby="t-ex">
+<div class="ex-tete"><p class="badge">Exemple</p>
+<h2 id="t-ex">Ce que vous obtenez pour Attichy (60350)</h2>
+<p>Le service compétent, son tarif publié et la règle, chacun avec sa source.</p></div>
+<dl class="ex-res">
+<div><dt>Le service compétent</dt><dd>CC des Lisières de l&#39;Oise</dd></div>
+<div><dt>Son tarif publié pour le contrôle en cas de vente</dt><dd><b>250 € TTC</b> <small>selon son rapport annuel du service (RPQS) (<a href="https://ccloise.com/wp-content/uploads/2024/01/Annexe-DEL2026-100-Rapport-sur-le-Prix-et-la-Qualite-de-Service-du-service-public-dassainissement-non-collectif-2025.pdf" rel="noopener">source : CC des Lisières de l&#39;Oise</a>), relevé le 27/10/2026</small></dd></div>
+<div><dt>La règle</dt><dd>Pour vendre, le rapport doit avoir moins de 3 ans le jour de l'acte authentique <small><a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F31685" rel="noopener">source : service-public.gouv.fr, fiche F31685</a></small></dd></div>
+</dl>
+<p class="ex-fin"><a class="bouton" href="#e-commune">Essayer pour ma commune ↑</a> <small>Le tarif en vigueur est celui que confirme votre SPANC.</small></p>
+</section>
+<section class="bloc" aria-labelledby="t-fosse">
+<h2 id="t-fosse">Votre fosse aujourd'hui</h2>
 <ul class="tuiles">
-<li><a href="/urgence/" class="t-urgence">⚠ Urgence : ça déborde, ça refoule, ça sent</a></li>
-<li><a href="/vidange-fosse-septique/">Vidange : quand et par qui</a></li>
-<li><a href="/mise-aux-normes-assainissement/">Travaux : rapport non conforme, mise aux normes</a></li>
+<li><a href="/urgence/" class="t-urgence"><strong>Urgence : ça déborde, ça refoule, ça sent</strong><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#i-urg"/></svg><span>Débordement, refoulement, odeurs : que faire</span></a></li>
+<li><a href="/vidange-fosse-septique/"><strong>Vidange : quand et par qui</strong><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#i-cuve"/></svg><span>Quand, par qui, comment vérifier l'agrément</span></a></li>
+<li><a href="/mise-aux-normes-assainissement/"><strong>Travaux : rapport non conforme</strong><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#i-travaux"/></svg><span>Mise aux normes : délais, étapes, filières</span></a></li>
 </ul>
-<p>Bouchon, écoulement qui ne se fait plus sans fosse pleine : <a href="/curage-debouchage-fosse-septique/">Curage et débouchage d'une fosse ou d'un épandage</a>.</p>
-
-<h2>Par où commencer</h2>
-<ul>
-<li><a href="/controle-spanc/vente-immobiliere/"><strong>Simulateur : mon rapport SPANC sera-t-il valable le jour de la vente ?</strong></a><br>Date du contrôle et date prévue de l'acte : vous savez tout de suite s'il faut un nouveau contrôle. Le service à contacter et, quand il est publié, le tarif du contrôle s'affichent pour les communes couvertes.</li>
-<li><a href="/guides/checklist-vente-achat-maison-fosse-septique/"><strong>Checklist vente ou achat</strong></a><br>Ce que font le vendeur, l'acheteur et le notaire ou l'agent, étape par étape. Aussi en PDF à imprimer, gratuit et sans inscription.</li>
-<li><a href="/controle-spanc/"><strong>Le contrôle SPANC</strong></a><br>À quoi il sert, quand il a lieu, ce que contient le rapport.</li>
-<li><a href="/guides/"><strong>Tous les guides</strong></a><br>Vendre, acheter, comprendre un rapport non conforme.</li>
+<p>Bouchon, écoulement qui ne se fait plus sans fosse pleine : <a href="/curage-debouchage-fosse-septique/">Curage et débouchage d'une fosse ou d'un épandage</a>.</p></section>
+<section id="controle" class="bloc" aria-labelledby="t-commencer">
+<h2 id="t-commencer">Par où commencer</h2>
+<ul class="photos">
+<li><a href="/guides/checklist-vente-achat-maison-fosse-septique/"><strong>Checklist vente ou achat</strong><img src="/assets/img/vente-400.webp" srcset="/assets/img/vente-400.webp 400w, /assets/img/vente-640.webp 640w" sizes="(min-width:60rem) 22rem, (min-width:40rem) 45vw, 92vw" width="400" height="300" alt="Maquette de maison en bois, clés et contrat posés sur une table" loading="lazy" decoding="async"><span>Ce que font le vendeur, l'acheteur et le notaire, étape par étape. Aussi en PDF à imprimer.</span></a></li>
+<li><a href="/controle-spanc/"><strong>Le contrôle SPANC</strong><img src="/assets/img/achat-400.webp" srcset="/assets/img/achat-400.webp 400w, /assets/img/achat-640.webp 640w" sizes="(min-width:60rem) 22rem, (min-width:40rem) 45vw, 92vw" width="400" height="267" alt="Maison à colombages et son jardin fleuri, en Normandie" loading="lazy" decoding="async"><span>À quoi il sert, quand il a lieu, ce que contient le rapport.</span></a></li>
+<li><a href="/guides/quand-vidanger-fosse-septique/"><strong>Vidange : quand vidanger ?</strong><img src="/assets/img/vidange-400.webp" srcset="/assets/img/vidange-400.webp 400w, /assets/img/vidange-640.webp 640w" sizes="(min-width:60rem) 22rem, (min-width:40rem) 45vw, 92vw" width="400" height="276" alt="Couvercles d'une fosse toutes eaux et ventilation dans un jardin" loading="lazy" decoding="async"><span>Avant que les boues dépassent 50 % du volume utile, sauf mention contraire dans l'avis d'agrément.</span></a></li>
 </ul>
-
-<h2>Guides selon votre situation</h2>
-<ul>
+<p class="suite"><a href="/controle-spanc/vente-immobiliere/">Simulateur : mon rapport SPANC sera-t-il valable le jour de la vente ?</a> · <a href="/guides/">Tous les guides</a></p></section>
+<section class="bloc" aria-labelledby="t-comment">
+<h2 id="t-comment">Comment ça marche</h2>
+<ol class="etapes">
+<li><b>1</b><span><strong>Choisissez votre situation</strong> : urgence, vidange, vente ou travaux.</span></li>
+<li><b>2</b><span><strong>Lisez la règle et sa source</strong> : service-public.gouv.fr, Légifrance, votre SPANC.</span></li>
+<li><b>3</b><span><strong>Contactez le bon interlocuteur</strong> : SPANC, mairie, notaire, vidangeur agréé ou installateur.</span></li>
+</ol></section>
+<div id="guides" class="duo">
+<section aria-labelledby="t-guides">
+<h2 id="t-guides">Guides selon votre situation</h2>
+<ul class="liens">
 <li><a href="/guides/vendre-maison-fosse-septique/">Vendre une maison avec fosse septique</a> : le rapport à fournir, sa validité et les démarches avant la promesse.</li>
 <li><a href="/guides/acheter-maison-assainissement-non-conforme/">Acheter une maison dont l'assainissement est non conforme</a> : ce que dit le rapport, le délai de travaux et ce qui se négocie.</li>
 <li><a href="/guides/rapport-spanc-non-conforme-que-faire/">Rapport SPANC non conforme : que faire ?</a> : lire le rapport, les délais et les démarches.</li>
 <li><a href="/guides/fosse-septique-ou-micro-station/">Fosse septique ou micro-station ?</a> : les deux cadres réglementaires, la vidange, le choix de la filière.</li>
 <li><a href="/guides/micro-station-entretien-pannes/">Entretien et pannes d'une micro-station</a> : vidange, alarme, odeurs, contrôle du SPANC.</li>
 <li><a href="/guides/quand-vidanger-fosse-septique/">Quand vidanger une fosse septique ?</a> : la règle des 50 % et les signes à surveiller.</li>
-</ul>
-
-<h2>Les repères à connaître</h2>
-<ul>
+</ul></section>
+<section aria-labelledby="t-reperes">
+<h2 id="t-reperes">Les repères à connaître</h2>
+<ul class="liens">
 <li>Pour vendre, le rapport du SPANC doit avoir moins de 3 ans le jour de la signature de l'acte authentique (<a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F31685" rel="noopener">source : service-public.gouv.fr, fiche F31685</a>).</li>
 <li>Si le rapport en vigueur à la signature constate une non-conformité appelant des travaux, c'est l'acquéreur, devenu propriétaire, qui doit les faire réaliser au plus tard 1 an après l'acte, sauf si le vendeur les a faits avant la vente. Qui en paie le coût peut se négocier entre vendeur et acheteur (<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049398848" rel="noopener">source : Légifrance, code de la santé publique</a>).</li>
 <li>Le contrôle est réalisé par le SPANC, le service public d'assainissement non collectif de votre commune ou intercommunalité, et non par un diagnostiqueur immobilier.</li>
-</ul>
-
-<h2>Territoires couverts</h2>
-<p>Les guides et la checklist valent partout en France. Le simulateur est en phase pilote : il indique le service compétent et, s'il est publié, <a href="/prix/controle-spanc/">le tarif du contrôle</a> pour les communes de l'Oise et de l'Eure. Les listes préfectorales sont reprises ici : <a href="/vidangeurs-agrees/oise/">les vidangeurs agréés de l'Oise</a> et <a href="/vidangeurs-agrees/eure/">les vidangeurs agréés de l'Eure</a>. Commune par commune (SPANC, tarif, vidangeurs les plus proches) : <a href="/vidange-fosse-septique/oise/">80 communes de l'Oise</a>. Ailleurs, votre mairie vous indique le SPANC à contacter.</p>
-
-<h2>Qui sommes-nous</h2>
+</ul></section></div>
+<section id="territoires" class="bloc terr" aria-labelledby="t-terr">
+<div><h2 id="t-terr">Territoires couverts</h2>
+<p>Les guides et la checklist valent partout en France. Le simulateur est en phase pilote : il indique le service compétent et, s'il est publié, <a href="/prix/controle-spanc/">le tarif du contrôle</a> pour les communes de l'Oise et de l'Eure. Les listes préfectorales sont reprises ici : <a href="/vidangeurs-agrees/oise/">les vidangeurs agréés de l'Oise</a> et <a href="/vidangeurs-agrees/eure/">les vidangeurs agréés de l'Eure</a>. Commune par commune (SPANC, tarif, vidangeurs les plus proches) : <a href="/vidange-fosse-septique/oise/">80 communes de l&#39;Oise</a>. Ailleurs, votre mairie vous indique le SPANC à contacter.</p>
+<ul class="deps">
+<li><a href="/vidange-fosse-septique/oise/"><strong>Oise (60)</strong><span>680 communes · 22 SPANC</span></a></li>
+<li><a href="/controle-spanc/vente-immobiliere/"><strong>Eure (27)</strong><span>585 communes · 15 SPANC</span></a></li>
+</ul></div>
+<svg class="carte-terr" viewBox="0 0 300 220" role="img" aria-labelledby="carte-t"><title id="carte-t">Carte schématique de l'Eure et de l'Oise</title>
+<path d="M18 92l30-30 40-8 20 14 22-4 10 26-8 30 6 28-26 24-34-2-26 18-24-14 6-30-20-24z" fill="#ffe3a1" stroke="#0b1f3a" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M150 50l38-22 46 6 34-8 16 26-8 34 10 26-30 14-46-4-36 10-26-16 6-30z" fill="#cfe0f7" stroke="#0b1f3a" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="78" y="118" font-size="17" font-weight="700" fill="#0b1f3a" text-anchor="middle">Eure</text><text x="78" y="138" font-size="13" fill="#0b1f3a" text-anchor="middle">27</text>
+<text x="218" y="84" font-size="17" font-weight="700" fill="#0b1f3a" text-anchor="middle">Oise</text><text x="218" y="104" font-size="13" fill="#0b1f3a" text-anchor="middle">60</text>
+<circle cx="200" cy="190" r="5" fill="#0b1f3a"/><text x="210" y="195" font-size="13" fill="#0b1f3a">Paris</text></svg></section>
+<section id="urgence" class="urg" aria-labelledby="t-urg">
+<h2 id="t-urg">Danger immédiat : 112</h2>
+<p><strong>En cas de danger immédiat (malaise, intoxication, effondrement), appelez le 112.</strong> Le 112 est le numéro d'urgence européen, joignable depuis un fixe ou un portable (service-public.gouv.fr, fiche F33954, consultée le 27/10/2026). Selon la situation : <a href="/urgence/">les urgences fosse septique</a>.</p>
+</section>
+<section class="bloc qui" aria-labelledby="t-qui">
+<h2 id="t-qui">Qui sommes-nous</h2>
 <p>Mon Vidangeur est un site d'information indépendant, édité par une société privée (voir les <a href="/mentions-legales/">mentions légales</a>). Ce n'est ni un service public, ni un SPANC : pour votre rapport, vos délais et le tarif en vigueur, c'est votre SPANC qui fait foi ; pour votre promesse ou votre acte, demandez conseil à votre notaire.</p>
 <p>Le site ne dépose aucun cookie de mesure d'audience ni de publicité et ne vous demande aucune donnée personnelle (voir <a href="/confidentialite/">données personnelles et cookies</a>).</p>
+</section>
 
 </main>
-<footer>
+<footer class="pied"><div>
 <p>Mon Vidangeur est un site d'information indépendant, ce n'est pas un service public. <a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Données personnelles et cookies</a></p>
 <p>Vidange de fosse septique par commune : <a href="/vidange-fosse-septique/oise/">Oise</a></p>
 <p>Ni publicité, ni cookie de mesure, ni envoi de vos saisies. Seul l'hébergeur dépose un cookie technique. Statistiques de visite anonymes, sur notre propre hébergement : <a href="/confidentialite/#mesure-audience">vous y opposer</a>.</p>
 <p>Données : relevé des tarifs et services SPANC de l'Oise et de l'Eure, mis à jour le 13/11/2026.</p>
-</footer>
+<p>Photos : village de l&#39;Oise (Hauts-de-France) par Daria K, maison à colombages par AXP Photography, clés et contrat par Atlantic Ambience, licence Pexels ; couvercles de fosse par Wikideas1, CC0 (Wikimedia Commons).</p>
+<nav id="menu" aria-label="Menu (pied de page)"><a href="/">Accueil</a> <a href="/vidange-fosse-septique/">Vidange</a> <a href="/controle-spanc/">Contrôle SPANC</a> <a href="/guides/">Guides</a> <a href="/urgence/">Urgence</a></nav>
+</div></footer>
 <script src="/assets/mesure.js" data-matomo="https://stats.monvidangeur.fr/" data-site="1" defer></script>
 </body>
 </html>

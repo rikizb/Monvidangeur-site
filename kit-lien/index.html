@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit lien SPANC et mairies : URL et QR code | Mon Vidangeur</title>
+<meta name="description" content="SPANC et mairies de l&#39;Oise et de l&#39;Eure : l&#39;adresse exacte de votre fiche (tarif, périodicité, contact), un bloc HTML à copier et un QR code pour vos courriers de contrôle.">
+<link rel="icon" href="data:,">
+<link rel="canonical" href="https://monvidangeur.fr/kit-lien/">
+<meta property="og:url" content="https://monvidangeur.fr/kit-lien/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mon Vidangeur">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Kit lien SPANC et mairies : URL et QR code">
+<meta property="og:description" content="SPANC et mairies de l&#39;Oise et de l&#39;Eure : l&#39;adresse exacte de votre fiche (tarif, périodicité, contact), un bloc HTML à copier et un QR code pour vos courriers de contrôle.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" href="/assets/fonts/public-sans-sub.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+:root{--n:#0b1f3a;--p:#1747a6;--a:#1747a6;--y:#ffc233;--f:#f1f5fb;--u:#b3261e;--t:#1c2733;--m:#4a5868}*{box-sizing:border-box}body{margin:0;font:1.0625rem/1.6 MVPS,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t)}
+main{max-width:60rem;margin:auto;padding:1.5rem 1rem 3rem}a{color:var(--a)}table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{border:1px solid #d5dde1;padding:.4rem .5rem;text-align:left;vertical-align:top}th{background:var(--f)}
+.evitement{position:absolute;left:-999px;top:0;background:#fff;padding:.5rem}.evitement:focus{left:1rem}.bref{background:var(--f);border-left:4px solid var(--y);border-radius:0 .9rem .9rem 0;padding:.9rem 1.1rem}
+.table-wrap{overflow-x:auto}form label{display:block;margin:.5rem 0}input,select,textarea{font:inherit;padding:.4rem;width:100%;max-width:28rem}
+input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px solid #d5dde1;margin:.75rem 0}.carte{border:1px solid #d5dde1;border-left:4px solid var(--a);padding:.5rem 1rem;margin:1rem 0}.suggestions{list-style:none;padding:0}.lien{background:none;color:var(--a);text-decoration:underline;padding:.2rem 0;border:0;cursor:pointer}.bouton2{display:inline-block;border:1px solid var(--a);padding:.3rem .6rem;text-decoration:none}blockquote{margin-inline:0}.cta-fin{margin:1.5rem 0}a.bouton{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:.6rem 1.3rem;background:var(--a);color:#fff;text-decoration:none;border-radius:99px;font-weight:700}a.bouton:hover{background:var(--n)}button{font:inherit;padding:.5rem 1rem;background:var(--a);color:#fff;border:0;border-radius:.6rem}
+main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.evitement{min-height:44px;display:inline-flex;align-items:center}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
+@media (scripting:enabled){ #simulateur-vente[hidden]{display:block;visibility:hidden}}
+.simu-repli{display:none}@media (scripting:enabled){ #simulateur-vente[hidden]{position:relative}#simulateur-vente[hidden]>.simu-repli{display:block;position:absolute;inset:0 0 auto 0;margin:0;padding:.75rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);background:#fff;animation:simu-repli 0s 3s both}}@keyframes simu-repli{from{visibility:hidden}to{visibility:visible}}
+nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#"],footer a{display:inline-flex;align-items:center;min-height:44px}
+td>a.lien-cellule{display:inline-flex;align-items:center;min-height:44px}
+.mesure-opposition button{min-height:44px}
+@font-face{font-family:MVPS;src:url(/assets/fonts/public-sans-sub.woff2) format("woff2");font-weight:400 800;font-display:swap}
+h1,h2,h3{color:var(--n);line-height:1.15;letter-spacing:-.015em}h1{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800}h2{font-size:clamp(1.4rem,2.4vw,1.85rem);margin-top:2.2rem}th{color:var(--n)}
+.top{background:var(--n);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.75rem clamp(1rem,4vw,3rem)}
+.logo{display:inline-flex;align-items:center;gap:.6rem;min-height:44px;color:#fff;font-weight:800;font-size:1.2rem;text-decoration:none}
+.menu{display:flex;flex-wrap:wrap;gap:.25rem;list-style:none;margin:0;padding:0}.top nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 1rem;border-radius:99px;color:#fff;font-weight:600;text-decoration:none}.top nav a:hover,.top nav a[aria-current]{background:#ffffff26}.top nav .nav-urgence{background:var(--u)}.nav-menu{display:none}
+.pied{background:var(--n);color:#c9d5e6;font-size:.9rem}.pied>div{max-width:78rem;margin:auto;padding:2.5rem 1rem}.pied a{color:#fff;margin-right:1rem}
+@media(max-width:47.99rem){.top .menu li{display:none}.top .menu li.nav-menu,.top .menu li:has(.nav-urgence){display:block}.top nav a{padding:0 .9rem}.logo{font-size:1.05rem}}
+</style>
+</head>
+<body data-indexable="oui">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header class="top"><a class="logo" href="/"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true" focusable="false"><rect width="36" height="36" rx="10" fill="#ffc233"/><path d="M18 7c4.5 5.5 7.5 9.5 7.5 13.5a7.5 7.5 0 01-15 0C10.5 16.5 13.5 12.5 18 7z" fill="#0b1f3a"/></svg><span>Mon Vidangeur</span><span class="vh">, accueil</span></a><nav aria-label="Menu principal"><ul class="menu">
+<li><a href="/vidange-fosse-septique/">Vidange</a></li>
+<li><a href="/controle-spanc/">Contrôle SPANC</a></li>
+<li><a href="/guides/">Guides</a></li>
+<li><a href="/urgence/" class="nav-urgence">Urgence</a></li>
+<li class="nav-menu"><a href="/kit-lien/#menu">Menu</a></li>
+</ul></nav></header>
+<main id="contenu" tabindex="-1"><nav aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <a href="/controle-spanc/">Contrôle SPANC</a> › <span aria-current="page">Kit lien SPANC et mairies</span></nav>
+<h1>Kit lien pour les SPANC et les mairies</h1>
+<p class="bref"><strong>En bref.</strong> Mon Vidangeur publie une fiche par SPANC : tarif, périodicité du contrôle et contact, chacun avec sa source et sa date de lecture. Si une information n'est pas publiée par le service, la fiche l'indique. Vous pouvez citer gratuitement la fiche de votre SPANC dans vos courriers de contrôle, sur le site de la mairie ou dans le bulletin municipal. 9 fiches sont disponibles (Oise et Eure).</p>
+
+<h2 id="comment-citer">Comment citer votre fiche</h2>
+<ol>
+<li><strong>Dans un courrier ou un avis de passage</strong> : imprimez le QR code de votre SPANC (PNG pour un traitement de texte, SVG pour un imprimeur) et ajoutez l'adresse en clair juste en dessous, pour les personnes qui n'ont pas de smartphone.</li>
+<li><strong>Sur un site web</strong> : copiez le bloc HTML de votre SPANC. Il contient un lien simple, sans script ni traceur.</li>
+<li><strong>Dans un bulletin ou un e-mail</strong> : recopiez l'adresse exacte, telle qu'elle est écrite ci-dessous.</li>
+</ol>
+<p>Le QR code ouvre la même fiche que l'adresse en clair. Il ajoute un repère de campagne (<code>?mtm_campaign=kit-lien&amp;mtm_source=qr-courrier</code>) qui nous permet de compter les visites venues des courriers, sans aucune donnée personnelle. L'adresse à citer reste celle sans ce repère.</p>
+<p>Une information de votre fiche est à corriger (tarif voté, nouvelle périodicité, nouveau contact) ? Écrivez à <a href="mailto:contact@monvidangeur.fr">contact@monvidangeur.fr</a> avec le document officiel (délibération, règlement de service) : nous ne publions rien sans source.</p>
+
+<h2 id="fiches">Les fiches SPANC à citer</h2>
+<p>Choisissez votre SPANC : <a href="#oise-cc-thelloise">CC Thelloise</a> · <a href="#oise-cc-plaine-estrees">CC de la Plaine d&#39;Estrées</a> · <a href="#oise-cc-lisieres-oise">CC des Lisières de l&#39;Oise</a> · <a href="#oise-cc-sablons">CC des Sablons</a> · <a href="#oise-cc-pays-de-valois">CC du Pays de Valois</a> · <a href="#eure-ca-seine-normandie-agglomeration">CA Seine Normandie Agglomération</a> · <a href="#eure-ca-evreux-portes-normandie">CA Évreux Portes de Normandie</a> · <a href="#eure-cc-bernay-terres-normandie">CC Intercom Bernay Terres de Normandie</a> · <a href="#eure-cc-roumois-seine">CC Roumois Seine</a>.</p>
+<h3 id="dep-60">Oise (60)</h3>
+<section class="carte" id="oise-cc-thelloise" aria-labelledby="oise-cc-thelloise-titre">
+<h4 id="oise-cc-thelloise-titre">SPANC de la CC Thelloise</h4>
+<p>Fiche en ligne : <a href="/controle-spanc/oise/cc-thelloise/">SPANC CC Thelloise</a> (contrôle, périodicité et contact).</p>
+<p>Adresse exacte à citer :<br><a href="/controle-spanc/oise/cc-thelloise/"><code>https://monvidangeur.fr/controle-spanc/oise/cc-thelloise/</code></a></p>
+<p><label for="oise-cc-thelloise-html">Bloc HTML à copier</label></p>
+<textarea id="oise-cc-thelloise-html" rows="3" readonly>&lt;a href="https://monvidangeur.fr/controle-spanc/oise/cc-thelloise/"&gt;Fiche du SPANC CC Thelloise : contrôle, périodicité et contact (Mon Vidangeur)&lt;/a&gt;</textarea>
+<p><img src="/kit-lien/qr/oise-cc-thelloise.png" width="164" height="164" alt="QR code de la fiche SPANC CC Thelloise" loading="lazy"><br>
+QR code : <a href="/kit-lien/qr/oise-cc-thelloise.png" download>PNG</a> · <a href="/kit-lien/qr/oise-cc-thelloise.svg" download>SVG</a></p>
+</section>
+<section class="carte" id="oise-cc-plaine-estrees" aria-labelledby="oise-cc-plaine-estrees-titre">
+<h4 id="oise-cc-plaine-estrees-titre">SPANC de la CC de la Plaine d&#39;Estrées</h4>
+<p>Fiche en ligne : <a href="/controle-spanc/oise/cc-plaine-estrees/">SPANC CC de la Plaine d&#39;Estrées</a> (tarif, périodicité du contrôle et contact).</p>
+<p>Adresse exacte à citer :<br><a href="/controle-spanc/oise/cc-plaine-estrees/"><code>https://monvidangeur.fr/controle-spanc/oise/cc-plaine-estrees/</code></a></p>
+<p><label for="oise-cc-plaine-estrees-html">Bloc HTML à copier</label></p>
+<textarea id="oise-cc-plaine-estrees-html" rows="3" readonly>&lt;a href="https://monvidangeur.fr/controle-spanc/oise/cc-plaine-estrees/"&gt;Fiche du SPANC CC de la Plaine d&#39;Estrées : tarif, périodicité du contrôle et contact (Mon Vidangeur)&lt;/a&gt;</textarea>
+<p><img src="/kit-lien/qr/oise-cc-plaine-estrees.png" width="164" height="164" alt="QR code de la fiche SPANC CC de la Plaine d&#39;Estrées" loading="lazy"><br>
+QR code : <a href="/kit-lien/qr/oise-cc-plaine-estrees.png" download>PNG</a> · <a href="/kit-lien/qr/oise-cc-plaine-estrees.svg" download>SVG</a></p>
+</section>
+<section class="carte" id="oise-cc-lisieres-oise" aria-labelledby="oise-cc-lisieres-oise-titre">
+<h4 id="oise-cc-lisieres-oise-titre">SPANC de la CC des Lisières de l&#39;Oise</h4>
+<p>Fiche en ligne : <a href="/controle-spanc/oise/cc-lisieres-oise/">SPANC CC des Lisières de l&#39;Oise</a> (tarif, périodicité du contrôle et contact).</p>
+<p>Adresse exacte à citer :<br><a href="/controle-spanc/oise/cc-lisieres-oise/"><code>https://monvidangeur.fr/controle-spanc/oise/cc-lisieres-oise/</code></a></p>
+<p><label for="oise-cc-lisieres-oise-html">Bloc HTML à copier</label></p>
+<textarea id="oise-cc-lisieres-oise-html" rows="3" readonly>&lt;a href="https://monvidangeur.fr/controle-spanc/oise/cc-lisieres-oise/"&gt;Fiche du SPANC CC des Lisières de l&#39;Oise : tarif, périodicité du contrôle et contact (Mon Vidangeur)&lt;/a&gt;</textarea>
+<p><img src="/kit-lien/qr/oise-cc-lisieres-oise.png" width="164" height="164" alt="QR code de la fiche SPANC CC des Lisières de l&#39;Oise" loading="lazy"><br>
+QR code : <a href="/kit-lien/qr/oise-cc-lisieres-oise.png" download>PNG</a> · <a href="/kit-lien/qr/oise-cc-lisieres-oise.svg" download>SVG</a></p>
+</section>
+<section class="carte" id="oise-cc-sablons" aria-labelledby="oise-cc-sablons-titre">
+<h4 id="oise-cc-sablons-titre">SPANC de la CC des Sablons</h4>
+<p>Fiche en ligne : <a href="/controle-spanc/oise/cc-sablons/">SPANC CC des Sablons</a> (tarif, périodicité du contrôle et contact).</p>
+<p>Adresse exacte à citer :<br><a href="/controle-spanc/oise/cc-sablons/"><code>https://monvidangeur.fr/controle-spanc/oise/cc-sablons/</code></a></p>
+<p><label for="oise-cc-sablons-html">Bloc HTML à copier</label></p>
+<textarea id="oise-cc-sablons-html" rows="3" readonly>&lt;a href="https://monvidangeur.fr/controle-spanc/oise/cc-sablons/"&gt;Fiche du SPANC CC des Sablons : tarif, périodicité du contrôle et contact (Mon Vidangeur)&lt;/a&gt;</textarea>
+<p><img src="/kit-lien/qr/oise-cc-sablons.png" width="164" height="164" alt="QR code de la fiche SPANC CC des Sablons" loading="lazy"><br>
+QR code : <a href="/kit-lien/qr/oise-cc-sablons.png" download>PNG</a> · <a href="/kit-lien/qr/oise-cc-sablons.svg" download>SVG</a></p>
+</section>
+<section class="carte" id="oise-cc-pays-de-valois" aria-labelledby="oise-cc-pays-de-valois-titre">
+<h4 id="oise-cc-pays-de-valois-titre">SPANC de la CC du Pays de Valois</h4>
+<p>Fiche en ligne : <a href="/controle-spanc/oise/cc-pays-de-valois/">SPANC CC du Pays de Valois</a> (tarif, périodicité du contrôle et contact).</p>
+<p>Adresse exacte à citer :<br><a href="/controle-spanc/oise/cc-pays-de-valois/"><code>https://monvidangeur.fr/controle-spanc/oise/cc-pays-de-valois/</code></a></p>
+<p><label for="oise-cc-pays-de-valois-html">Bloc HTML à copier</label></p>
+<textarea id="oise-cc-pays-de-valois-html" rows="3" readonly>&lt;a href="https://monvidangeur.fr/controle-spanc/oise/cc-pays-de-valois/"&gt;Fiche du SPANC CC du Pays de Valois : tarif, périodicité du contrôle et contact (Mon Vidangeur)&lt;/a&gt;</textarea>
+<p><img src="/kit-lien/qr/oise-cc-pays-de-valois.png" width="164" height="164" alt="QR code de la fiche SPANC CC du Pays de Valois" loading="lazy"><br>
+QR code : <a href="/kit-lien/qr/oise-cc-pays-de-valois.png" download>PNG</a> · <a href="/kit-lien/qr/oise-cc-pays-de-valois.svg" download>SVG</a></p>
+</section>
+<h3 id="dep-27">Eure (27)</h3>
+<section class="carte" id="eure-ca-seine-normandie-agglomeration" aria-labelledby="eure-ca-seine-normandie-agglomeration-titre">
+<h4 id="eure-ca-seine-normandie-agglomeration-titre">SPANC de la CA Seine Normandie Agglomération</h4>
+<p>Fiche en ligne : <a href="/controle-spanc/eure/ca-seine-normandie-agglomeration/">SPANC CA Seine Normandie Agglomération</a> (tarif, périodicité du contrôle et contact).</p>
+<p>Adresse exacte à citer :<br><a href="/controle-spanc/eure/ca-seine-normandie-agglomeration/"><code>https://monvidangeur.fr/controle-spanc/eure/ca-seine-normandie-agglomeration/</code></a></p>
+<p><label for="eure-ca-seine-normandie-agglomeration-html">Bloc HTML à copier</label></p>
+<textarea id="eure-ca-seine-normandie-agglomeration-html" rows="3" readonly>&lt;a href="https://monvidangeur.fr/controle-spanc/eure/ca-seine-normandie-agglomeration/"&gt;Fiche du SPANC CA Seine Normandie Agglomération : tarif, périodicité du contrôle et contact (Mon Vidangeur)&lt;/a&gt;</textarea>
+<p><img src="/kit-lien/qr/eure-ca-seine-normandie-agglomeration.png" width="164" height="164" alt="QR code de la fiche SPANC CA Seine Normandie Agglomération" loading="lazy"><br>
+QR code : <a href="/kit-lien/qr/eure-ca-seine-normandie-agglomeration.png" download>PNG</a> · <a href="/kit-lien/qr/eure-ca-seine-normandie-agglomeration.svg" download>SVG</a></p>
+</section>
+<section class="carte" id="eure-ca-evreux-portes-normandie" aria-labelledby="eure-ca-evreux-portes-normandie-titre">
+<h4 id="eure-ca-evreux-portes-normandie-titre">SPANC de la CA Évreux Portes de Normandie</h4>
+<p>Fiche en ligne : <a href="/controle-spanc/eure/ca-evreux-portes-normandie/">SPANC CA Évreux Portes de Normandie</a> (tarif, périodicité du contrôle et contact).</p>
+<p>Adresse exacte à citer :<br><a href="/controle-spanc/eure/ca-evreux-portes-normandie/"><code>https://monvidangeur.fr/controle-spanc/eure/ca-evreux-portes-normandie/</code></a></p>
+<p><label for="eure-ca-evreux-portes-normandie-html">Bloc HTML à copier</label></p>
+<textarea id="eure-ca-evreux-portes-normandie-html" rows="3" readonly>&lt;a href="https://monvidangeur.fr/controle-spanc/eure/ca-evreux-portes-normandie/"&gt;Fiche du SPANC CA Évreux Portes de Normandie : tarif, périodicité du contrôle et contact (Mon Vidangeur)&lt;/a&gt;</textarea>
+<p><img src="/kit-lien/qr/eure-ca-evreux-portes-normandie.png" width="164" height="164" alt="QR code de la fiche SPANC CA Évreux Portes de Normandie" loading="lazy"><br>
+QR code : <a href="/kit-lien/qr/eure-ca-evreux-portes-normandie.png" download>PNG</a> · <a href="/kit-lien/qr/eure-ca-evreux-portes-normandie.svg" download>SVG</a></p>
+</section>
+<section class="carte" id="eure-cc-bernay-terres-normandie" aria-labelledby="eure-cc-bernay-terres-normandie-titre">
+<h4 id="eure-cc-bernay-terres-normandie-titre">SPANC de la CC Intercom Bernay Terres de Normandie</h4>
+<p>Fiche en ligne : <a href="/controle-spanc/eure/cc-bernay-terres-normandie/">SPANC CC Intercom Bernay Terres de Normandie</a> (tarif, périodicité du contrôle et contact).</p>
+<p>Adresse exacte à citer :<br><a href="/controle-spanc/eure/cc-bernay-terres-normandie/"><code>https://monvidangeur.fr/controle-spanc/eure/cc-bernay-terres-normandie/</code></a></p>
+<p><label for="eure-cc-bernay-terres-normandie-html">Bloc HTML à copier</label></p>
+<textarea id="eure-cc-bernay-terres-normandie-html" rows="3" readonly>&lt;a href="https://monvidangeur.fr/controle-spanc/eure/cc-bernay-terres-normandie/"&gt;Fiche du SPANC CC Intercom Bernay Terres de Normandie : tarif, périodicité du contrôle et contact (Mon Vidangeur)&lt;/a&gt;</textarea>
+<p><img src="/kit-lien/qr/eure-cc-bernay-terres-normandie.png" width="164" height="164" alt="QR code de la fiche SPANC CC Intercom Bernay Terres de Normandie" loading="lazy"><br>
+QR code : <a href="/kit-lien/qr/eure-cc-bernay-terres-normandie.png" download>PNG</a> · <a href="/kit-lien/qr/eure-cc-bernay-terres-normandie.svg" download>SVG</a></p>
+</section>
+<section class="carte" id="eure-cc-roumois-seine" aria-labelledby="eure-cc-roumois-seine-titre">
+<h4 id="eure-cc-roumois-seine-titre">SPANC de la CC Roumois Seine</h4>
+<p>Fiche en ligne : <a href="/controle-spanc/eure/cc-roumois-seine/">SPANC CC Roumois Seine</a> (tarif, périodicité du contrôle et contact).</p>
+<p>Adresse exacte à citer :<br><a href="/controle-spanc/eure/cc-roumois-seine/"><code>https://monvidangeur.fr/controle-spanc/eure/cc-roumois-seine/</code></a></p>
+<p><label for="eure-cc-roumois-seine-html">Bloc HTML à copier</label></p>
+<textarea id="eure-cc-roumois-seine-html" rows="3" readonly>&lt;a href="https://monvidangeur.fr/controle-spanc/eure/cc-roumois-seine/"&gt;Fiche du SPANC CC Roumois Seine : tarif, périodicité du contrôle et contact (Mon Vidangeur)&lt;/a&gt;</textarea>
+<p><img src="/kit-lien/qr/eure-cc-roumois-seine.png" width="164" height="164" alt="QR code de la fiche SPANC CC Roumois Seine" loading="lazy"><br>
+QR code : <a href="/kit-lien/qr/eure-cc-roumois-seine.png" download>PNG</a> · <a href="/kit-lien/qr/eure-cc-roumois-seine.svg" download>SVG</a></p>
+</section>
+
+<h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<ul>
+<li><a href="/controle-spanc/">Contrôle SPANC : périodicité, vente, rapport</a></li>
+<li><a href="/prix/controle-spanc/">Prix du contrôle SPANC dans l'Oise et l'Eure</a></li>
+<li><a href="/controle-spanc/vente-immobiliere/">Simulateur : contrôle SPANC et vente immobilière</a></li>
+</ul>
+<p>Dernière mise à jour de la page : 22/11/2026.</p>
+
+</main>
+<footer class="pied"><div>
+<p>Mon Vidangeur est un site d'information indépendant, ce n'est pas un service public. <a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Données personnelles et cookies</a></p>
+<p>Vidange de fosse septique par commune : <a href="/vidange-fosse-septique/oise/">Oise</a></p>
+<p>Ni publicité, ni cookie de mesure, ni envoi de vos saisies. Seul l'hébergeur dépose un cookie technique. Statistiques de visite anonymes, sur notre propre hébergement : <a href="/confidentialite/#mesure-audience">vous y opposer</a>.</p>
+<p>Données : relevé des tarifs et services SPANC de l'Oise et de l'Eure, mis à jour le 13/11/2026.</p>
+<nav id="menu" aria-label="Menu (pied de page)"><a href="/">Accueil</a> <a href="/vidange-fosse-septique/">Vidange</a> <a href="/controle-spanc/">Contrôle SPANC</a> <a href="/guides/">Guides</a> <a href="/urgence/">Urgence</a></nav>
+</div></footer>
+<script src="/assets/mesure.js" data-matomo="https://stats.monvidangeur.fr/" data-site="1" defer></script>
+</body>
+</html>

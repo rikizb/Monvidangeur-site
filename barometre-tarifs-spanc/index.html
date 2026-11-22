@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baromètre des tarifs SPANC : Oise, Eure, Somme | Mon Vidangeur</title>
+<meta name="description" content="Tarifs des contrôles SPANC publiés dans l&#39;Oise, l&#39;Eure et la Somme : neuf, périodique, vente. Carte, médiane, minimum, maximum, sources datées, export CSV.">
+<link rel="icon" href="data:,">
+<link rel="canonical" href="https://monvidangeur.fr/barometre-tarifs-spanc/">
+<meta property="og:url" content="https://monvidangeur.fr/barometre-tarifs-spanc/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mon Vidangeur">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Baromètre des tarifs SPANC : Oise, Eure, Somme">
+<meta property="og:description" content="Tarifs des contrôles SPANC publiés dans l&#39;Oise, l&#39;Eure et la Somme : neuf, périodique, vente. Carte, médiane, minimum, maximum, sources datées, export CSV.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" href="/assets/fonts/public-sans-sub.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+:root{--n:#0b1f3a;--p:#1747a6;--a:#1747a6;--y:#ffc233;--f:#f1f5fb;--u:#b3261e;--t:#1c2733;--m:#4a5868}*{box-sizing:border-box}body{margin:0;font:1.0625rem/1.6 MVPS,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t)}
+main{max-width:60rem;margin:auto;padding:1.5rem 1rem 3rem}a{color:var(--a)}table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{border:1px solid #d5dde1;padding:.4rem .5rem;text-align:left;vertical-align:top}th{background:var(--f)}
+.evitement{position:absolute;left:-999px;top:0;background:#fff;padding:.5rem}.evitement:focus{left:1rem}.bref{background:var(--f);border-left:4px solid var(--y);border-radius:0 .9rem .9rem 0;padding:.9rem 1.1rem}
+.table-wrap{overflow-x:auto}form label{display:block;margin:.5rem 0}input,select,textarea{font:inherit;padding:.4rem;width:100%;max-width:28rem}
+input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px solid #d5dde1;margin:.75rem 0}.carte{border:1px solid #d5dde1;border-left:4px solid var(--a);padding:.5rem 1rem;margin:1rem 0}.suggestions{list-style:none;padding:0}.lien{background:none;color:var(--a);text-decoration:underline;padding:.2rem 0;border:0;cursor:pointer}.bouton2{display:inline-block;border:1px solid var(--a);padding:.3rem .6rem;text-decoration:none}blockquote{margin-inline:0}.cta-fin{margin:1.5rem 0}a.bouton{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:.6rem 1.3rem;background:var(--a);color:#fff;text-decoration:none;border-radius:99px;font-weight:700}a.bouton:hover{background:var(--n)}button{font:inherit;padding:.5rem 1rem;background:var(--a);color:#fff;border:0;border-radius:.6rem}
+main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.evitement{min-height:44px;display:inline-flex;align-items:center}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
+@media (scripting:enabled){ #simulateur-vente[hidden]{display:block;visibility:hidden}}
+.simu-repli{display:none}@media (scripting:enabled){ #simulateur-vente[hidden]{position:relative}#simulateur-vente[hidden]>.simu-repli{display:block;position:absolute;inset:0 0 auto 0;margin:0;padding:.75rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);background:#fff;animation:simu-repli 0s 3s both}}@keyframes simu-repli{from{visibility:hidden}to{visibility:visible}}
+nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#"],footer a{display:inline-flex;align-items:center;min-height:44px}
+td>a.lien-cellule{display:inline-flex;align-items:center;min-height:44px}
+.mesure-opposition button{min-height:44px}
+@font-face{font-family:MVPS;src:url(/assets/fonts/public-sans-sub.woff2) format("woff2");font-weight:400 800;font-display:swap}
+h1,h2,h3{color:var(--n);line-height:1.15;letter-spacing:-.015em}h1{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800}h2{font-size:clamp(1.4rem,2.4vw,1.85rem);margin-top:2.2rem}th{color:var(--n)}
+.top{background:var(--n);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.75rem clamp(1rem,4vw,3rem)}
+.logo{display:inline-flex;align-items:center;gap:.6rem;min-height:44px;color:#fff;font-weight:800;font-size:1.2rem;text-decoration:none}
+.menu{display:flex;flex-wrap:wrap;gap:.25rem;list-style:none;margin:0;padding:0}.top nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 1rem;border-radius:99px;color:#fff;font-weight:600;text-decoration:none}.top nav a:hover,.top nav a[aria-current]{background:#ffffff26}.top nav .nav-urgence{background:var(--u)}.nav-menu{display:none}
+.pied{background:var(--n);color:#c9d5e6;font-size:.9rem}.pied>div{max-width:78rem;margin:auto;padding:2.5rem 1rem}.pied a{color:#fff;margin-right:1rem}
+@media(max-width:47.99rem){.top .menu li{display:none}.top .menu li.nav-menu,.top .menu li:has(.nav-urgence){display:block}.top nav a{padding:0 .9rem}.logo{font-size:1.05rem}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://monvidangeur.fr/barometre-tarifs-spanc/#webpage","url":"https://monvidangeur.fr/barometre-tarifs-spanc/","name":"Baromètre des tarifs SPANC : Oise, Eure et Somme","inLanguage":"fr-FR","isPartOf":{"@id":"https://monvidangeur.fr/#website"},"publisher":{"@id":"https://monvidangeur.fr/#org"},"dateModified":"2026-11-22","mainEntity":{"@id":"https://monvidangeur.fr/barometre-tarifs-spanc/#dataset"}},{"@type":"Dataset","@id":"https://monvidangeur.fr/barometre-tarifs-spanc/#dataset","name":"Baromètre des tarifs SPANC publiés (Oise, Eure, Somme)","description":"Montants publiés par 13 services publics d'assainissement non collectif (SPANC) de l'Oise, de l'Eure et de la Somme : contrôle de conception, d'exécution, périodique et en cas de vente, avec HT ou TTC, périodicité, document source, date du document et date de lecture. 39 montants, 17 documents sources.","url":"https://monvidangeur.fr/barometre-tarifs-spanc/","inLanguage":"fr-FR","isAccessibleForFree":true,"license":"https://www.etalab.gouv.fr/licence-ouverte-open-licence/","creator":{"@id":"https://monvidangeur.fr/#org"},"publisher":{"@id":"https://monvidangeur.fr/#org"},"dateModified":"2026-11-22","keywords":["SPANC","assainissement non collectif","redevance","contrôle","tarif","Oise","Eure","Somme"],"spatialCoverage":{"@type":"Place","name":"Oise, Eure et Somme (France)"},"variableMeasured":["montant du contrôle de conception","montant du contrôle d'exécution","montant du contrôle périodique","montant du contrôle en cas de vente","périodicité du contrôle"],"distribution":[{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://monvidangeur.fr/barometre-tarifs-spanc/barometre-tarifs-spanc-oise-eure-somme.csv"},{"@type":"DataDownload","encodingFormat":"image/svg+xml","contentUrl":"https://monvidangeur.fr/barometre-tarifs-spanc/carte-tarifs-spanc-oise-eure-somme.svg"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://monvidangeur.fr/"},{"@type":"ListItem","position":2,"name":"Contrôle SPANC","item":"https://monvidangeur.fr/controle-spanc/"},{"@type":"ListItem","position":3,"name":"Baromètre des tarifs SPANC","item":"https://monvidangeur.fr/barometre-tarifs-spanc/"}]},{"@type":"Organization","@id":"https://monvidangeur.fr/#org","name":"Mon Vidangeur","url":"https://monvidangeur.fr/","legalName":"LES EVABRES","telephone":"+33664841784","address":{"@type":"PostalAddress","streetAddress":"87 rue Carnot","postalCode":"92300","addressLocality":"Levallois-Perret","addressCountry":"FR"},"contactPoint":{"@type":"ContactPoint","contactType":"contact","email":"contact@monvidangeur.fr","availableLanguage":"fr"}}]}</script>
+</head>
+<body data-indexable="oui">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header class="top"><a class="logo" href="/"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true" focusable="false"><rect width="36" height="36" rx="10" fill="#ffc233"/><path d="M18 7c4.5 5.5 7.5 9.5 7.5 13.5a7.5 7.5 0 01-15 0C10.5 16.5 13.5 12.5 18 7z" fill="#0b1f3a"/></svg><span>Mon Vidangeur</span><span class="vh">, accueil</span></a><nav aria-label="Menu principal"><ul class="menu">
+<li><a href="/vidange-fosse-septique/">Vidange</a></li>
+<li><a href="/controle-spanc/">Contrôle SPANC</a></li>
+<li><a href="/guides/">Guides</a></li>
+<li><a href="/urgence/" class="nav-urgence">Urgence</a></li>
+<li class="nav-menu"><a href="/barometre-tarifs-spanc/#menu">Menu</a></li>
+</ul></nav></header>
+<main id="contenu" tabindex="-1"><nav aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <a href="/controle-spanc/">Contrôle SPANC</a> › <span aria-current="page">Baromètre des tarifs SPANC</span></nav>
+
+<h1>Baromètre des tarifs SPANC : Oise, Eure et Somme</h1>
+<blockquote>
+<p><strong>En bref.</strong> Chaque SPANC fixe ses tarifs par délibération : il n'existe pas de prix national. Ce baromètre réunit les montants publiés par 13 services de l'Oise (4), de l'Eure (3) et de la Somme (6), soit 39 montants tirés de 17 documents officiels, chacun avec son lien et sa date. Médiane, minimum et maximum sont calculés sur ces seuls montants.</p>
+</blockquote>
+
+<h2 id="chiffres-cles">Médiane, minimum et maximum</h2>
+<div class="table-wrap" role="region" aria-label="Tableau 1 (défilement horizontal possible)" tabindex="0"><table>
+<caption>Montants publiés par les SPANC retenus, relevé du 22/11/2026</caption>
+<thead><tr><th scope="col">Contrôle</th><th scope="col">Services</th><th scope="col">Médiane</th><th scope="col">Minimum</th><th scope="col">Maximum</th><th scope="col">HT / TTC</th></tr></thead>
+<tbody>
+<tr><td>Contrôle en cas de vente</td><td>11</td><td>165 €</td><td>100 € (CC Intercom Bernay Terres de Normandie)</td><td>350 € (CC des Sablons)</td><td>8 TTC, 1 HT, 2 non précisé</td></tr>
+<tr><td>Contrôle périodique de bon fonctionnement</td><td>7</td><td>110 €</td><td>36,01 € (CA Amiens Métropole)</td><td>120 € (CC Avre Luce Noye)</td><td>5 TTC, 1 HT, 1 non précisé</td></tr>
+<tr><td>Contrôle de conception</td><td>10</td><td>103,83 €</td><td>57,20 € (CC Ponthieu-Marquenterre)</td><td>500 € (CC des Sablons)</td><td>6 TTC, 1 HT, 3 non précisé</td></tr>
+<tr><td>Contrôle d&#39;exécution des travaux</td><td>9</td><td>143 €</td><td>80 € (CC Intercom Bernay Terres de Normandie)</td><td>200 € (CC des Lisières de l&#39;Oise)</td><td>6 TTC, 1 HT, 2 non précisé</td></tr>
+</tbody>
+</table></div>
+<p>Les montants sont pris tels que publiés : TTC, HT, ou sans précision quand le document ne le dit pas. Ils ne sont donc pas tous de même nature ; la colonne « HT / TTC » donne le décompte. Ne sont pas comptés : la CC Roumois Seine, qui ne facture plus le contrôle de vente à part depuis le 01/01/2026, et les redevances annuelles, qui ne sont pas le prix d'une visite.</p>
+
+<h2 id="carte">Carte par intercommunalité</h2>
+<p><img src="/barometre-tarifs-spanc/carte-tarifs-spanc-oise-eure-somme.svg" width="1130" height="718" alt="Carte de l'Oise, de l'Eure et de la Somme découpée par territoire de SPANC. Les 13 services du tableau sont numérotés et colorés selon le montant publié du contrôle en cas de vente ; les autres territoires sont en gris." loading="lazy" style="width:100%;height:auto"></p>
+<p>Chaque territoire est celui d'un SPANC (intercommunalité, ou syndicat quand il détient la compétence). Couleur : montant publié du contrôle en cas de vente. Gris : aucun montant sourcé retenu, ce qui ne veut pas dire que le service n'a pas de tarif. Carte au format SVG : <a href="/barometre-tarifs-spanc/carte-tarifs-spanc-oise-eure-somme.svg" download>télécharger la carte</a>.</p>
+
+<h2 id="tableau">Tarifs publiés par service</h2>
+<div class="table-wrap" role="region" aria-label="Tableau 2 (défilement horizontal possible)" tabindex="0"><table>
+<caption>13 SPANC avec au moins un montant sourcé (Oise, Eure, Somme)</caption>
+<thead><tr><th scope="col">N°</th><th scope="col">SPANC</th><th scope="col">Dép.</th><th scope="col">Contrôle neuf</th><th scope="col">Contrôle périodique</th><th scope="col">Contrôle en cas de vente</th><th scope="col">Périodicité</th><th scope="col">Source et date</th></tr></thead>
+<tbody>
+<tr id="spanc-246000897"><td>1</td><td><a class="lien-cellule" href="/controle-spanc/oise/cc-plaine-estrees/">CC de la Plaine d&#39;Estrées</a></td><td>Oise</td><td>non publié</td><td>non publié</td><td>220 € (TTC)</td><td>8 ans</td><td><a rel="noopener" href="https://www.ccplaine-estrees.com/rdv-en-ligne/">page tarifaire du service</a>, délib. du 09/04/2019 (preuve en vigueur : 09/12/2025), lu le 13/11/2026</td></tr>
+<tr id="spanc-246000749"><td>2</td><td><a class="lien-cellule" href="/controle-spanc/oise/cc-lisieres-oise/">CC des Lisières de l&#39;Oise</a></td><td>Oise</td><td>conception 150 € (TTC) ; exécution 200 € (TTC)</td><td>110 € (TTC)</td><td>250 € (TTC)</td><td>non précisée par la source</td><td><a rel="noopener" href="https://ccloise.com/wp-content/uploads/2024/01/Annexe-DEL2026-100-Rapport-sur-le-Prix-et-la-Qualite-de-Service-du-service-public-dassainissement-non-collectif-2025.pdf">rapport annuel du service (RPQS)</a>, preuve en vigueur : 31/12/2025, lu le 27/10/2026</td></tr>
+<tr id="spanc-246000582"><td>3</td><td><a class="lien-cellule" href="/controle-spanc/oise/cc-sablons/">CC des Sablons</a></td><td>Oise</td><td>conception 500 € (HT ou TTC non précisé par le règlement)</td><td>75 € (HT ou TTC non précisé par le règlement)</td><td>350 € (HT ou TTC non précisé par le règlement)</td><td>6 ans</td><td><a rel="noopener" href="https://cc-sablons.com/wp-content/uploads/Revision-Reglement-SPANC-18-12-2025.pdf">règlement de service</a>, délib. du 18/12/2025, lu le 09/11/2026</td></tr>
+<tr id="spanc-246000871"><td>4</td><td><a class="lien-cellule" href="/controle-spanc/oise/cc-pays-de-valois/">CC du Pays de Valois</a></td><td>Oise</td><td>conception 150 € (TTC) ; exécution 180 € (TTC)</td><td>110 € (TTC)</td><td>250 € (TTC)</td><td>non précisée par la source</td><td><a rel="noopener" href="https://www.services.eaufrance.fr/sispea/referential/download-rpqs.action?collectivityId=209815&amp;rpqsId=1167534">rapport annuel du service (RPQS)</a>, délib. du 14/12/2017 (preuve en vigueur : 31/12/2025), lu le 13/11/2026</td></tr>
+<tr id="spanc-200071454"><td>5</td><td><a class="lien-cellule" href="/controle-spanc/eure/ca-evreux-portes-normandie/">CA Évreux Portes de Normandie</a></td><td>Eure</td><td>conception 84,79 € (HT ou TTC non précisé par la grille) ; exécution 109,04 € (HT ou TTC non précisé par la grille)</td><td>non publié</td><td>145,37 € (HT ou TTC non précisé par le formulaire)</td><td>8 ans</td><td><a rel="noopener" href="https://www.evreuxportesdenormandie.fr/app/uploads/1/2025/07/demande-de-diagnostic-cession-2026.pdf">formulaire de demande du service</a>, délib. du 16/12/2025 (preuve en vigueur : 01/01/2026), lu le 27/10/2026 ; <a rel="noopener" href="https://www.evreuxportesdenormandie.fr/app/uploads/1/2025/07/Demande-dautorisation-dassainissement-individuel-et-grille-tarifaire.pdf">grille tarifaire du service</a>, preuve en vigueur : 16/12/2025, lu le 27/10/2026</td></tr>
+<tr id="spanc-200066413"><td>6</td><td><a class="lien-cellule" href="/controle-spanc/eure/cc-bernay-terres-normandie/">CC Intercom Bernay Terres de Normandie</a></td><td>Eure</td><td>conception 95 € (HT ou TTC non précisé par le formulaire) ; exécution 80 € (HT ou TTC non précisé par le formulaire)</td><td>redevance annuelle de 22 € par an (HT ou TTC non précisé par le document)</td><td>100 € (TTC)</td><td>10 ans</td><td><a rel="noopener" href="https://www.bernaynormandie.fr/wp-content/uploads/2026/06/Formulaire_vente_ANC_2026_V2.pdf">formulaire de demande du service</a>, délib. du 18/12/2025 (preuve en vigueur : 26/06/2026), lu le 27/10/2026 ; <a rel="noopener" href="https://www.bernaynormandie.fr/wp-content/uploads/2026/01/FORMULAIRE-DEMANDE-DE-CONTROLE-DE-CONCEPTION-ANC-2026.pdf">formulaire de demande du service</a>, preuve en vigueur : 18/12/2025, lu le 27/10/2026 ; <a rel="noopener" href="https://www.bernaynormandie.fr/votre-quotidien/assainissement/assainissement-non-collectif/">page tarifaire du service</a>, preuve en vigueur : 18/12/2025, lu le 27/10/2026</td></tr>
+<tr id="spanc-200066405"><td>7</td><td><a class="lien-cellule" href="/controle-spanc/eure/cc-roumois-seine/">CC Roumois Seine</a></td><td>Eure</td><td>non publié</td><td>non publié</td><td>n&#39;est plus facturé à part (délibération)</td><td>10 ans</td><td><a rel="noopener" href="https://www.roumoiseine.fr/wp-content/uploads/2026/01/cc_193_2025-tampon.pdf">délibération du 15/12/2025</a>, délib. du 15/12/2025 (preuve en vigueur : 01/01/2026), lu le 13/11/2026</td></tr>
+<tr id="spanc-248000531"><td>8</td><td>CA Amiens Métropole</td><td>Somme</td><td>conception 101,66 € (HT) ; exécution 101,66 € (HT)</td><td>36,01 € (HT)</td><td>143,98 € (HT)</td><td>8 ans</td><td><a rel="noopener" href="https://www.amiens.fr/content/download/86913/1713100/file/tarifs+sea+2026.pdf">délibération du 18/12/2025</a>, délib. du 18/12/2025 (preuve en vigueur : 01/01/2026), lu le 02/11/2026</td></tr>
+<tr id="spanc-200070969"><td>9</td><td>CC Avre Luce Noye</td><td>Somme</td><td>conception 106 € (TTC, soit 96,36 € HT) ; exécution 106 € (TTC, soit 96,36 € HT)</td><td>120 € (TTC, soit 109,09 € HT)</td><td>187 € (TTC, soit 170 € HT)</td><td>non précisée par la source</td><td><a rel="noopener" href="https://www.avrelucenoye.fr/wp-content/uploads/2026/01/22-TARIFS-RASPA-2026-tampon.pdf">délibération n° 2025_1712_22 « Tarifs RASPA 2026 » (reçue en préfecture le 22/12/2025)</a>, délibération du 17/12/2025 (tarifs au 01/01/2026), lu le 22/11/2026</td></tr>
+<tr id="spanc-200070936"><td>10</td><td>CC Ponthieu-Marquenterre</td><td>Somme</td><td>conception 57,20 € (TTC) ; exécution 148,50 € (TTC)</td><td>88 € (TTC)</td><td>148,50 € (TTC)</td><td>non précisée par la source</td><td><a rel="noopener" href="https://www.ponthieu-marquenterre.fr/environnement/assainissement-non-collectif-spanc/">page tarifaire du service</a>, preuve en vigueur : 01/01/2026, lu le 02/11/2026</td></tr>
+<tr id="spanc-200070985"><td>11</td><td>CC de l&#39;Est de la Somme</td><td>Somme</td><td>non publié</td><td>non publié</td><td>165 € (TTC)</td><td>8 ans</td><td><a rel="noopener" href="https://estdelasomme.fr/wp-content/uploads/2025/10/Bon-de-commande-AC-et-ANC.pdf">document du service</a>, délib. du 05/03/2020 (preuve en vigueur : 08/09/2025), lu le 02/11/2026</td></tr>
+<tr id="spanc-248000747"><td>12</td><td>CC du Pays du Coquelicot</td><td>Somme</td><td>conception 130 € (TTC) ; exécution 170 € (TTC)</td><td>112 € (TTC)</td><td>non publié</td><td>8 ans</td><td><a rel="noopener" href="https://www.paysducoquelicot.com/fileadmin/user_upload/A_-_n__10_RPQS_ANC_2025_01.pdf">rapport annuel du service (RPQS)</a>, délib. du 02/12/2024 (preuve en vigueur : 01/01/2026), lu le 02/11/2026</td></tr>
+<tr id="spanc-200070944"><td>13</td><td>CC du Vimeu</td><td>Somme</td><td>conception 63 € (TTC, soit 57,27 € HT) ; exécution 143 € (TTC, soit 130 € HT)</td><td>non publié</td><td>165 € (TTC, soit 150 € HT)</td><td>non précisée par la source</td><td><a rel="noopener" href="https://ccvimeu.fr/wp-content/uploads/2025/12/Demande-de-diagnostic-dinstallation-assainissement-non-collectif-ANNEE-2026.pdf">formulaire de demande de diagnostic du service (année 2026)</a>, formulaire « Année 2026 », lu le 22/11/2026 ; <a rel="noopener" href="https://ccvimeu.fr/wp-content/uploads/2025/12/Demande-dinstallation-dun-systeme-autonome-annee-2026.pdf">formulaire de demande d&#39;installation du service (année 2026)</a>, formulaire « Année 2026 », lu le 22/11/2026</td></tr>
+</tbody>
+</table></div>
+<p>« Non publié » : le service ne publie pas ce montant dans un document récent et vérifiable, ou nous ne l'avons pas trouvé. Contrôle neuf : contrôle de conception du projet, puis contrôle de bonne exécution des travaux. La périodicité est celle écrite par le service ; la loi fixe un maximum de 10 ans (CGCT, art. L2224-8).</p>
+
+<h2 id="methode">Méthode</h2>
+<ul>
+<li><strong>Sources.</strong> Uniquement des documents publiés par les services : délibérations, règlements de service, rapports annuels (RPQS), formulaires et pages tarifaires. Chaque montant renvoie à son document, avec la date du document et notre date de lecture.</li>
+<li><strong>Montants retenus.</strong> Un montant n'est retenu que s'il est écrit dans un document daté de moins de 18 mois ou confirmé par un document récent. Les déclarations à l'observatoire national SISPEA, non vérifiées, ne sont pas utilisées.</li>
+<li><strong>Services écartés.</strong> CC Thelloise : deux documents officiels donnent des montants différents ; CC Senlis Sud Oise : pas de confirmation 2026 des montants ; CC du Pays du Neubourg : pas de délibération datée ; CA Seine Normandie Agglomération : document non daté.</li>
+<li><strong>Calculs.</strong> Médiane, minimum et maximum par type de contrôle, sur les montants à l'acte retenus. Aucune valeur n'est estimée ni complétée.</li>
+<li><strong>Corrections.</strong> Un service a voté un nouveau tarif ? Écrivez à <a href="mailto:contact@monvidangeur.fr">contact@monvidangeur.fr</a> avec le document officiel.</li>
+</ul>
+
+<h2 id="telecharger">Télécharger les données</h2>
+<p><a href="/barometre-tarifs-spanc/barometre-tarifs-spanc-oise-eure-somme.csv" download>Baromètre des tarifs SPANC au format CSV</a> (une ligne par montant : service, contrôle, montant, HT ou TTC, périodicité, document, lien, dates). Réutilisation libre sous <a rel="noopener" href="https://www.etalab.gouv.fr/licence-ouverte-open-licence/">Licence Ouverte 2.0</a>, en citant « Mon Vidangeur, baromètre des tarifs SPANC, 22/11/2026 » ; les documents d'origine restent ceux des collectivités.</p>
+
+<h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<ul>
+<li><a href="/prix/controle-spanc/">Prix du contrôle SPANC pour une vente dans l'Oise et l'Eure</a></li>
+<li><a href="/controle-spanc/vente-immobiliere/">Simulateur : contrôle SPANC et vente immobilière</a></li>
+<li><a href="/controle-spanc/">Contrôle SPANC : périodicité, rapport, refus</a></li>
+<li><a href="/prix/vidange-fosse-septique/">Relevé des prix de vidange de fosse septique</a></li>
+</ul>
+
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Code général des collectivités territoriales, art. L2224-8 III — synthèse officielle « Quelle est la périodicité des contrôles ? » (portail interministériel de l'ANC) — <a rel="noopener" href="https://www.assainissement-non-collectif.developpement-durable.gouv.fr/quelle-est-la-periodicite-des-controles-a37.html">Lire sur le portail interministériel de l'ANC</a> (consulté le 22/10/2026)</li>
+<li>Service-public.gouv.fr — Assainissement des eaux usées domestiques (F447) — <a rel="noopener" href="https://www.service-public.gouv.fr/particuliers/vosdroits/F447">Lire sur Service-public.gouv.fr</a> (consulté le 22/10/2026)</li>
+<li>Rattachement des communes aux SPANC : BANATIC, export national du 21/10/2026, et SISPEA, composition communale des services 2025. Contours des communes : API Découpage administratif (<a rel="noopener" href="https://geo.api.gouv.fr/decoupage-administratif">geo.api.gouv.fr</a>), lue le 22/11/2026.</li>
+<li>Documents tarifaires des services : un lien par ligne dans le tableau ci-dessus.</li>
+</ul>
+<p>Dernière mise à jour de la page : 22/11/2026.</p>
+
+</main>
+<footer class="pied"><div>
+<p>Mon Vidangeur est un site d'information indépendant, ce n'est pas un service public. <a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Données personnelles et cookies</a></p>
+<p>Vidange de fosse septique par commune : <a href="/vidange-fosse-septique/oise/">Oise</a></p>
+<p>Ni publicité, ni cookie de mesure, ni envoi de vos saisies. Seul l'hébergeur dépose un cookie technique. Statistiques de visite anonymes, sur notre propre hébergement : <a href="/confidentialite/#mesure-audience">vous y opposer</a>.</p>
+<p>Données : relevé des tarifs et services SPANC de l'Oise et de l'Eure, mis à jour le 13/11/2026.</p>
+<nav id="menu" aria-label="Menu (pied de page)"><a href="/">Accueil</a> <a href="/vidange-fosse-septique/">Vidange</a> <a href="/controle-spanc/">Contrôle SPANC</a> <a href="/guides/">Guides</a> <a href="/urgence/">Urgence</a></nav>
+</div></footer>
+<script src="/assets/mesure.js" data-matomo="https://stats.monvidangeur.fr/" data-site="1" defer></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Décodeur de rapport SPANC : délais | Mon Vidangeur</title>
+<meta name="description" content="Collez une phrase de votre rapport SPANC : conclusion de la grille officielle, délai des travaux (4 ans, 1 an si vente), qui appeler. Rien n&#39;est envoyé.">
+<link rel="icon" href="data:,">
+<link rel="canonical" href="https://monvidangeur.fr/decodeur-rapport-spanc/">
+<meta property="og:url" content="https://monvidangeur.fr/decodeur-rapport-spanc/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mon Vidangeur">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Décodeur de rapport SPANC : délais">
+<meta property="og:description" content="Collez une phrase de votre rapport SPANC : conclusion de la grille officielle, délai des travaux (4 ans, 1 an si vente), qui appeler. Rien n&#39;est envoyé.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" href="/assets/fonts/public-sans-sub.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+:root{--n:#0b1f3a;--p:#1747a6;--a:#1747a6;--y:#ffc233;--f:#f1f5fb;--u:#b3261e;--t:#1c2733;--m:#4a5868}*{box-sizing:border-box}body{margin:0;font:1.0625rem/1.6 MVPS,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t)}
+main{max-width:60rem;margin:auto;padding:1.5rem 1rem 3rem}a{color:var(--a)}table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{border:1px solid #d5dde1;padding:.4rem .5rem;text-align:left;vertical-align:top}th{background:var(--f)}
+.evitement{position:absolute;left:-999px;top:0;background:#fff;padding:.5rem}.evitement:focus{left:1rem}.bref{background:var(--f);border-left:4px solid var(--y);border-radius:0 .9rem .9rem 0;padding:.9rem 1.1rem}
+.table-wrap{overflow-x:auto}form label{display:block;margin:.5rem 0}input,select,textarea{font:inherit;padding:.4rem;width:100%;max-width:28rem}
+input[type=checkbox],input[type=radio]{width:auto}.simu fieldset{border:1px solid #d5dde1;margin:.75rem 0}.carte{border:1px solid #d5dde1;border-left:4px solid var(--a);padding:.5rem 1rem;margin:1rem 0}.suggestions{list-style:none;padding:0}.lien{background:none;color:var(--a);text-decoration:underline;padding:.2rem 0;border:0;cursor:pointer}.bouton2{display:inline-block;border:1px solid var(--a);padding:.3rem .6rem;text-decoration:none}blockquote{margin-inline:0}.cta-fin{margin:1.5rem 0}a.bouton{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:.6rem 1.3rem;background:var(--a);color:#fff;text-decoration:none;border-radius:99px;font-weight:700}a.bouton:hover{background:var(--n)}button{font:inherit;padding:.5rem 1rem;background:var(--a);color:#fff;border:0;border-radius:.6rem}
+main a{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}:focus-visible{outline:3px solid var(--a);outline-offset:2px}main li>a,main li>strong>a,.lien-seul>a{padding-block:.75rem}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.evitement{min-height:44px;display:inline-flex;align-items:center}.simu fieldset>label,.simu label:has(>input[type=radio]),.simu label:has(>input[type=checkbox]){display:flex;align-items:center;gap:.5rem;min-height:44px;margin:0}input[type=text],input[type=date],select{min-height:44px}.suggestions li>*{min-height:44px}
+@media (scripting:enabled){ #simulateur-vente[hidden]{display:block;visibility:hidden}}
+.simu-repli{display:none}@media (scripting:enabled){ #simulateur-vente[hidden]{position:relative}#simulateur-vente[hidden]>.simu-repli{display:block;position:absolute;inset:0 0 auto 0;margin:0;padding:.75rem 1rem;border:1px solid #d5dde1;border-left:4px solid var(--a);background:#fff;animation:simu-repli 0s 3s both}}@keyframes simu-repli{from{visibility:hidden}to{visibility:visible}}
+nav[aria-label="Fil d'Ariane"] a{padding-block:.75rem}.carte a,main p>a[href^="#"],footer a{display:inline-flex;align-items:center;min-height:44px}
+td>a.lien-cellule{display:inline-flex;align-items:center;min-height:44px}
+.mesure-opposition button{min-height:44px}
+@font-face{font-family:MVPS;src:url(/assets/fonts/public-sans-sub.woff2) format("woff2");font-weight:400 800;font-display:swap}
+h1,h2,h3{color:var(--n);line-height:1.15;letter-spacing:-.015em}h1{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800}h2{font-size:clamp(1.4rem,2.4vw,1.85rem);margin-top:2.2rem}th{color:var(--n)}
+.top{background:var(--n);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.75rem clamp(1rem,4vw,3rem)}
+.logo{display:inline-flex;align-items:center;gap:.6rem;min-height:44px;color:#fff;font-weight:800;font-size:1.2rem;text-decoration:none}
+.menu{display:flex;flex-wrap:wrap;gap:.25rem;list-style:none;margin:0;padding:0}.top nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 1rem;border-radius:99px;color:#fff;font-weight:600;text-decoration:none}.top nav a:hover,.top nav a[aria-current]{background:#ffffff26}.top nav .nav-urgence{background:var(--u)}.nav-menu{display:none}
+.pied{background:var(--n);color:#c9d5e6;font-size:.9rem}.pied>div{max-width:78rem;margin:auto;padding:2.5rem 1rem}.pied a{color:#fff;margin-right:1rem}
+@media(max-width:47.99rem){.top .menu li{display:none}.top .menu li.nav-menu,.top .menu li:has(.nav-urgence){display:block}.top nav a{padding:0 .9rem}.logo{font-size:1.05rem}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Décodeur de rapport SPANC","url":"https://monvidangeur.fr/decodeur-rapport-spanc/","applicationCategory":"UtilityApplication","operatingSystem":"Tous (navigateur web)","isAccessibleForFree":true,"inLanguage":"fr-FR","description":"Collez une phrase de votre rapport SPANC : conclusion de la grille officielle, délai des travaux (4 ans, 1 an si vente), qui appeler. Rien n'est envoyé.","dateModified":"2026-11-27","publisher":{"@type":"Organization","name":"Mon Vidangeur","url":"https://monvidangeur.fr/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Mon rapport SPANC dit « non conforme » : quel délai pour les travaux ?","acceptedAnswer":{"@type":"Answer","text":"Cela dépend du cas. Danger pour la santé des personnes (cas a) ou risque environnemental avéré (cas b) : travaux sous 4 ans à compter de la notification du rapport. Installation incomplète, sous-dimensionnée ou en dysfonctionnement majeur hors zone à enjeu (cas c) : pas de délai hors vente. En cas de vente, pour les cas a, b et c : au plus tard 1 an après l'acte (arrêté du 27/04/2012, art. 4)."}},{"@type":"Question","name":"Le texte que je colle dans le décodeur est-il envoyé quelque part ?","acceptedAnswer":{"@type":"Answer","text":"Non. L'analyse se fait entièrement dans votre navigateur : le texte n'est ni envoyé, ni enregistré, ni conservé après la fermeture de la page."}},{"@type":"Question","name":"Quelle différence entre « défaut d'entretien » et « non conforme » ?","acceptedAnswer":{"@type":"Answer","text":"Un défaut d'entretien ou d'usure n'est pas une non-conformité : le SPANC délivre des recommandations, sans délai réglementaire, même en cas de vente. Une non-conformité (cas a, b ou c) s'accompagne d'une liste de travaux (arrêté du 27/04/2012, art. 4 et annexe II)."}},{"@type":"Question","name":"Combien de temps mon rapport SPANC est-il valable pour vendre ?","acceptedAnswer":{"@type":"Answer","text":"3 ans à compter de la date du contrôle : le rapport doit dater de moins de 3 ans à la signature de l'acte authentique (arrêté du 27/04/2012, art. 4 ; CSP L1331-11-1)."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://monvidangeur.fr/"},{"@type":"ListItem","position":2,"name":"Contrôle SPANC","item":"https://monvidangeur.fr/controle-spanc/"},{"@type":"ListItem","position":3,"name":"Décodeur de rapport SPANC","item":"https://monvidangeur.fr/decodeur-rapport-spanc/"}]}]}</script>
+</head>
+<body data-indexable="oui">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header class="top"><a class="logo" href="/"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true" focusable="false"><rect width="36" height="36" rx="10" fill="#ffc233"/><path d="M18 7c4.5 5.5 7.5 9.5 7.5 13.5a7.5 7.5 0 01-15 0C10.5 16.5 13.5 12.5 18 7z" fill="#0b1f3a"/></svg><span>Mon Vidangeur</span><span class="vh">, accueil</span></a><nav aria-label="Menu principal"><ul class="menu">
+<li><a href="/vidange-fosse-septique/">Vidange</a></li>
+<li><a href="/controle-spanc/">Contrôle SPANC</a></li>
+<li><a href="/guides/">Guides</a></li>
+<li><a href="/urgence/" class="nav-urgence">Urgence</a></li>
+<li class="nav-menu"><a href="/decodeur-rapport-spanc/#menu">Menu</a></li>
+</ul></nav></header>
+<main id="contenu" tabindex="-1"><nav aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <a href="/controle-spanc/">Contrôle SPANC</a> › <span aria-current="page">Décodeur de rapport SPANC</span></nav>
+<h1>Décodeur de rapport SPANC : que veut dire la conclusion de votre contrôle ?</h1>
+<p class="bref"><strong>En bref.</strong> Collez une phrase de votre rapport de contrôle SPANC (la conclusion, un constat ou une catégorie) : le décodeur la rapproche de la grille d'évaluation officielle (annexe II de l'arrêté du 27 avril 2012) et vous donne l'explication, le délai des travaux, le cas de la vente et qui appeler. L'analyse se fait dans votre navigateur : rien n'est envoyé ni enregistré.</p>
+
+<div id="decodeur" class="decodeur" hidden>
+<h2 id="decoder">Décoder une phrase</h2>
+<p><label for="decodeur-texte">Phrase de votre rapport SPANC</label></p>
+<textarea id="decodeur-texte" rows="4" autocomplete="off" spellcheck="false"></textarea>
+<p><button type="button" id="decodeur-bouton" class="bouton">Décoder</button></p>
+<p>Exemples à essayer :
+<button type="button" class="lien decodeur-exemple">Installation non conforme : danger pour la santé des personnes</button>
+<button type="button" class="lien decodeur-exemple">Fosse septique seule, rejet vers un puisard</button>
+<button type="button" class="lien decodeur-exemple">Défaut d'entretien : vidange à prévoir</button>
+<button type="button" class="lien decodeur-exemple">Absence d'installation</button></p>
+<div id="decodeur-resultat" aria-live="polite"></div>
+<p><small>Le texte reste sur votre appareil : il n'est ni envoyé, ni enregistré, ni conservé après la fermeture de la page.</small></p>
+</div>
+<noscript><p>Le décodeur automatique a besoin de JavaScript. Choisissez directement la conclusion de votre rapport dans le tableau ci-dessous.</p></noscript>
+<section class="carte decodeur-verdict" id="verdict-absence-installation" data-cle="absence" hidden>
+<h3>Absence d&#39;installation</h3>
+<p>Le SPANC n&#39;a pas pu constater d&#39;installation d&#39;assainissement non collectif. C&#39;est un non-respect de l&#39;obligation d&#39;équipement : le propriétaire est mis en demeure de réaliser une installation conforme, avec des travaux à réaliser dans les meilleurs délais.</p>
+<p><strong>Délai :</strong> Mise en demeure, travaux dans les meilleurs délais. <strong>Vente :</strong> Pas de délai propre à la vente dans la grille.</p>
+<p><a href="/decodeur-rapport-spanc/absence-installation/">Explication complète, délais sourcés et qui appeler →</a></p>
+</section>
+<section class="carte decodeur-verdict" id="verdict-danger-sante-personnes" data-cle="a" hidden>
+<h3>Non conforme, danger pour la santé des personnes (cas a)</h3>
+<p>C&#39;est la non-conformité la plus contraignante : les travaux sont obligatoires sous 4 ans à compter de la notification du rapport, et au plus tard 1 an après la signature de l&#39;acte en cas de vente. Le maire peut raccourcir le délai selon l&#39;importance du risque.</p>
+<p><strong>Délai :</strong> Travaux obligatoires sous 4 ans. <strong>Vente :</strong> Au plus tard 1 an après l&#39;acte.</p>
+<p><a href="/decodeur-rapport-spanc/danger-sante-personnes/">Explication complète, délais sourcés et qui appeler →</a></p>
+</section>
+<section class="carte decodeur-verdict" id="verdict-risque-environnemental-avere" data-cle="b" hidden>
+<h3>Non conforme, risque environnemental avéré (cas b)</h3>
+<p>Votre installation est incomplète, significativement sous-dimensionnée ou en dysfonctionnement majeur et elle est située dans une zone à enjeu environnemental. Les travaux sont obligatoires sous 4 ans à compter de la notification du rapport, et au plus tard 1 an après l&#39;acte en cas de vente.</p>
+<p><strong>Délai :</strong> Travaux obligatoires sous 4 ans. <strong>Vente :</strong> Au plus tard 1 an après l&#39;acte.</p>
+<p><a href="/decodeur-rapport-spanc/risque-environnemental-avere/">Explication complète, délais sourcés et qui appeler →</a></p>
+</section>
+<section class="carte decodeur-verdict" id="verdict-non-conforme-sans-danger" data-cle="c" hidden>
+<h3>Non conforme sans danger ni risque avéré (cas c)</h3>
+<p>Votre installation est incomplète, significativement sous-dimensionnée ou présente un dysfonctionnement majeur, mais elle n&#39;est pas dans une zone à enjeu sanitaire ou environnemental. Le SPANC identifie les travaux de mise en conformité ; hors vente, la réglementation ne fixe pas de délai. En cas de vente, les travaux sont à faire au plus tard 1 an après la signature de l&#39;acte.</p>
+<p><strong>Délai :</strong> Pas de délai réglementaire hors vente. <strong>Vente :</strong> Travaux au plus tard 1 an après l&#39;acte.</p>
+<p><a href="/decodeur-rapport-spanc/non-conforme-sans-danger/">Explication complète, délais sourcés et qui appeler →</a></p>
+</section>
+<section class="carte decodeur-verdict" id="verdict-defauts-entretien-usure" data-cle="entretien" hidden>
+<h3>Défauts d&#39;entretien ou d&#39;usure</h3>
+<p>Ce n&#39;est pas une non-conformité. Le SPANC vous remet une liste de recommandations pour améliorer le fonctionnement de l&#39;installation. La réglementation ne fixe aucun délai de travaux pour ce cas, y compris en cas de vente.</p>
+<p><strong>Délai :</strong> Recommandations, aucun délai réglementaire. <strong>Vente :</strong> Pas d&#39;obligation de travaux après la vente.</p>
+<p><a href="/decodeur-rapport-spanc/defauts-entretien-usure/">Explication complète, délais sourcés et qui appeler →</a></p>
+</section>
+<section class="carte decodeur-verdict" id="verdict-installation-conforme" data-cle="conforme" hidden>
+<h3>Conforme, aucun défaut relevé</h3>
+<p>Le contrôleur n&#39;a relevé aucun des problèmes de la grille officielle : aucun travaux n&#39;est exigé. Le rapport sert pour une vente pendant 3 ans à compter de la date du contrôle ; le prochain contrôle a lieu selon le règlement de service, au plus tard 10 ans après.</p>
+<p><strong>Délai :</strong> Aucun travaux exigé. <strong>Vente :</strong> Rapport valable 3 ans à compter du contrôle.</p>
+<p><a href="/decodeur-rapport-spanc/installation-conforme/">Explication complète, délais sourcés et qui appeler →</a></p>
+</section>
+
+<h2 id="grille">Les conclusions possibles de la grille officielle</h2>
+<p>Le rapport de visite d'une installation existante évalue la non-conformité « au regard des critères précisés dans le tableau de l'annexe II » de l'arrêté du 27 avril 2012 (art. 4). Choisissez la conclusion de votre rapport :</p>
+<div class="table-wrap" role="region" aria-label="Tableau 1 (défilement horizontal possible)" tabindex="0"><table>
+<caption>Conclusions du rapport SPANC, délais des travaux et cas de la vente (arrêté du 27/04/2012, art. 4 et annexe II, relus le 27/11/2026)</caption>
+<thead><tr><th scope="col">Conclusion du rapport</th><th scope="col">Délai des travaux</th><th scope="col">En cas de vente</th></tr></thead>
+<tbody>
+<tr><th scope="row"><a href="/decodeur-rapport-spanc/absence-installation/">Absence d&#39;installation</a></th><td>Mise en demeure, travaux dans les meilleurs délais.</td><td>Pas de délai propre à la vente dans la grille.</td></tr>
+<tr><th scope="row"><a href="/decodeur-rapport-spanc/danger-sante-personnes/">Non conforme, danger pour la santé des personnes (cas a)</a></th><td>Travaux obligatoires sous 4 ans.</td><td>Au plus tard 1 an après l&#39;acte.</td></tr>
+<tr><th scope="row"><a href="/decodeur-rapport-spanc/risque-environnemental-avere/">Non conforme, risque environnemental avéré (cas b)</a></th><td>Travaux obligatoires sous 4 ans.</td><td>Au plus tard 1 an après l&#39;acte.</td></tr>
+<tr><th scope="row"><a href="/decodeur-rapport-spanc/non-conforme-sans-danger/">Non conforme sans danger ni risque avéré (cas c)</a></th><td>Pas de délai réglementaire hors vente.</td><td>Travaux au plus tard 1 an après l&#39;acte.</td></tr>
+<tr><th scope="row"><a href="/decodeur-rapport-spanc/defauts-entretien-usure/">Défauts d&#39;entretien ou d&#39;usure</a></th><td>Recommandations, aucun délai réglementaire.</td><td>Pas d&#39;obligation de travaux après la vente.</td></tr>
+<tr><th scope="row"><a href="/decodeur-rapport-spanc/installation-conforme/">Conforme, aucun défaut relevé</a></th><td>Aucun travaux exigé.</td><td>Rapport valable 3 ans à compter du contrôle.</td></tr>
+</tbody>
+</table></div>
+<p>Les délais de 4 ans courent à compter de la notification du rapport qui liste les travaux ; le maire peut les raccourcir selon l'importance du risque (arrêté du 27/04/2012, art. 5 ; CSP L1331-1-1). En cas de vente, le délai d'un an court à compter de la signature de l'acte (art. 4 ; CCH L271-4 II).</p>
+
+<h2 id="lire-son-rapport">Où trouver la conclusion dans votre rapport</h2>
+<p>Selon l'article 4 de l'arrêté du 27 avril 2012, le rapport de visite comporte notamment la date du contrôle, la liste des points contrôlés, l'évaluation des dangers pour la santé des personnes et des risques avérés de pollution de l'environnement, l'évaluation de la non-conformité au regard de la grille de l'annexe II, le cas échéant la liste des travaux classés par ordre de priorité et leurs délais, des recommandations, et la fréquence du prochain contrôle. Copiez de préférence la phrase de conclusion ou la ligne qui décrit le problème constaté.</p>
+
+<h2 id="vente">Vous vendez ou achetez ?</h2>
+<p>Le rapport doit dater de moins de 3 ans à la signature de l'acte authentique ; ces 3 ans courent à compter de la date du contrôle (arrêté du 27/04/2012, art. 4 ; CSP L1331-11-1). En cas de non-conformité (cas a, b ou c), les travaux sont réalisés au plus tard 1 an après la signature de l'acte, par le vendeur avant la vente ou sinon par l'acquéreur (art. 4 ; F31685). Les étapes : <a href="/controle-spanc/vente-immobiliere/">contrôle SPANC et vente immobilière</a>.</p>
+
+<h2 id="qui-appeler">Qui appeler</h2>
+<ul>
+<li><strong>Votre SPANC</strong>, pour faire expliquer le classement, contester un constat par écrit (les voies et délais de recours figurent dans son règlement de service, art. 7) ou faire valider un projet de travaux : <a href="/controle-spanc/spanc-oise-eure-somme/">fiches des SPANC de l'Oise, de l'Eure et de la Somme</a>.</li>
+<li><strong>Un professionnel</strong> pour l'étude et les travaux, ou un vidangeur agréé pour l'entretien : <a href="/trouver-un-professionnel/">trouver un professionnel</a>.</li>
+<li><strong>Votre notaire</strong> si une vente est en cours.</li>
+</ul>
+<p>Pour comprendre le contrôle lui-même (périodicité, déroulement, prix) : <a href="/controle-spanc/">contrôle SPANC</a>.</p>
+
+<h2 id="questions-frequentes">Questions fréquentes</h2>
+<h3 id="mon-rapport-spanc-dit-non-conforme-quel-delai-pour-les-travaux">Mon rapport SPANC dit « non conforme » : quel délai pour les travaux ?</h3>
+<p>Cela dépend du cas. Danger pour la santé des personnes (cas a) ou risque environnemental avéré (cas b) : travaux sous 4 ans à compter de la notification du rapport. Installation incomplète, sous-dimensionnée ou en dysfonctionnement majeur hors zone à enjeu (cas c) : pas de délai hors vente. En cas de vente, pour les cas a, b et c : au plus tard 1 an après l&#39;acte (arrêté du 27/04/2012, art. 4).</p>
+<h3 id="le-texte-que-je-colle-dans-le-decodeur-est-il-envoye-quelque-part">Le texte que je colle dans le décodeur est-il envoyé quelque part ?</h3>
+<p>Non. L&#39;analyse se fait entièrement dans votre navigateur : le texte n&#39;est ni envoyé, ni enregistré, ni conservé après la fermeture de la page.</p>
+<h3 id="quelle-difference-entre-defaut-d-entretien-et-non-conforme">Quelle différence entre « défaut d&#39;entretien » et « non conforme » ?</h3>
+<p>Un défaut d&#39;entretien ou d&#39;usure n&#39;est pas une non-conformité : le SPANC délivre des recommandations, sans délai réglementaire, même en cas de vente. Une non-conformité (cas a, b ou c) s&#39;accompagne d&#39;une liste de travaux (arrêté du 27/04/2012, art. 4 et annexe II).</p>
+<h3 id="combien-de-temps-mon-rapport-spanc-est-il-valable-pour-vendre">Combien de temps mon rapport SPANC est-il valable pour vendre ?</h3>
+<p>3 ans à compter de la date du contrôle : le rapport doit dater de moins de 3 ans à la signature de l&#39;acte authentique (arrêté du 27/04/2012, art. 4 ; CSP L1331-11-1).</p>
+
+
+<p><em>Le décodeur rapproche des mots de votre texte des termes de la grille officielle : c'est une aide à la lecture, pas une interprétation de votre rapport. Seul votre SPANC peut confirmer le classement.</em></p>
+
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Arrêté du 27 avril 2012, version consolidée : art. 2 (définitions du danger pour la santé, du risque avéré et des zones à enjeu), art. 4 (cas a, b, c ; 4 ans ; 1 an en cas de vente ; recommandations), art. 5 (point de départ du délai, contre-visite), art. 7 (fréquence du contrôle) et annexe II (critères et grille d'évaluation) — AIDA, INERIS — <a rel="noopener" href="https://aida.ineris.fr/reglementation/arrete-270412-relatif-modalites-lexecution-mission-controle-installations">Lire sur AIDA (INERIS)</a> (consulté le 27/11/2026)</li>
+<li>Arrêté du 27 avril 2012 relatif aux modalités de l'exécution de la mission de contrôle des installations d'ANC (NOR DEVL1205609A, JORF n°0109 du 10/05/2012) — <a rel="noopener" href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000025835036">Lire sur Légifrance</a> (consulté le 24/11/2026)</li>
+<li>Code de la santé publique, art. L1331-1-1 (obligation d'équipement ; travaux prescrits dans un délai de quatre ans suivant la notification du document de contrôle) — <a rel="noopener" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000022495931">Lire sur Légifrance</a> (consulté le 22/10/2026)</li>
+<li>Code de la santé publique, art. L1331-11-1 (document de contrôle joint au dossier de diagnostic en cas de vente, daté de moins de trois ans) — <a rel="noopener" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043975559">Lire sur Légifrance</a> (consulté le 24/11/2026)</li>
+<li>Code de la construction et de l'habitation, art. L271-4 (I 8° et II : en cas de non-conformité, l'acquéreur fait procéder aux travaux dans un délai d'un an après l'acte) — version modifiée par la loi n° 2024-322 du 9/04/2024, art. 34 — <a rel="noopener" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049398848">Lire sur Légifrance</a> (consulté le 24/11/2026)</li>
+<li>Service-public.gouv.fr — Diagnostic immobilier : assainissement des eaux usées (F31685), page vérifiée par la DILA le 26/02/2025 — <a rel="noopener" href="https://www.service-public.gouv.fr/particuliers/vosdroits/F31685">Lire sur Service-public.gouv.fr</a> (consulté le 27/11/2026)</li>
+<li>Code général des collectivités territoriales, art. L2224-8 III — synthèse officielle « Quelle est la périodicité des contrôles ? » (portail interministériel de l'ANC, mise à jour du 25/02/2011) — <a rel="noopener" href="https://www.assainissement-non-collectif.developpement-durable.gouv.fr/quelle-est-la-periodicite-des-controles-a37.html">Lire sur le portail interministériel de l'ANC</a> (consulté le 27/11/2026)</li>
+</ul>
+<p>Dernière mise à jour de la page : 27/11/2026.</p>
+<script src="/assets/decodeur-spanc.js" defer></script>
+
+</main>
+<footer class="pied"><div>
+<p>Mon Vidangeur est un site d'information indépendant, ce n'est pas un service public. <a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Données personnelles et cookies</a></p>
+<p>Vidange de fosse septique par commune : <a href="/vidange-fosse-septique/oise/">Oise</a></p>
+<p>Ni publicité, ni cookie de mesure, ni envoi de vos saisies. Seul l'hébergeur dépose un cookie technique. Statistiques de visite anonymes, sur notre propre hébergement : <a href="/confidentialite/#mesure-audience">vous y opposer</a>.</p>
+<p>Données : relevé des tarifs et services SPANC de l'Oise et de l'Eure, mis à jour le 13/11/2026.</p>
+<nav id="menu" aria-label="Menu (pied de page)"><a href="/">Accueil</a> <a href="/vidange-fosse-septique/">Vidange</a> <a href="/controle-spanc/">Contrôle SPANC</a> <a href="/guides/">Guides</a> <a href="/urgence/">Urgence</a></nav>
+</div></footer>
+<script src="/assets/mesure.js" data-matomo="https://stats.monvidangeur.fr/" data-site="1" defer></script>
+</body>
+</html>
